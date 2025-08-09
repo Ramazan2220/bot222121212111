@@ -1,0 +1,32 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-07-20 14:06:41,880 - __main__ - INFO - Инициализация базы данных...
+2025-07-20 14:06:41,886 - database.db_manager - INFO - База данных инициализирована
+2025-07-20 14:06:41,887 - __main__ - INFO - Запуск планировщика задач...
+2025-07-20 14:06:41,887 - utils.scheduler - INFO - Планировщик задач запущен
+2025-07-20 14:06:41,887 - __main__ - INFO - Запуск обработчика очереди задач...
+2025-07-20 14:06:41,887 - utils.task_queue - INFO - 🚀 Запущен адаптивный обработчик очереди задач
+2025-07-20 14:06:41,887 - utils.task_queue - INFO - Запущен поток обработки очереди задач
+2025-07-20 14:06:41,887 - __main__ - INFO - Запуск мониторинга системных ресурсов...
+2025-07-20 14:06:41,887 - utils.system_monitor - INFO - 🖥️ Запущен мониторинг системных ресурсов (профиль: macbook)
+2025-07-20 14:06:41,887 - __main__ - INFO - Запуск Telegram бота...
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+2025-07-20 14:06:42,052 - py.warnings - WARNING - /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+
+2025-07-20 14:06:42,054 - telegram_bot.handlers.publish - INFO - ✅ Loaded 11 handlers from monolithic publish_handlers.py
+2025-07-20 14:06:42,054 - telegram_bot.handlers.publish - INFO - 📊 Total publish handlers loaded: 11
+2025-07-20 14:06:42,057 - telegram_bot.bot - INFO - Бот настроен и готов к работе
+2025-07-20 14:06:42,057 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-20 14:06:42,391 - __main__ - INFO - Бот запущен и готов к работе!
+2025-07-20 14:06:43,944 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 3 | Уровень: Ограниченная активность бота
+2025-07-20 14:07:13,097 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-07-20 14:08:02,028 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 36% (НИЗКАЯ) - Повышенная активность бота | CPU: 15.5% | RAM: 81.0% | Temp: N/A
+2025-07-20 14:08:10,828 - telegram.ext.updater - INFO - Received signal 15 (SIGTERM), stopping...
+2025-07-20 14:08:10,829 - apscheduler.scheduler - INFO - Scheduler has been shut down
+Python version: 3.12.5 (v3.12.5:ff3bc82f7c9, Aug  7 2024, 05:32:06) [Clang 13.0.0 (clang-1300.0.29.30)]
+Python executable: /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/bin/python
+Python path: ['/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python312.zip', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/lib-dynload', '/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages', '/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages/setuptools/_vendor']

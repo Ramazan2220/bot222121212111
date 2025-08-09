@@ -1,0 +1,198 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-07-20 14:08:21,508 - __main__ - INFO - Инициализация базы данных...
+2025-07-20 14:08:21,512 - database.db_manager - INFO - База данных инициализирована
+2025-07-20 14:08:21,512 - __main__ - INFO - Запуск планировщика задач...
+2025-07-20 14:08:21,512 - utils.scheduler - INFO - Планировщик задач запущен
+2025-07-20 14:08:21,512 - __main__ - INFO - Запуск обработчика очереди задач...
+2025-07-20 14:08:21,512 - utils.task_queue - INFO - 🚀 Запущен адаптивный обработчик очереди задач
+2025-07-20 14:08:21,512 - utils.task_queue - INFO - Запущен поток обработки очереди задач
+2025-07-20 14:08:21,512 - __main__ - INFO - Запуск мониторинга системных ресурсов...
+2025-07-20 14:08:21,512 - utils.system_monitor - INFO - 🖥️ Запущен мониторинг системных ресурсов (профиль: macbook)
+2025-07-20 14:08:21,512 - __main__ - INFO - Запуск Telegram бота...
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+2025-07-20 14:08:21,606 - py.warnings - WARNING - /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/bot_env_working/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+
+2025-07-20 14:08:21,608 - telegram_bot.handlers.publish - INFO - ✅ Loaded 11 handlers from monolithic publish_handlers.py
+2025-07-20 14:08:21,608 - telegram_bot.handlers.publish - INFO - 📊 Total publish handlers loaded: 11
+2025-07-20 14:08:21,610 - telegram_bot.bot - INFO - Бот настроен и готов к работе
+2025-07-20 14:08:21,610 - apscheduler.scheduler - INFO - Scheduler started
+2025-07-20 14:08:22,020 - __main__ - INFO - Бот запущен и готов к работе!
+2025-07-20 14:08:23,527 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-07-20 14:08:52,663 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-07-20 14:09:23,812 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 3 | Уровень: Ограниченная активность бота
+2025-07-20 14:09:54,974 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-07-20 14:10:09,045 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 16.27 > 12.0
+2025-07-20 14:10:09,051 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:10:09,051 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:10:09,051 - utils.task_queue - WARNING - 🚨 Система перегружена! Уровень: 'ЭКСТРЕННАЯ ОСТАНОВКА - система перегружена' | Потоков: 1 | Задержка: 120.0с
+2025-07-20 14:10:09,052 - utils.task_queue - WARNING - 🚨 Система критически перегружена! Приостанавливаем обработку новых задач
+2025-07-20 14:10:39,053 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 16.34 > 12.0
+2025-07-20 14:10:39,055 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:10:39,055 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:10:39,055 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 1 | Уровень: ЭКСТРЕННАЯ ОСТАНОВКА - система перегружена
+2025-07-20 14:10:39,055 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 16.34 > 12.0
+2025-07-20 14:10:39,055 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:10:39,055 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:10:39,055 - utils.task_queue - WARNING - 🚨 Система перегружена! Уровень: 'ЭКСТРЕННАЯ ОСТАНОВКА - система перегружена' | Потоков: 1 | Задержка: 120.0с
+2025-07-20 14:10:39,055 - utils.task_queue - WARNING - 🚨 Система критически перегружена! Приостанавливаем обработку новых задач
+2025-07-20 14:11:09,059 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 15.58 > 12.0
+2025-07-20 14:11:09,066 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:11:09,066 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:11:09,066 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 15.58 > 12.0
+2025-07-20 14:11:09,066 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:11:09,066 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:11:09,066 - utils.task_queue - WARNING - 🚨 Система перегружена! Уровень: 'ЭКСТРЕННАЯ ОСТАНОВКА - система перегружена' | Потоков: 1 | Задержка: 120.0с
+2025-07-20 14:11:09,066 - utils.task_queue - WARNING - 🚨 Система критически перегружена! Приостанавливаем обработку новых задач
+2025-07-20 14:11:39,070 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 16.62 > 12.0
+2025-07-20 14:11:39,071 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:11:39,071 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:11:39,072 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 16.62 > 12.0
+2025-07-20 14:11:39,072 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:11:39,072 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:11:39,072 - utils.task_queue - WARNING - 🚨 Система перегружена! Уровень: 'ЭКСТРЕННАЯ ОСТАНОВКА - система перегружена' | Потоков: 1 | Задержка: 120.0с
+2025-07-20 14:11:39,072 - utils.task_queue - WARNING - 🚨 Система критически перегружена! Приостанавливаем обработку новых задач
+2025-07-20 14:12:01,599 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:01,611 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:12:01,635 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:06,850 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:06,853 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:12:06,855 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:09,076 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 14.06 > 12.0
+2025-07-20 14:12:09,078 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:12:09,078 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:12:09,078 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 14.06 > 12.0
+2025-07-20 14:12:09,078 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:12:09,078 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:12:09,078 - utils.task_queue - WARNING - 🚨 Система перегружена! Уровень: 'ЭКСТРЕННАЯ ОСТАНОВКА - система перегружена' | Потоков: 1 | Задержка: 120.0с
+2025-07-20 14:12:09,078 - utils.task_queue - WARNING - 🚨 Система критически перегружена! Приостанавливаем обработку новых задач
+2025-07-20 14:12:12,597 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:12,599 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:12:12,600 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:17,805 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:17,909 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:12:17,910 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:19,551 - instagram.client - INFO - Тестирование входа для пользователя kazimir_wish.z371 с прокси
+2025-07-20 14:12:19,553 - instagram.client - ERROR - Ошибка при входе для пользователя kazimir_wish.z371: argument of type 'NoneType' is not iterable
+2025-07-20 14:12:23,014 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:23,015 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:12:23,015 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:28,165 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:28,166 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:12:28,166 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:33,862 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:33,866 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:12:33,866 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:39,083 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 14.42 > 12.0
+2025-07-20 14:12:39,083 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:12:39,084 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:12:39,084 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 14.42 > 12.0
+2025-07-20 14:12:39,084 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:12:39,084 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:12:39,084 - utils.task_queue - WARNING - 🚨 Система перегружена! Уровень: 'ЭКСТРЕННАЯ ОСТАНОВКА - система перегружена' | Потоков: 1 | Задержка: 120.0с
+2025-07-20 14:12:39,084 - utils.task_queue - WARNING - 🚨 Система критически перегружена! Приостанавливаем обработку новых задач
+2025-07-20 14:12:50,257 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:50,258 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:12:50,259 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:55,408 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:12:55,408 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:12:55,409 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:01,614 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:01,614 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:13:01,615 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:09,088 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 12.11 > 12.0
+2025-07-20 14:13:09,089 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:13:09,089 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:13:09,089 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 12.11 > 12.0
+2025-07-20 14:13:09,089 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:13:09,089 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:13:09,089 - utils.task_queue - WARNING - 🚨 Система перегружена! Уровень: 'ЭКСТРЕННАЯ ОСТАНОВКА - система перегружена' | Потоков: 1 | Задержка: 120.0с
+2025-07-20 14:13:09,089 - utils.task_queue - WARNING - 🚨 Система критически перегружена! Приостанавливаем обработку новых задач
+2025-07-20 14:13:09,316 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:09,316 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:13:09,317 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:16,209 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:16,212 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:13:16,213 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:26,494 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:26,495 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:13:26,496 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:40,098 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 1 → 3 | Уровень: Ограниченная активность бота
+2025-07-20 14:13:41,830 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:41,831 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:13:41,832 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:57,482 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:13:57,484 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:13:57,486 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:14:11,254 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-07-20 14:14:18,780 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:14:18,782 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:14:18,783 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:14:42,393 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 3 | Уровень: Ограниченная активность бота
+2025-07-20 14:14:48,577 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:14:48,582 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:14:48,583 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:14:58,495 - utils.system_monitor - CRITICAL - 🚨 ПРЕВЫШЕНЫ ЗАЩИТНЫЕ ЛИМИТЫ: Load: 12.49 > 12.0
+2025-07-20 14:14:58,497 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - система будет принудительно охлаждена
+2025-07-20 14:14:58,497 - utils.system_monitor - CRITICAL - 🚨 АКТИВИРОВАН ЗАЩИТНЫЙ РЕЖИМ - превышены критические лимиты!
+2025-07-20 14:14:58,497 - utils.task_queue - WARNING - 🚨 Система перегружена! Уровень: 'ЭКСТРЕННАЯ ОСТАНОВКА - система перегружена' | Потоков: 1 | Задержка: 120.0с
+2025-07-20 14:14:58,497 - utils.task_queue - WARNING - 🚨 Система критически перегружена! Приостанавливаем обработку новых задач
+2025-07-20 14:15:31,279 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:15:31,281 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:15:31,283 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:16:05,480 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:16:05,484 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:16:05,486 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:16:31,794 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-07-20 14:16:39,681 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:16:39,683 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:16:39,684 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:17:02,953 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 3 | Уровень: Ограниченная активность бота
+2025-07-20 14:17:13,883 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:17:13,885 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:17:13,886 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:17:48,084 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:17:48,086 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:17:48,087 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:18:22,284 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:18:22,286 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:18:22,286 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:18:56,485 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:18:56,487 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:18:56,488 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:19:30,686 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:19:30,688 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:19:30,689 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:19:38,650 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-07-20 14:20:04,888 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:20:04,891 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:20:04,892 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:20:39,090 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:20:39,093 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:20:39,094 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:21:13,291 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:21:13,295 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:21:13,295 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:21:47,493 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:21:47,495 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:21:47,496 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:22:21,693 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:22:21,696 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:22:21,696 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:22:55,850 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:22:55,855 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:22:55,855 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:23:30,094 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:23:30,095 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:23:30,096 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:24:04,291 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:24:04,294 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:24:04,296 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:24:18,849 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 3 | Уровень: Ограниченная активность бота
+2025-07-20 14:24:38,441 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-07-20 14:24:38,447 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-07-20 14:24:38,452 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running

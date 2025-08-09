@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 241, 245, 249;
+}
+
+[data-theme="dark"] {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 23, 42;
+  --background-end-rgb: 88, 28, 135;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom right, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+}
+
+/* Стили для прокрутки */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
+
+/* Стили для светлой темы */
+.light-theme {
+  --card-bg: 255, 255, 255;
+  --card-border: 226, 232, 240;
+  --text-primary: 15, 23, 42;
+  --text-secondary: 71, 85, 105;
+  --accent-color: 59, 130, 246;
+}
+
+/* Стили для темной темы */
+.dark-theme {
+  --card-bg: 30, 41, 59;
+  --card-border: 51, 65, 85;
+  --text-primary: 255, 255, 255;
+  --text-secondary: 148, 163, 184;
+  --accent-color: 59, 130, 246;
+}

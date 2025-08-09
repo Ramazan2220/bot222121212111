@@ -1,0 +1,215 @@
+/* Мобильные стили */
+@media (max-width: 768px) {
+  /* Уменьшаем размеры заголовков */
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Уменьшаем отступы в карточках */
+  .card,
+  [class*="card-"] {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  /* Уменьшаем размер шрифта */
+  body {
+    font-size: 0.875rem;
+  }
+
+  /* Уменьшаем отступы в контейнерах */
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Оптимизируем таблицы */
+  table {
+    font-size: 0.75rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Оптимизируем формы */
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Предотвращает масштабирование на iOS */
+    padding: 0.5rem;
+    height: 2.5rem;
+  }
+
+  /* Оптимизируем кнопки */
+  button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    min-height: 2.5rem;
+  }
+
+  /* Оптимизируем сетки */
+  .grid {
+    gap: 0.75rem;
+  }
+
+  /* Оптимизируем отступы между элементами */
+  .space-y-4 > * + * {
+    margin-top: 0.75rem;
+  }
+
+  /* Оптимизируем иконки */
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  /* Ensure content doesn't get hidden behind the bottom nav */
+  main {
+    padding-bottom: 5rem;
+  }
+
+  /* Улучшаем читаемость текста */
+  p {
+    line-height: 1.4;
+  }
+
+  /* Улучшаем отображение карточек */
+  .card-header {
+    padding: 0.75rem;
+  }
+
+  .card-content {
+    padding: 0.75rem;
+  }
+
+  .card-footer {
+    padding: 0.75rem;
+  }
+
+  /* Улучшаем отображение модальных окон */
+  .dialog-content {
+    width: 95%;
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  /* Улучшаем отображение выпадающих меню */
+  .dropdown-content {
+    min-width: 200px;
+  }
+
+  /* Улучшаем отображение вкладок */
+  .tabs-list {
+    gap: 0.5rem;
+  }
+
+  .tab {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  /* Улучшаем отображение аккордеонов */
+  .accordion-item {
+    padding: 0.75rem;
+  }
+
+  /* Улучшаем отображение бейджей */
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.125rem 0.375rem;
+  }
+
+  /* Улучшаем отображение графиков */
+  .chart-container {
+    height: 200px;
+  }
+
+  /* Улучшаем отображение списков */
+  .list-item {
+    padding: 0.75rem;
+  }
+
+  /* Улучшаем отображение аватаров */
+  .avatar {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  /* Улучшаем отображение тултипов */
+  .tooltip {
+    max-width: 200px;
+    font-size: 0.75rem;
+  }
+
+  /* Улучшаем отображение прогресс-баров */
+  .progress {
+    height: 0.5rem;
+  }
+
+  /* Улучшаем отображение переключателей */
+  .switch {
+    width: 2.5rem;
+    height: 1.25rem;
+  }
+
+  /* Улучшаем отображение слайдеров */
+  .slider {
+    height: 0.5rem;
+  }
+
+  /* Улучшаем отображение чекбоксов и радио-кнопок */
+  .checkbox,
+  .radio {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Стили для очень маленьких экранов */
+@media (max-width: 375px) {
+  .mobile-bottom-nav-label {
+    display: none;
+  }
+
+  .mobile-header-title {
+    max-width: 150px;
+  }
+}
+
+/* Стили для ландшафтной ориентации на мобильных устройствах */
+@media (max-height: 500px) and (orientation: landscape) {
+  .mobile-bottom-nav {
+    display: none;
+  }
+
+  main {
+    padding-bottom: 1rem;
+  }
+}
+
+/* Улучшение доступности для сенсорных устройств */
+@media (hover: none) {
+  button,
+  [role="button"],
+  a {
+    min-height: 44px; /* Минимальная высота для удобного нажатия */
+    min-width: 44px; /* Минимальная ширина для удобного нажатия */
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    transform: scale(1.2);
+  }
+}

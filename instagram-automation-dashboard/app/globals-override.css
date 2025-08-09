@@ -1,0 +1,117 @@
+/* Глобальные переопределения стилей для обеспечения единообразия */
+
+/* Базовые размеры текста */
+.text-base,
+.text-sm,
+.text-xs,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+button,
+input,
+select,
+textarea {
+  font-size: 14px !important;
+}
+
+/* Заголовки */
+h1,
+.text-2xl,
+.text-3xl,
+.text-4xl {
+  font-size: 24px !important;
+}
+
+h2,
+.text-xl {
+  font-size: 20px !important;
+}
+
+h3,
+.text-lg {
+  font-size: 16px !important;
+}
+
+/* Мелкий текст */
+.text-xs,
+.text-[10px], .text-[9px], .text-[8px] {
+  font-size: 12px !important;
+}
+
+/* Отступы карточек */
+.card-padding {
+  padding: 16px !important;
+}
+
+.card-header {
+  padding: 16px 16px 8px 16px !important;
+}
+
+.card-content {
+  padding: 16px !important;
+}
+
+/* Высота элементов */
+.btn-height,
+button,
+.h-6,
+.h-5,
+.h-4,
+input,
+select {
+  height: 36px !important;
+  min-height: 36px !important;
+}
+
+/* Размеры иконок */
+.icon-size,
+svg {
+  height: 18px !important;
+  width: 18px !important;
+  min-height: 18px !important;
+  min-width: 18px !important;
+}
+
+/* Отступы между элементами */
+.gap-1,
+.gap-2,
+.gap-3,
+.gap-4 {
+  gap: 12px !important;
+}
+
+/* Отступы внутри элементов */
+.p-1,
+.p-2,
+.p-3,
+.p-4,
+.px-1,
+.px-2,
+.px-3,
+.px-4,
+.py-1,
+.py-2,
+.py-3,
+.py-4 {
+  padding: 12px !important;
+}
+
+/* Размеры бейджей */
+.badge {
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  height: 24px !important;
+}
+
+/* Размеры табов */
+.tab {
+  height: 36px !important;
+  font-size: 14px !important;
+  padding: 0 16px !important;
+}

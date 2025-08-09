@@ -1,0 +1,24 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-08-01 15:25:21,520 - __main__ - INFO - Инициализация базы данных...
+2025-08-01 15:25:21,524 - database.db_manager - INFO - База данных инициализирована
+2025-08-01 15:25:21,524 - __main__ - INFO - Запуск планировщика задач...
+2025-08-01 15:25:21,525 - utils.scheduler - INFO - Планировщик задач запущен
+2025-08-01 15:25:21,525 - __main__ - INFO - Запуск обработчика очереди задач...
+2025-08-01 15:25:21,525 - utils.task_queue - INFO - 🚀 Запущен адаптивный обработчик очереди задач
+2025-08-01 15:25:21,525 - utils.task_queue - INFO - Запущен поток обработки очереди задач
+2025-08-01 15:25:21,525 - __main__ - INFO - Запуск мониторинга системных ресурсов...
+2025-08-01 15:25:21,525 - utils.system_monitor - INFO - 🖥️ Запущен мониторинг системных ресурсов (профиль: macbook)
+2025-08-01 15:25:21,525 - __main__ - INFO - Запуск умного валидатора аккаунтов...
+2025-08-01 15:25:21,548 - utils.smart_validator_service - INFO - 🚀 Инициализирован умный валидатор (проверки: 2, восстановления: 1)
+2025-08-01 15:25:21,548 - utils.smart_validator_service - INFO - ✅ Умный валидатор запущен
+2025-08-01 15:25:21,548 - __main__ - INFO - Запуск Telegram бота...
+2025-08-01 15:25:21,550 - py.warnings - WARNING - /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+
+2025-08-01 15:25:21,558 - telegram_bot.bot - INFO - Бот настроен и готов к работе
+2025-08-01 15:25:21,558 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-01 15:25:21,950 - __main__ - INFO - Бот запущен и готов к работе!
+2025-08-01 15:25:23,535 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 50 → 4 | Уровень: Стандартная активность бота

@@ -1,0 +1,225 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-08-01 14:41:21,658 - __main__ - INFO - Инициализация базы данных...
+2025-08-01 14:41:21,664 - database.db_manager - INFO - База данных инициализирована
+2025-08-01 14:41:21,665 - __main__ - INFO - Запуск планировщика задач...
+2025-08-01 14:41:21,665 - utils.scheduler - INFO - Планировщик задач запущен
+2025-08-01 14:41:21,665 - __main__ - INFO - Запуск обработчика очереди задач...
+2025-08-01 14:41:21,666 - utils.task_queue - INFO - 🚀 Запущен адаптивный обработчик очереди задач
+2025-08-01 14:41:21,666 - utils.task_queue - INFO - Запущен поток обработки очереди задач
+2025-08-01 14:41:21,666 - __main__ - INFO - Запуск мониторинга системных ресурсов...
+2025-08-01 14:41:21,666 - utils.system_monitor - INFO - 🖥️ Запущен мониторинг системных ресурсов (профиль: macbook)
+2025-08-01 14:41:21,666 - __main__ - INFO - Запуск умного валидатора аккаунтов...
+2025-08-01 14:41:21,696 - utils.smart_validator_service - INFO - 🚀 Инициализирован умный валидатор (проверки: 2, восстановления: 1)
+2025-08-01 14:41:21,696 - utils.smart_validator_service - INFO - ✅ Умный валидатор запущен
+2025-08-01 14:41:21,696 - __main__ - INFO - Запуск Telegram бота...
+2025-08-01 14:41:21,697 - py.warnings - WARNING - /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+
+2025-08-01 14:41:21,703 - telegram_bot.bot - INFO - Бот настроен и готов к работе
+2025-08-01 14:41:21,703 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-01 14:41:22,051 - __main__ - INFO - Бот запущен и готов к работе!
+2025-08-01 14:41:23,681 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 50 → 4 | Уровень: Стандартная активность бота
+2025-08-01 14:41:52,844 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 14:42:55,151 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 14:44:26,701 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:26,701 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:44:26,703 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:31,855 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:31,856 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:44:31,857 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:37,504 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:37,505 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:44:37,506 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:43,173 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:43,174 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:44:43,174 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:49,566 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:49,568 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:44:49,569 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:57,597 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:44:57,598 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:44:57,598 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:45:08,049 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:45:08,050 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:45:08,050 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:45:19,159 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:45:19,161 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:45:19,161 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:45:35,754 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:45:35,756 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:45:35,757 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:45:56,991 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:45:56,992 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:45:56,992 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:46:26,774 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:46:26,774 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:46:26,775 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:47:04,428 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 14:47:09,362 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:47:09,364 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:47:09,367 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:47:43,506 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:47:43,507 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:47:43,508 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:48:17,660 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:48:17,662 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:48:17,663 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:48:51,816 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:48:51,818 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:48:51,819 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:49:25,963 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:49:25,966 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:49:25,968 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:49:40,212 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 14:50:00,112 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:50:00,112 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:50:00,113 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:50:02,143 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 36% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 15.9% | RAM: 81.7% | Temp: N/A
+2025-08-01 14:50:11,365 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 14:50:34,269 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:50:34,270 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:50:34,271 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:51:08,415 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:51:08,416 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:51:08,417 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:51:42,564 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:51:42,564 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:51:42,574 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:51:44,881 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 3 | Уровень: Ограниченная активность бота
+2025-08-01 14:52:16,091 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-08-01 14:52:16,734 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:52:16,735 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:52:16,736 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:52:50,890 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:52:50,892 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:52:50,893 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:53:25,042 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:53:25,044 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:53:25,045 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:53:59,192 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:53:59,194 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:53:59,195 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:54:33,341 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:54:33,343 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:54:33,344 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:55:07,493 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:55:07,495 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:55:07,496 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:55:41,656 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:55:41,659 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:55:41,661 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:56:15,794 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:56:15,796 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:56:15,798 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:56:49,943 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:56:49,945 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:56:49,948 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:57:02,707 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 48% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 37.2% | RAM: 81.4% | Temp: N/A
+2025-08-01 14:57:24,157 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:57:24,157 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:57:24,159 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:57:58,309 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:57:58,310 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:57:58,311 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:58:32,462 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:58:32,464 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:58:32,465 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:59:06,609 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:59:06,611 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:59:06,612 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:59:40,759 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 14:59:40,761 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 14:59:40,763 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:00:14,949 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:00:14,951 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:00:14,953 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:00:49,100 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:00:49,102 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:00:49,105 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:01:23,401 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:01:23,402 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:01:23,403 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:01:57,551 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:01:57,552 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:01:57,553 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:02:02,214 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 43% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 21.1% | RAM: 80.4% | Temp: N/A
+2025-08-01 15:02:31,691 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:02:31,693 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:02:31,694 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:03:05,829 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:03:05,829 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:03:05,830 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:03:39,968 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:03:39,969 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:03:39,970 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:04:14,146 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:04:14,146 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:04:14,147 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:04:48,310 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:04:48,311 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:04:48,312 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:05:22,461 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:05:22,461 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:05:22,462 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:05:56,596 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:05:56,597 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:05:56,598 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:06:30,743 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:06:30,744 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:06:30,745 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:07:04,951 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:07:04,953 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:07:04,954 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:07:39,115 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:07:39,117 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:07:39,119 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:08:13,266 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:08:13,268 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:08:13,268 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:08:47,415 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:08:47,417 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:08:47,418 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:09:02,804 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 39% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 25.0% | RAM: 80.4% | Temp: N/A
+2025-08-01 15:09:21,567 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:09:21,567 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:09:21,569 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:09:55,701 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:09:55,702 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:09:55,702 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:10:29,853 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:10:29,854 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:10:29,855 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:11:04,034 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:11:04,036 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:11:04,037 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:11:38,180 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:11:38,181 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:11:38,182 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:12:12,347 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:12:12,348 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:12:12,349 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:12:46,500 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:12:46,502 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:12:46,504 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:13:20,656 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:13:20,657 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:13:20,658 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:13:54,826 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:13:54,827 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:13:54,828 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:14:02,247 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 37% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 24.5% | RAM: 80.7% | Temp: N/A
+2025-08-01 15:14:28,987 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:14:28,989 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:14:28,990 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:15:03,140 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:15:03,143 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:15:03,144 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:15:37,290 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:15:37,291 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:15:37,292 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:16:11,438 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-08-01 15:16:11,439 - __main__ - ERROR - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2025-08-01 15:16:11,441 - telegram_bot.bot - ERROR - Ошибка при обработке обновления None: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running

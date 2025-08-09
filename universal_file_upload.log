@@ -1,0 +1,65 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-08-01 15:29:12,559 - __main__ - INFO - Инициализация базы данных...
+2025-08-01 15:29:12,566 - database.db_manager - INFO - База данных инициализирована
+2025-08-01 15:29:12,566 - __main__ - INFO - Запуск планировщика задач...
+2025-08-01 15:29:12,567 - utils.scheduler - INFO - Планировщик задач запущен
+2025-08-01 15:29:12,567 - __main__ - INFO - Запуск обработчика очереди задач...
+2025-08-01 15:29:12,567 - utils.task_queue - INFO - 🚀 Запущен адаптивный обработчик очереди задач
+2025-08-01 15:29:12,568 - utils.task_queue - INFO - Запущен поток обработки очереди задач
+2025-08-01 15:29:12,568 - __main__ - INFO - Запуск мониторинга системных ресурсов...
+2025-08-01 15:29:12,568 - utils.system_monitor - INFO - 🖥️ Запущен мониторинг системных ресурсов (профиль: macbook)
+2025-08-01 15:29:12,568 - __main__ - INFO - Запуск умного валидатора аккаунтов...
+2025-08-01 15:29:12,572 - utils.smart_validator_service - INFO - 🚀 Инициализирован умный валидатор (проверки: 2, восстановления: 1)
+2025-08-01 15:29:12,574 - utils.smart_validator_service - INFO - ✅ Умный валидатор запущен
+2025-08-01 15:29:12,574 - __main__ - INFO - Запуск Telegram бота...
+2025-08-01 15:29:12,575 - py.warnings - WARNING - /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+
+2025-08-01 15:29:12,610 - telegram_bot.bot - INFO - Бот настроен и готов к работе
+2025-08-01 15:29:12,610 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-01 15:29:13,201 - __main__ - INFO - Бот запущен и готов к работе!
+2025-08-01 15:29:14,577 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 50 → 4 | Уровень: Стандартная активность бота
+2025-08-01 15:29:36,465 - database.db_manager - INFO - 📡 emily.allenh3hbb: Назначен прокси
+2025-08-01 15:29:36,469 - database.db_manager - INFO - 📡 tanisha.wilsonogzq: Назначен прокси
+2025-08-01 15:29:36,474 - database.db_manager - INFO - 📡 meagan.sanders4zii: Назначен прокси
+2025-08-01 15:29:36,479 - database.db_manager - INFO - 📡 ira.napapis5b11o: Назначен прокси
+2025-08-01 15:29:36,484 - database.db_manager - INFO - 📡 michelle.muses3or: Назначен прокси
+2025-08-01 15:29:36,487 - database.db_manager - INFO - 📡 lisa.schroederoy9e: Назначен прокси
+2025-08-01 15:29:36,491 - database.db_manager - INFO - 📡 stephanie.taylor26o4: Назначен прокси
+2025-08-01 15:29:36,495 - database.db_manager - INFO - 📡 tamara.dejesusficr: Назначен прокси
+2025-08-01 15:29:36,500 - database.db_manager - INFO - 📡 teri.waltersfe2j: Назначен прокси
+2025-08-01 15:29:36,504 - database.db_manager - INFO - 📡 bailey5231512: Назначен прокси
+2025-08-01 15:29:36,507 - database.db_manager - INFO - 📡 simpkin070651: Назначен прокси
+2025-08-01 15:29:36,510 - database.db_manager - INFO - 📡 vsusan_msdql3079: Назначен прокси
+2025-08-01 15:29:36,515 - database.db_manager - INFO - 📡 bdorothy_drmdm7577: Назначен прокси
+2025-08-01 15:29:36,518 - database.db_manager - INFO - 📡 kbetty_meoju9156: Назначен прокси
+2025-08-01 15:29:36,521 - database.db_manager - INFO - 📡 ssarah_draud8416: Назначен прокси
+2025-08-01 15:29:36,524 - database.db_manager - INFO - 📡 julietmason16534: Назначен прокси
+2025-08-01 15:29:36,527 - database.db_manager - INFO - 📡 jennifermiller13149: Назначен прокси
+2025-08-01 15:29:36,531 - database.db_manager - INFO - 📡 nataliadexter1176: Назначен прокси
+2025-08-01 15:29:36,534 - database.db_manager - INFO - 📡 nataliadexter1258: Назначен прокси
+2025-08-01 15:29:36,537 - database.db_manager - INFO - 📡 michaelmiller15791: Назначен прокси
+2025-08-01 15:29:36,540 - database.db_manager - INFO - 📡 jenniferbrown11317: Назначен прокси
+2025-08-01 15:29:36,544 - database.db_manager - INFO - 📡 gracebrown14324: Назначен прокси
+2025-08-01 15:29:36,547 - database.db_manager - INFO - 📡 qmichelle_mepey0347: Назначен прокси
+2025-08-01 15:29:36,550 - database.db_manager - INFO - 📡 vmargaret_mrsnoq8822: Назначен прокси
+2025-08-01 15:29:36,553 - database.db_manager - INFO - 📡 0238_helenojm535: Назначен прокси
+2025-08-01 15:29:36,556 - database.db_manager - INFO - 📡 megeorge.s730o: Назначен прокси
+2025-08-01 15:29:36,560 - database.db_manager - INFO - 📡 cmb.mary.lip70g: Назначен прокси
+2025-08-01 15:29:36,564 - database.db_manager - INFO - 📡 drmarkmoored94131: Назначен прокси
+2025-08-01 15:29:36,567 - database.db_manager - INFO - 📡 john_wilsonsh05926: Назначен прокси
+2025-08-01 15:29:36,570 - database.db_manager - INFO - 📡 meanthony_21260: Назначен прокси
+2025-08-01 15:29:36,574 - database.db_manager - INFO - 📡 leslyenydo_fype99: Назначен прокси
+2025-08-01 15:29:36,578 - database.db_manager - INFO - 📡 julissabowen1: Назначен прокси
+2025-08-01 15:29:36,581 - database.db_manager - INFO - 📡 kachmicawo7xe: Назначен прокси
+2025-08-01 15:29:36,584 - database.db_manager - INFO - 📡 rablantituqo8du: Назначен прокси
+2025-08-01 15:29:36,587 - database.db_manager - INFO - 📡 werrilowtapixy9ze: Назначен прокси
+2025-08-01 15:29:36,590 - database.db_manager - INFO - 📡 nottinghamqydufy1ko: Назначен прокси
+2025-08-01 15:29:36,594 - database.db_manager - INFO - 📡 willimentqabeci2pa: Назначен прокси
+2025-08-01 15:29:36,599 - database.db_manager - INFO - 📡 finleybarbara124252: Назначен прокси
+2025-08-01 15:33:21,817 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 15:33:52,965 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 15:36:02,972 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 39% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 17.5% | RAM: 81.1% | Temp: N/A

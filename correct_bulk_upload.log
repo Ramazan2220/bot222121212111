@@ -1,0 +1,212 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-08-01 15:36:32,629 - __main__ - INFO - Инициализация базы данных...
+2025-08-01 15:36:32,634 - database.db_manager - INFO - База данных инициализирована
+2025-08-01 15:36:32,634 - __main__ - INFO - Запуск планировщика задач...
+2025-08-01 15:36:32,635 - utils.scheduler - INFO - Планировщик задач запущен
+2025-08-01 15:36:32,635 - __main__ - INFO - Запуск обработчика очереди задач...
+2025-08-01 15:36:32,635 - utils.task_queue - INFO - 🚀 Запущен адаптивный обработчик очереди задач
+2025-08-01 15:36:32,635 - utils.task_queue - INFO - Запущен поток обработки очереди задач
+2025-08-01 15:36:32,635 - __main__ - INFO - Запуск мониторинга системных ресурсов...
+2025-08-01 15:36:32,635 - utils.system_monitor - INFO - 🖥️ Запущен мониторинг системных ресурсов (профиль: macbook)
+2025-08-01 15:36:32,635 - __main__ - INFO - Запуск умного валидатора аккаунтов...
+2025-08-01 15:36:32,638 - utils.smart_validator_service - INFO - 🚀 Инициализирован умный валидатор (проверки: 2, восстановления: 1)
+2025-08-01 15:36:32,638 - utils.smart_validator_service - INFO - ✅ Умный валидатор запущен
+2025-08-01 15:36:32,638 - __main__ - INFO - Запуск Telegram бота...
+2025-08-01 15:36:32,639 - py.warnings - WARNING - /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+
+2025-08-01 15:36:32,678 - telegram_bot.bot - INFO - Бот настроен и готов к работе
+2025-08-01 15:36:32,678 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-01 15:36:33,040 - __main__ - INFO - Бот запущен и готов к работе!
+2025-08-01 15:36:34,648 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 50 → 4 | Уровень: Стандартная активность бота
+2025-08-01 15:37:38,977 - database.db_manager - INFO - Добавление аккаунта emily.allenh3hbb в базу данных без проверки входа
+2025-08-01 15:37:38,988 - database.db_manager - INFO - Аккаунт emily.allenh3hbb успешно добавлен в базу данных с ID 1
+2025-08-01 15:37:39,005 - database.db_manager - INFO - 📡 emily.allenh3hbb: Автоматически назначен прокси
+2025-08-01 15:37:39,668 - instagram.client - INFO - Тестирование входа для пользователя emily.allenh3hbb с прокси
+2025-08-01 15:37:39,699 - services.instagram_service - INFO - ✅ Автоматически зашифрован пароль для emily.allenh3hbb
+2025-08-01 15:37:39,700 - instagram.client - INFO - Используется расшифрованный пароль для emily.allenh3hbb
+2025-08-01 15:37:39,701 - instagram.client - INFO - Создан клиент Instagram для emily.allenh3hbb
+2025-08-01 15:37:39,703 - device_manager - INFO - Сгенерированы настройки устройства для аккаунта 1: xiaomi Mi 11
+2025-08-01 15:37:39,703 - instagram.client_patch - INFO - 🔧 SET_SETTINGS: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12/12; 560dpi; 1080x2400; xiaomi; Mi 11; mi-11; qcom)
+2025-08-01 15:37:39,703 - instagram.client_patch - INFO - 📱 ПРИМЕНЕНО УСТРОЙСТВО: xiaomi Mi 11
+2025-08-01 15:37:39,703 - instagram.client - INFO - 📌 Установлен статический прокси для emily.allenh3hbb
+2025-08-01 15:37:39,703 - instagram.client - INFO - Настроен улучшенный обработчик кодов подтверждения и патч input() для emily.allenh3hbb
+2025-08-01 15:37:39,703 - instagram.client - INFO - Добавлена задержка 3.14 секунд перед входом для emily.allenh3hbb
+2025-08-01 15:37:42,848 - instagram.client_patch - INFO - 🔧 LOGIN_PATCH: Установлен User-Agent перед логином: Instagram 269.0.0.18.75 Android (12/12; 560dpi; 1080x2400; xiaomi; Mi 11; mi-11; qcom)
+2025-08-01 15:37:42,848 - instagram.client_patch - INFO - 📱 ЛОГИН С УСТРОЙСТВОМ: xiaomi Mi 11
+2025-08-01 15:37:42,849 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12/12; 560dpi; 1080x2400; xiaomi; Mi 11; mi-11; qcom)
+2025-08-01 15:37:42,850 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Mi 11
+2025-08-01 15:37:46,247 - public_request - INFO - emily.allenh3hbb [200] POST https://i.instagram.com/api/v1/accounts/contact_point_prefill/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:37:46,247 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12/12; 560dpi; 1080x2400; xiaomi; Mi 11; mi-11; qcom)
+2025-08-01 15:37:46,247 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Mi 11
+2025-08-01 15:37:46,867 - public_request - INFO - emily.allenh3hbb [200] POST https://i.instagram.com/api/v1/launcher/sync/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:37:48,402 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12/12; 560dpi; 1080x2400; xiaomi; Mi 11; mi-11; qcom)
+2025-08-01 15:37:48,402 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Mi 11
+2025-08-01 15:37:49,622 - public_request - INFO - emily.allenh3hbb [400] POST https://i.instagram.com/api/v1/accounts/login/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:37:49,623 - instagram.client - INFO - Восстановлен оригинальный input() после попытки входа для emily.allenh3hbb
+2025-08-01 15:37:49,624 - instagram.client - ERROR - Ошибка при входе для emily.allenh3hbb: We can't find an account with emily.allenh3hbb. Try another phone number or email, or if you don't have an Instagram account, you can sign up.
+2025-08-01 15:37:49,629 - database.db_manager - INFO - Добавление аккаунта tanisha.wilsonogzq в базу данных без проверки входа
+2025-08-01 15:37:49,637 - database.db_manager - INFO - Аккаунт tanisha.wilsonogzq успешно добавлен в базу данных с ID 2
+2025-08-01 15:37:49,644 - database.db_manager - INFO - 📡 tanisha.wilsonogzq: Автоматически назначен прокси
+2025-08-01 15:37:50,265 - instagram.client - INFO - Тестирование входа для пользователя tanisha.wilsonogzq с прокси
+2025-08-01 15:37:50,276 - services.instagram_service - INFO - ✅ Автоматически зашифрован пароль для tanisha.wilsonogzq
+2025-08-01 15:37:50,276 - instagram.client - INFO - Используется расшифрованный пароль для tanisha.wilsonogzq
+2025-08-01 15:37:50,276 - instagram.client - INFO - Создан клиент Instagram для tanisha.wilsonogzq
+2025-08-01 15:37:50,279 - device_manager - INFO - Сгенерированы настройки устройства для аккаунта 2: samsung SM-G998B
+2025-08-01 15:37:50,279 - instagram.client_patch - INFO - 🔧 SET_SETTINGS: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:37:50,279 - instagram.client_patch - INFO - 📱 ПРИМЕНЕНО УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:37:50,279 - instagram.client - INFO - 📌 Установлен статический прокси для tanisha.wilsonogzq
+2025-08-01 15:37:50,280 - instagram.client - INFO - Настроен улучшенный обработчик кодов подтверждения и патч input() для tanisha.wilsonogzq
+2025-08-01 15:37:50,280 - instagram.client - INFO - Добавлена задержка 2.64 секунд перед входом для tanisha.wilsonogzq
+2025-08-01 15:37:52,922 - instagram.client_patch - INFO - 🔧 LOGIN_PATCH: Установлен User-Agent перед логином: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:37:52,923 - instagram.client_patch - INFO - 📱 ЛОГИН С УСТРОЙСТВОМ: samsung SM-G998B
+2025-08-01 15:37:52,924 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:37:52,924 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:37:54,702 - public_request - INFO - tanisha.wilsonogzq [200] POST https://i.instagram.com/api/v1/accounts/contact_point_prefill/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:37:54,703 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:37:54,703 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:37:55,535 - public_request - INFO - tanisha.wilsonogzq [200] POST https://i.instagram.com/api/v1/launcher/sync/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:37:56,762 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:37:56,762 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:38:03,557 - public_request - INFO - tanisha.wilsonogzq [400] POST https://i.instagram.com/api/v1/accounts/login/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:38:03,558 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:38:03,558 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:38:05,972 - public_request - INFO - tanisha.wilsonogzq [200] GET https://i.instagram.com/api/v1/challenge/AShNi1ZaBQWProcZmsaCDbi2W2FFlOms-nbbnCzyZsUqlnQgea2jLOiG7FPsxioQ2BP5w50/ASS4s-U_JKExvGzDPiFW7CFl9VYjtLHcAh6lAri08cxU5y95VhWovoPFcZp-VCqnJmpQJIs7blBRSg/?guid=17bd2906-9d8a-44b4-8155-90c55e73f489&device_id=android-a41e83ff31f5f409&challenge_context=Af7Yz789n_YQZxH2TcKlkU5s8v1W2s3xcLsAI39qVzISG85rzzC2PLAPT71JT0WHbo1gQh0x6l76pq_KeySeEjCCt01fj1VzYt_j4BtWDTOt5gol83MQhyeeHWNzYjRcdg8gfUgzBm0ltqOdLi26lohZumEetqZcerqSDHxMEHFZ9W1M4_KqVdHDYSYykb4Z9wVOSf-FSy28cy_AuwmK-nO0cVNeYOhHWimJsXZjiONuoWttpoSZAyvxlY0FZtIzvsNWgp8Ui1LArgY1umvDETTr-0B1n-LuUMlUEQlb_qaYjQWxFt95Jowl23xQ8veQuM5a_FJCzKtBPDjLBu6hmgdwzW7t6wFyICgdKPe_7eOxhzlhKlZiSYqjKeb2sjQMHgH0lFEX6ABTi930knFuekkzf9pth9B6HHmMIplrlWcPQd7DyQwlQ07EowkCsncb1gdnV9P3AM2pK-mZJyx4LWjzXK8QSRI7gLBxOS_NTJg_5DexyZW3NE9kdXZ9cPsBjwfzC-XsfOPQ3TE3witDC3UPkISueoD4lrOR8f-pOFUQgWqjWC5o3aBH3TZXZNUojyv7s1bP_zlFB3lv1uA (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:38:05,972 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:38:05,972 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:38:09,883 - public_request - INFO - tanisha.wilsonogzq [200] POST https://i.instagram.com/api/v1/challenge/AShNi1ZaBQWProcZmsaCDbi2W2FFlOms-nbbnCzyZsUqlnQgea2jLOiG7FPsxioQ2BP5w50/ASS4s-U_JKExvGzDPiFW7CFl9VYjtLHcAh6lAri08cxU5y95VhWovoPFcZp-VCqnJmpQJIs7blBRSg/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:38:09,883 - instagram.client - INFO - Запрос кода подтверждения для tanisha.wilsonogzq, тип: ChallengeChoice.EMAIL, попытка получения кода 1/5
+2025-08-01 15:38:09,884 - instagram.email_utils_optimized - INFO - 🔍 Поиск кода для veronicasanford2018@polosmail.com (попытка 1)
+2025-08-01 15:38:09,884 - instagram.imap_pool - INFO - 🔄 Запущена автоочистка пула IMAP (интервал: 0:05:00)
+2025-08-01 15:38:10,382 - instagram.imap_pool - INFO - ✅ IMAP соединение создано для veronicasanford2018@polosmail.com
+2025-08-01 15:38:26,501 - instagram.email_utils_optimized - INFO - 🔍 Поиск кода для veronicasanford2018@polosmail.com (попытка 2)
+2025-08-01 15:38:27,079 - instagram.email_utils_optimized - INFO - 📧 Найдено 1 писем в INBOX
+2025-08-01 15:38:27,276 - instagram.email_utils_optimized - INFO - ✅ Код найден для veronicasanford2018@polosmail.com: 348384 (за 0.8с, 1 поисков)
+2025-08-01 15:38:27,371 - instagram.client - INFO - Получен код подтверждения из email: 348384 (попытка получения 1)
+2025-08-01 15:38:27,372 - instagram.client - INFO - Отправка кода 348384 для tanisha.wilsonogzq, попытка верификации 1/3
+2025-08-01 15:38:32,377 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:38:32,378 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:38:37,276 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 15:38:43,764 - public_request - INFO - tanisha.wilsonogzq [200] POST https://i.instagram.com/api/v1/challenge/AShNi1ZaBQWProcZmsaCDbi2W2FFlOms-nbbnCzyZsUqlnQgea2jLOiG7FPsxioQ2BP5w50/ASS4s-U_JKExvGzDPiFW7CFl9VYjtLHcAh6lAri08cxU5y95VhWovoPFcZp-VCqnJmpQJIs7blBRSg/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:38:43,767 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:38:43,767 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:38:46,196 - public_request - INFO - tanisha.wilsonogzq [200] POST https://i.instagram.com/api/v1/accounts/login/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:38:46,197 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:38:46,197 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:38:48,037 - public_request - INFO - tanisha.wilsonogzq [200] POST https://i.instagram.com/api/v1/feed/reels_tray/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:38:48,038 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 440dpi; 1440x3200; samsung; SM-G998B; sm-g998b; qcom)
+2025-08-01 15:38:48,039 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: samsung SM-G998B
+2025-08-01 15:38:52,870 - public_request - INFO - tanisha.wilsonogzq [200] POST https://i.instagram.com/api/v1/feed/timeline/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:38:52,873 - instagram.client - INFO - Успешный вход для tanisha.wilsonogzq
+2025-08-01 15:38:52,873 - instagram.client - INFO - Восстановлен оригинальный input() после попытки входа для tanisha.wilsonogzq
+2025-08-01 15:38:52,875 - instagram.client - INFO - Сохранена сессия для tanisha.wilsonogzq
+2025-08-01 15:38:52,885 - instagram.client - INFO - ✅ Статус аккаунта tanisha.wilsonogzq обновлен как активный в базе данных
+2025-08-01 15:38:52,891 - database.db_manager - INFO - Аккаунт tanisha.wilsonogzq (ID: 2) активирован
+2025-08-01 15:38:52,892 - database.db_manager - INFO - Добавление аккаунта meagan.sanders4zii в базу данных без проверки входа
+2025-08-01 15:38:52,896 - database.db_manager - INFO - Аккаунт meagan.sanders4zii успешно добавлен в базу данных с ID 3
+2025-08-01 15:38:52,901 - database.db_manager - INFO - 📡 meagan.sanders4zii: Автоматически назначен прокси
+2025-08-01 15:38:53,535 - instagram.client - INFO - Тестирование входа для пользователя meagan.sanders4zii с прокси
+2025-08-01 15:38:53,543 - services.instagram_service - INFO - ✅ Автоматически зашифрован пароль для meagan.sanders4zii
+2025-08-01 15:38:53,543 - instagram.client - INFO - Используется расшифрованный пароль для meagan.sanders4zii
+2025-08-01 15:38:53,544 - instagram.client - INFO - Создан клиент Instagram для meagan.sanders4zii
+2025-08-01 15:38:53,548 - device_manager - INFO - Сгенерированы настройки устройства для аккаунта 3: xiaomi POCO X3
+2025-08-01 15:38:53,548 - instagram.client_patch - INFO - 🔧 SET_SETTINGS: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 560dpi; 1080x2280; xiaomi; POCO X3; poco-x3; qcom)
+2025-08-01 15:38:53,548 - instagram.client_patch - INFO - 📱 ПРИМЕНЕНО УСТРОЙСТВО: xiaomi POCO X3
+2025-08-01 15:38:53,549 - instagram.client - INFO - 📌 Установлен статический прокси для meagan.sanders4zii
+2025-08-01 15:38:53,549 - instagram.client - INFO - Настроен улучшенный обработчик кодов подтверждения и патч input() для meagan.sanders4zii
+2025-08-01 15:38:53,549 - instagram.client - INFO - Добавлена задержка 2.04 секунд перед входом для meagan.sanders4zii
+2025-08-01 15:38:55,594 - instagram.client_patch - INFO - 🔧 LOGIN_PATCH: Установлен User-Agent перед логином: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 560dpi; 1080x2280; xiaomi; POCO X3; poco-x3; qcom)
+2025-08-01 15:38:55,594 - instagram.client_patch - INFO - 📱 ЛОГИН С УСТРОЙСТВОМ: xiaomi POCO X3
+2025-08-01 15:38:55,595 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 560dpi; 1080x2280; xiaomi; POCO X3; poco-x3; qcom)
+2025-08-01 15:38:55,595 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi POCO X3
+2025-08-01 15:39:02,109 - instagram.client - INFO - Восстановлен оригинальный input() после попытки входа для meagan.sanders4zii
+2025-08-01 15:39:02,110 - instagram.client - ERROR - Ошибка при входе для meagan.sanders4zii: ProxyError HTTPSConnectionPool(host='i.instagram.com', port=443): Max retries exceeded with url: /api/v1/accounts/contact_point_prefill/ (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Node has rejected the request')))
+2025-08-01 15:39:02,113 - database.db_manager - INFO - Добавление аккаунта ira.napapis5b11o в базу данных без проверки входа
+2025-08-01 15:39:02,126 - database.db_manager - INFO - Аккаунт ira.napapis5b11o успешно добавлен в базу данных с ID 4
+2025-08-01 15:39:02,132 - database.db_manager - INFO - 📡 ira.napapis5b11o: Автоматически назначен прокси
+2025-08-01 15:39:02,728 - instagram.client - INFO - Тестирование входа для пользователя ira.napapis5b11o с прокси
+2025-08-01 15:39:02,740 - services.instagram_service - INFO - ✅ Автоматически зашифрован пароль для ira.napapis5b11o
+2025-08-01 15:39:02,740 - instagram.client - INFO - Используется расшифрованный пароль для ira.napapis5b11o
+2025-08-01 15:39:02,741 - instagram.client - INFO - Создан клиент Instagram для ira.napapis5b11o
+2025-08-01 15:39:02,745 - device_manager - INFO - Сгенерированы настройки устройства для аккаунта 4: xiaomi Redmi 9
+2025-08-01 15:39:02,745 - instagram.client_patch - INFO - 🔧 SET_SETTINGS: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 560dpi; 1080x2160; xiaomi; Redmi 9; redmi-9; qcom)
+2025-08-01 15:39:02,745 - instagram.client_patch - INFO - 📱 ПРИМЕНЕНО УСТРОЙСТВО: xiaomi Redmi 9
+2025-08-01 15:39:02,745 - instagram.client - INFO - 📌 Установлен статический прокси для ira.napapis5b11o
+2025-08-01 15:39:02,745 - instagram.client - INFO - Настроен улучшенный обработчик кодов подтверждения и патч input() для ira.napapis5b11o
+2025-08-01 15:39:02,745 - instagram.client - INFO - Добавлена задержка 3.20 секунд перед входом для ira.napapis5b11o
+2025-08-01 15:39:05,956 - instagram.client_patch - INFO - 🔧 LOGIN_PATCH: Установлен User-Agent перед логином: Instagram 269.0.0.18.75 Android (10.0/10.0; 560dpi; 1080x2160; xiaomi; Redmi 9; redmi-9; qcom)
+2025-08-01 15:39:05,956 - instagram.client_patch - INFO - 📱 ЛОГИН С УСТРОЙСТВОМ: xiaomi Redmi 9
+2025-08-01 15:39:05,956 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 560dpi; 1080x2160; xiaomi; Redmi 9; redmi-9; qcom)
+2025-08-01 15:39:05,957 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Redmi 9
+2025-08-01 15:39:39,561 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 15:39:42,708 - instagram.client - INFO - Восстановлен оригинальный input() после попытки входа для ira.napapis5b11o
+2025-08-01 15:39:42,708 - instagram.client - ERROR - Ошибка при входе для ira.napapis5b11o: ProxyError HTTPSConnectionPool(host='i.instagram.com', port=443): Max retries exceeded with url: /api/v1/accounts/contact_point_prefill/ (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 504 Node connect timed out')))
+2025-08-01 15:39:42,712 - database.db_manager - INFO - Добавление аккаунта michelle.muses3or в базу данных без проверки входа
+2025-08-01 15:39:42,718 - database.db_manager - INFO - Аккаунт michelle.muses3or успешно добавлен в базу данных с ID 5
+2025-08-01 15:39:42,723 - database.db_manager - INFO - 📡 michelle.muses3or: Автоматически назначен прокси
+2025-08-01 15:39:43,324 - instagram.client - INFO - Тестирование входа для пользователя michelle.muses3or с прокси
+2025-08-01 15:39:43,330 - services.instagram_service - INFO - ✅ Автоматически зашифрован пароль для michelle.muses3or
+2025-08-01 15:39:43,330 - instagram.client - INFO - Используется расшифрованный пароль для michelle.muses3or
+2025-08-01 15:39:43,331 - instagram.client - INFO - Создан клиент Instagram для michelle.muses3or
+2025-08-01 15:39:43,333 - device_manager - INFO - Сгенерированы настройки устройства для аккаунта 5: oppo A74
+2025-08-01 15:39:43,333 - instagram.client_patch - INFO - 🔧 SET_SETTINGS: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 420dpi; 1080x2280; oppo; A74; a74; qcom)
+2025-08-01 15:39:43,333 - instagram.client_patch - INFO - 📱 ПРИМЕНЕНО УСТРОЙСТВО: oppo A74
+2025-08-01 15:39:43,333 - instagram.client - INFO - 📌 Установлен статический прокси для michelle.muses3or
+2025-08-01 15:39:43,333 - instagram.client - INFO - Настроен улучшенный обработчик кодов подтверждения и патч input() для michelle.muses3or
+2025-08-01 15:39:43,333 - instagram.client - INFO - Добавлена задержка 3.95 секунд перед входом для michelle.muses3or
+2025-08-01 15:39:47,286 - instagram.client_patch - INFO - 🔧 LOGIN_PATCH: Установлен User-Agent перед логином: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 420dpi; 1080x2280; oppo; A74; a74; qcom)
+2025-08-01 15:39:47,287 - instagram.client_patch - INFO - 📱 ЛОГИН С УСТРОЙСТВОМ: oppo A74
+2025-08-01 15:39:47,288 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 420dpi; 1080x2280; oppo; A74; a74; qcom)
+2025-08-01 15:39:47,288 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: oppo A74
+2025-08-01 15:39:48,771 - public_request - INFO - michelle.muses3or [200] POST https://i.instagram.com/api/v1/accounts/contact_point_prefill/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:39:48,772 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 420dpi; 1080x2280; oppo; A74; a74; qcom)
+2025-08-01 15:39:48,772 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: oppo A74
+2025-08-01 15:39:49,538 - public_request - INFO - michelle.muses3or [200] POST https://i.instagram.com/api/v1/launcher/sync/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:39:50,976 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 420dpi; 1080x2280; oppo; A74; a74; qcom)
+2025-08-01 15:39:50,976 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: oppo A74
+2025-08-01 15:40:04,166 - public_request - INFO - michelle.muses3or [400] POST https://i.instagram.com/api/v1/accounts/login/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:40:04,167 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 420dpi; 1080x2280; oppo; A74; a74; qcom)
+2025-08-01 15:40:04,167 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: oppo A74
+2025-08-01 15:40:06,766 - public_request - INFO - michelle.muses3or [200] GET https://i.instagram.com/api/v1/challenge/ASjlMvbW6q16Hhm4fNC0a7BjVMCSdKzfsjXzOZ8RGUyeaI56S63Mui63liMZN3-iBwquyHk/ASSIvvJuovv8N3a8JkNNB-bVFPts4-fouk2j8EMlN-8cOQMCt_TGgAlxCWqfXrLBPYizuzTPMc9MPg/?guid=b538963b-eaed-476d-8e72-7f425794216f&device_id=android-b742b655ca4e5f38&challenge_context=Af6_7Moigykr4rnNDB9U1hOeQ8nenyiuDjovql-Fa1AMy_Kj1JaHgRvaQ0FAjI5CdXARZjVFAev4yui2DrlGMcL-YzoqJjQ3OzMW415pW4B6CCD_D1dkc2_jInXoMFMONJGybXpsRyXN0KjgDmZcU9nFTNyyqgiHVOFou7ey0I7HFkOvVLJ6HyIPflPu-PzHCAIqQ3ui8sH746vH7QvvJxj-bMiNCzWKlv9a9OQW-HC7e91pc6_Mg6lwdSwZ-7HlrSxEfT2SgSsipE8zpHzdWiYtYmGPlVkW3ddab-J7swJB87rs8hTBjjFT6HGo27AIvQkz73LzrStEPDSEcnn_xKe0A8IWVFOATIgTCX08g5dGJtWcozhIFhyLtgLp7USNGKuLKS2CgStkP4dGdykleLSNw9dQliwp8ik4nht50V3ULsj480HkLK5AtTc5IyxHUa9C51HIkzZPISLwzrvHzKboe48vfkT7_kFjHLuCu7bLxRXduTeTHsQWQLThbHl0zn70cFzNwPtHOk5BY-YcWZEbnyV3N6Id2IlAe7LGmq8rJM6hOa-xTTXfEHgtlGPcq0ZHSsCypmKaG_QZnJA (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:40:06,767 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 420dpi; 1080x2280; oppo; A74; a74; qcom)
+2025-08-01 15:40:06,767 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: oppo A74
+2025-08-01 15:40:12,912 - public_request - INFO - michelle.muses3or [200] POST https://i.instagram.com/api/v1/challenge/ASjlMvbW6q16Hhm4fNC0a7BjVMCSdKzfsjXzOZ8RGUyeaI56S63Mui63liMZN3-iBwquyHk/ASSIvvJuovv8N3a8JkNNB-bVFPts4-fouk2j8EMlN-8cOQMCt_TGgAlxCWqfXrLBPYizuzTPMc9MPg/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:40:12,913 - instagram.client - INFO - Запрос кода подтверждения для michelle.muses3or, тип: ChallengeChoice.EMAIL, попытка получения кода 1/5
+2025-08-01 15:40:12,913 - instagram.email_utils_optimized - INFO - 🔍 Поиск кода для denisefierst1967@fringmail.com (попытка 1)
+2025-08-01 15:40:13,415 - instagram.imap_pool - INFO - ✅ IMAP соединение создано для denisefierst1967@fringmail.com
+2025-08-01 15:40:29,525 - instagram.email_utils_optimized - INFO - 🔍 Поиск кода для denisefierst1967@fringmail.com (попытка 2)
+2025-08-01 15:40:30,107 - instagram.email_utils_optimized - INFO - 📧 Найдено 1 писем в INBOX
+2025-08-01 15:40:30,314 - instagram.email_utils_optimized - INFO - ✅ Код найден для denisefierst1967@fringmail.com: 614231 (за 0.8с, 1 поисков)
+2025-08-01 15:40:30,408 - instagram.client - INFO - Получен код подтверждения из email: 614231 (попытка получения 1)
+2025-08-01 15:40:30,409 - instagram.client - INFO - Отправка кода 614231 для michelle.muses3or, попытка верификации 1/3
+2025-08-01 15:40:35,414 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (12.0.1/12.0.1; 420dpi; 1080x2280; oppo; A74; a74; qcom)
+2025-08-01 15:40:35,414 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: oppo A74
+2025-08-01 15:40:55,104 - public_request - INFO - michelle.muses3or [572] POST https://i.instagram.com/api/v1/challenge/ASjlMvbW6q16Hhm4fNC0a7BjVMCSdKzfsjXzOZ8RGUyeaI56S63Mui63liMZN3-iBwquyHk/ASSIvvJuovv8N3a8JkNNB-bVFPts4-fouk2j8EMlN-8cOQMCt_TGgAlxCWqfXrLBPYizuzTPMc9MPg/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:40:55,106 - instagram.client - INFO - Восстановлен оригинальный input() после попытки входа для michelle.muses3or
+2025-08-01 15:40:55,107 - instagram.client - ERROR - Ошибка при входе для michelle.muses3or: 572 Server Error: - for url: https://i.instagram.com/api/v1/challenge/ASjlMvbW6q16Hhm4fNC0a7BjVMCSdKzfsjXzOZ8RGUyeaI56S63Mui63liMZN3-iBwquyHk/ASSIvvJuovv8N3a8JkNNB-bVFPts4-fouk2j8EMlN-8cOQMCt_TGgAlxCWqfXrLBPYizuzTPMc9MPg/
+2025-08-01 15:40:55,117 - database.db_manager - INFO - Добавление аккаунта lisa.schroederoy9e в базу данных без проверки входа
+2025-08-01 15:40:55,125 - database.db_manager - INFO - Аккаунт lisa.schroederoy9e успешно добавлен в базу данных с ID 6
+2025-08-01 15:40:55,130 - database.db_manager - INFO - 📡 lisa.schroederoy9e: Автоматически назначен прокси
+2025-08-01 15:40:55,723 - instagram.client - INFO - Тестирование входа для пользователя lisa.schroederoy9e с прокси
+2025-08-01 15:40:55,730 - services.instagram_service - INFO - ✅ Автоматически зашифрован пароль для lisa.schroederoy9e
+2025-08-01 15:40:55,730 - instagram.client - INFO - Используется расшифрованный пароль для lisa.schroederoy9e
+2025-08-01 15:40:55,731 - instagram.client - INFO - Создан клиент Instagram для lisa.schroederoy9e
+2025-08-01 15:40:55,733 - device_manager - INFO - Сгенерированы настройки устройства для аккаунта 6: oppo Find X3 Pro
+2025-08-01 15:40:55,734 - instagram.client_patch - INFO - 🔧 SET_SETTINGS: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (13.0/13.0; 420dpi; 1440x3200; oppo; Find X3 Pro; find-x3-pro; qcom)
+2025-08-01 15:40:55,734 - instagram.client_patch - INFO - 📱 ПРИМЕНЕНО УСТРОЙСТВО: oppo Find X3 Pro
+2025-08-01 15:40:55,734 - instagram.client - INFO - 📌 Установлен статический прокси для lisa.schroederoy9e
+2025-08-01 15:40:55,734 - instagram.client - INFO - Настроен улучшенный обработчик кодов подтверждения и патч input() для lisa.schroederoy9e
+2025-08-01 15:40:55,734 - instagram.client - INFO - Добавлена задержка 3.41 секунд перед входом для lisa.schroederoy9e
+2025-08-01 15:40:59,150 - instagram.client_patch - INFO - 🔧 LOGIN_PATCH: Установлен User-Agent перед логином: Instagram 269.0.0.18.75 Android (13.0/13.0; 420dpi; 1440x3200; oppo; Find X3 Pro; find-x3-pro; qcom)
+2025-08-01 15:40:59,150 - instagram.client_patch - INFO - 📱 ЛОГИН С УСТРОЙСТВОМ: oppo Find X3 Pro
+2025-08-01 15:40:59,150 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (13.0/13.0; 420dpi; 1440x3200; oppo; Find X3 Pro; find-x3-pro; qcom)
+2025-08-01 15:40:59,150 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: oppo Find X3 Pro
+2025-08-01 15:41:00,545 - public_request - INFO - lisa.schroederoy9e [200] POST https://i.instagram.com/api/v1/accounts/contact_point_prefill/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:41:00,546 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (13.0/13.0; 420dpi; 1440x3200; oppo; Find X3 Pro; find-x3-pro; qcom)
+2025-08-01 15:41:00,546 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: oppo Find X3 Pro
+2025-08-01 15:41:01,146 - public_request - INFO - lisa.schroederoy9e [200] POST https://i.instagram.com/api/v1/launcher/sync/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 15:41:02,560 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (13.0/13.0; 420dpi; 1440x3200; oppo; Find X3 Pro; find-x3-pro; qcom)
+2025-08-01 15:41:02,561 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: oppo Find X3 Pro

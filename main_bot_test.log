@@ -1,0 +1,53 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-08-02 13:48:24,703 - __main__ - INFO - Инициализация базы данных...
+2025-08-02 13:48:24,788 - database.connection_pool - INFO - 🏊‍♂️ Database Connection Pool инициализирован:
+2025-08-02 13:48:24,788 - database.connection_pool - INFO -   📊 Размер пула: 15
+2025-08-02 13:48:24,788 - database.connection_pool - INFO -   ➕ Max overflow: 5
+2025-08-02 13:48:24,788 - database.connection_pool - INFO -   ⏱️ Timeout: 20s
+2025-08-02 13:48:24,788 - database.connection_pool - INFO -   🔄 Recycle: 1800s
+2025-08-02 13:48:24,788 - database.connection_pool - INFO - ✅ Глобальный Database Connection Pool инициализирован
+2025-08-02 13:48:24,788 - database.db_manager - INFO - ✅ База данных и Connection Pool инициализированы
+2025-08-02 13:48:24,788 - __main__ - INFO - Запуск планировщика задач...
+2025-08-02 13:48:24,788 - utils.scheduler - INFO - Планировщик задач запущен
+2025-08-02 13:48:24,788 - __main__ - INFO - Запуск обработчика очереди задач...
+2025-08-02 13:48:24,789 - utils.task_queue - INFO - 🚀 Запущен адаптивный обработчик очереди задач
+2025-08-02 13:48:24,789 - utils.task_queue - INFO - Запущен поток обработки очереди задач
+2025-08-02 13:48:24,789 - __main__ - INFO - Запуск мониторинга системных ресурсов...
+2025-08-02 13:48:24,789 - utils.system_monitor - INFO - 🖥️ Запущен мониторинг системных ресурсов (профиль: macbook)
+2025-08-02 13:48:24,789 - __main__ - INFO - Запуск умного валидатора аккаунтов...
+2025-08-02 13:48:24,812 - utils.smart_validator_service - INFO - 🚀 Инициализирован умный валидатор (проверки: 2, восстановления: 1)
+2025-08-02 13:48:24,812 - utils.smart_validator_service - INFO - ✅ Умный валидатор запущен
+2025-08-02 13:48:24,812 - __main__ - INFO - 📧 Готовим IMAP пул для оптимизированной работы с email...
+2025-08-02 13:48:24,812 - __main__ - INFO - ✅ IMAP пул готов к работе
+2025-08-02 13:48:24,812 - __main__ - INFO - 🏊‍♂️ Готовим Instagram Client Pool для оптимизированной работы с API...
+2025-08-02 13:48:24,812 - __main__ - INFO - ✅ Instagram Client Pool готов к работе
+2025-08-02 13:48:24,812 - __main__ - INFO - 📝 Готовим Structured Logging с Sampling для оптимизации логов...
+2025-08-02 13:48:24,812 - utils.structured_logger - INFO - 📝 StructuredLogger 'instagram_bot_structured' инициализирован
+2025-08-02 13:48:24,812 - __main__ - INFO - ✅ Structured Logging готов к работе
+2025-08-02 13:48:24,812 - __main__ - INFO - Запуск Telegram бота...
+2025-08-02 13:48:24,813 - py.warnings - WARNING - /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+
+2025-08-02 13:48:24,820 - telegram_bot.bot - INFO - Бот настроен и готов к работе
+2025-08-02 13:48:24,820 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-02 13:48:25,183 - __main__ - INFO - Бот запущен и готов к работе!
+2025-08-02 13:48:26,804 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 50 → 3 | Уровень: Ограниченная активность бота
+2025-08-02 13:49:27,106 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-08-02 13:53:36,402 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 3 | Уровень: Ограниченная активность бота
+2025-08-02 13:54:07,572 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-08-02 13:57:45,710 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 3 | Уровень: Ограниченная активность бота
+2025-08-02 13:58:16,987 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-08-02 13:59:19,519 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-02 13:59:50,778 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 3 | Уровень: Ограниченная активность бота
+2025-08-02 14:00:22,036 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота
+2025-08-02 14:02:02,713 - utils.system_monitor - INFO - 🖥️ 🟠 НАГРУЗКА СИСТЕМЫ: 48% (СРЕДНЯЯ) - Ограниченная активность бота | CPU: 28.9% | RAM: 84.3% | Temp: N/A
+2025-08-02 14:05:00,165 - telegram.ext.updater - INFO - Received signal 15 (SIGTERM), stopping...
+2025-08-02 14:05:00,169 - apscheduler.scheduler - INFO - Scheduler has been shut down
+⚠️ ВНИМАНИЕ: Используется основной токен бота для админ панели!
+🔧 Для продакшена создайте отдельного бота через @BotFather
+Python version: 3.12.5 (v3.12.5:ff3bc82f7c9, Aug  7 2024, 05:32:06) [Clang 13.0.0 (clang-1300.0.29.30)]
+Python executable: /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/bin/python
+Python path: ['/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python312.zip', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12', '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/lib-dynload', '/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages', '/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/setuptools/_vendor', '/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/utils/../admin_bot']

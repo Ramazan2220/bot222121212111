@@ -1,0 +1,15 @@
+2025-08-07 01:02:59,305 - __main__ - ERROR - Ошибка импорта: cannot import name 'Application' from 'telegram.ext' (/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/clean_env/lib/python3.12/site-packages/telegram/ext/__init__.py)
+2025-08-07 01:08:46,863 - __main__ - ERROR - Ошибка импорта: cannot import name 'Application' from 'telegram.ext' (/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/clean_env/lib/python3.12/site-packages/telegram/ext/__init__.py)
+2025-08-07 01:09:41,984 - database.connection_pool - INFO - 📦 Database Connection Pool модуль загружен
+2025-08-07 01:09:41,994 - __main__ - INFO - Инициализация базы данных...
+2025-08-07 01:09:41,998 - database.db_manager - INFO - База данных инициализирована
+2025-08-07 01:09:41,998 - database.connection_pool - INFO - 🗄️ Database Connection Pool инициализирован: pool_size=15, max_overflow=25
+2025-08-07 01:09:41,998 - database.connection_pool - INFO - 🗄️ Глобальный Database Connection Pool инициализирован
+2025-08-07 01:09:41,998 - database.db_manager - INFO - ✅ Database Connection Pool инициализирован в db_manager
+2025-08-07 01:09:41,998 - __main__ - INFO - 🔒 Активация продвинутой системы изоляции пользователей...
+2025-08-07 01:09:41,998 - database.user_context_manager - INFO - 🔒 ✅ Scoped session с изоляцией пользователей создан
+2025-08-07 01:09:41,998 - __main__ - INFO - 🔒 ✅ Продвинутая система изоляции пользователей активирована
+2025-08-07 01:09:41,998 - __main__ - INFO - Запуск планировщика задач...
+2025-08-07 01:09:42,347 - instagram.client_patch - INFO - 🚀 Усиленные патчи для instagrapi успешно применены
+2025-08-07 01:09:42,357 - instagram.clip_upload_patch - INFO - Патч clip_upload не применяется - Instagram автоматически разделяет Reels и посты
+2025-08-07 01:09:42,647 - utils.scheduler - INFO - Планировщик задач запущен

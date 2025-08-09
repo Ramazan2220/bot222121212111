@@ -1,0 +1,19 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+Traceback (most recent call last):
+  File "/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/main.py", line 17, in <module>
+    from telegram_bot.bot import setup_bot
+  File "/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/telegram_bot/bot.py", line 6, in <module>
+    from telegram_bot.handlers import get_all_handlers
+  File "/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/telegram_bot/handlers/__init__.py", line 2, in <module>
+    from telegram_bot.handlers.publish_handlers import get_publish_handlers
+  File "/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/telegram_bot/handlers/publish_handlers.py", line 21, in <module>
+    from utils.task_queue import add_task_to_queue, get_task_status
+  File "/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/utils/task_queue.py", line 15, in <module>
+    from instagram.post_manager import PostManager
+  File "/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/instagram/post_manager.py", line 706
+    return False, str(e)            return False, str(e)
+                                    ^^^^^^
+SyntaxError: invalid syntax

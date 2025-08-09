@@ -1,0 +1,33 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-08-02 14:34:57,858 - utils.subscription_service - INFO - 🔐 SubscriptionService инициализирован
+2025-08-02 14:34:57,864 - admin_bot.main - INFO - 🤖 Запуск админ бота...
+2025-08-02 14:34:57,864 - admin_bot.main - INFO - 📊 Инициализация основной базы данных...
+2025-08-02 14:34:57,870 - database.connection_pool - INFO - 🏊‍♂️ Database Connection Pool инициализирован:
+2025-08-02 14:34:57,870 - database.connection_pool - INFO -   📊 Размер пула: 15
+2025-08-02 14:34:57,870 - database.connection_pool - INFO -   ➕ Max overflow: 5
+2025-08-02 14:34:57,870 - database.connection_pool - INFO -   ⏱️ Timeout: 20s
+2025-08-02 14:34:57,870 - database.connection_pool - INFO -   🔄 Recycle: 1800s
+2025-08-02 14:34:57,870 - database.connection_pool - INFO - ✅ Глобальный Database Connection Pool инициализирован
+2025-08-02 14:34:57,870 - database.db_manager - INFO - ✅ База данных и Connection Pool инициализированы
+2025-08-02 14:34:57,870 - admin_bot.main - INFO - ✅ База данных инициализирована
+2025-08-02 14:34:58,153 - admin_bot.main - INFO - Команды бота настроены
+2025-08-02 14:34:58,216 - admin_bot.main - INFO - ✅ Бот запущен: @reelsadmin_bot
+2025-08-02 14:34:58,216 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-02 14:34:58,283 - admin_bot.main - INFO - 🟢 Админ бот готов к работе!
+2025-08-02 14:35:11,166 - admin_bot.middleware.admin_auth - INFO - Admin 6499246016 accessed users_menu
+2025-08-02 14:35:12,670 - admin_bot.middleware.admin_auth - INFO - Admin 6499246016 accessed users_add
+2025-08-02 14:39:10,464 - admin_bot.middleware.admin_auth - INFO - Admin 6499246016 accessed users_menu
+2025-08-02 14:39:11,647 - admin_bot.middleware.admin_auth - INFO - Admin 6499246016 accessed users_add
+2025-08-02 14:39:16,441 - admin_bot.middleware.admin_auth - INFO - Admin 6499246016 accessed users_menu
+2025-08-02 14:39:17,632 - admin_bot.middleware.admin_auth - INFO - Admin 6499246016 accessed users_list
+2025-08-02 14:39:17,711 - admin_bot.main - ERROR - Ошибка в callback_handler: Can't parse entities: can't find end of the entity starting at byte offset 1030
+2025-08-02 14:39:19,215 - admin_bot.middleware.admin_auth - INFO - Admin 6499246016 accessed users_list
+2025-08-02 14:39:19,295 - admin_bot.main - ERROR - Ошибка в callback_handler: Can't parse entities: can't find end of the entity starting at byte offset 1030
+2025-08-02 14:43:41,801 - telegram.ext.updater - INFO - Received signal 15 (SIGTERM), stopping...
+2025-08-02 14:43:41,803 - apscheduler.scheduler - INFO - Scheduler has been shut down
+🚀 Запуск админ бота...
+⚠️ ВНИМАНИЕ: Используется основной токен бота для админ панели!
+🔧 Для продакшена создайте отдельного бота через @BotFather

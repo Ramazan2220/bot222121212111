@@ -1,0 +1,116 @@
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/utils/request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+/Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/apscheduler/__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-08-01 16:07:47,469 - __main__ - INFO - Инициализация базы данных...
+2025-08-01 16:07:47,475 - database.db_manager - INFO - База данных инициализирована
+2025-08-01 16:07:47,475 - __main__ - INFO - Запуск планировщика задач...
+2025-08-01 16:07:47,475 - utils.scheduler - INFO - Планировщик задач запущен
+2025-08-01 16:07:47,475 - __main__ - INFO - Запуск обработчика очереди задач...
+2025-08-01 16:07:47,475 - utils.task_queue - INFO - 🚀 Запущен адаптивный обработчик очереди задач
+2025-08-01 16:07:47,475 - utils.task_queue - INFO - Запущен поток обработки очереди задач
+2025-08-01 16:07:47,476 - __main__ - INFO - Запуск мониторинга системных ресурсов...
+2025-08-01 16:07:47,476 - utils.system_monitor - INFO - 🖥️ Запущен мониторинг системных ресурсов (профиль: macbook)
+2025-08-01 16:07:47,476 - __main__ - INFO - Запуск умного валидатора аккаунтов...
+2025-08-01 16:07:47,478 - utils.smart_validator_service - INFO - 🚀 Инициализирован умный валидатор (проверки: 2, восстановления: 1)
+2025-08-01 16:07:47,478 - utils.smart_validator_service - INFO - ✅ Умный валидатор запущен
+2025-08-01 16:07:47,479 - __main__ - INFO - Запуск Telegram бота...
+2025-08-01 16:07:47,480 - py.warnings - WARNING - /Users/ramazanhanaev/Desktop/instagram_telegram_bot_beckap/instagram_telegram_bot_reserv/fresh_env/lib/python3.12/site-packages/telegram/ext/conversationhandler.py:287: UserWarning: If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.
+  warnings.warn(
+
+2025-08-01 16:07:47,509 - telegram_bot.bot - INFO - Бот настроен и готов к работе
+2025-08-01 16:07:47,510 - apscheduler.scheduler - INFO - Scheduler started
+2025-08-01 16:07:47,777 - __main__ - INFO - Бот запущен и готов к работе!
+2025-08-01 16:07:49,483 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 50 → 4 | Уровень: Стандартная активность бота
+2025-08-01 16:09:00,259 - instagram.client - INFO - Тестирование входа для пользователя simpkin070651 с прокси
+2025-08-01 16:09:00,291 - services.instagram_service - INFO - ✅ Автоматически зашифрован пароль для simpkin070651
+2025-08-01 16:09:00,291 - instagram.client - INFO - Используется расшифрованный пароль для simpkin070651
+2025-08-01 16:09:00,293 - instagram.client - INFO - Создан клиент Instagram для simpkin070651
+2025-08-01 16:09:00,296 - device_manager - INFO - Сгенерированы настройки устройства для аккаунта 8: xiaomi Mi 10 Pro
+2025-08-01 16:09:00,296 - instagram.client_patch - INFO - 🔧 SET_SETTINGS: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (13/13; 440dpi; 1080x2340; xiaomi; Mi 10 Pro; mi-10-pro; qcom)
+2025-08-01 16:09:00,297 - instagram.client_patch - INFO - 📱 ПРИМЕНЕНО УСТРОЙСТВО: xiaomi Mi 10 Pro
+2025-08-01 16:09:00,297 - instagram.client - INFO - 📌 Установлен статический прокси для simpkin070651
+2025-08-01 16:09:00,297 - instagram.client - INFO - Настроен улучшенный обработчик кодов подтверждения и патч input() для simpkin070651
+2025-08-01 16:09:00,297 - instagram.client - INFO - Добавлена задержка 2.74 секунд перед входом для simpkin070651
+2025-08-01 16:09:03,045 - instagram.client_patch - INFO - 🔧 LOGIN_PATCH: Установлен User-Agent перед логином: Instagram 269.0.0.18.75 Android (13/13; 440dpi; 1080x2340; xiaomi; Mi 10 Pro; mi-10-pro; qcom)
+2025-08-01 16:09:03,046 - instagram.client_patch - INFO - 📱 ЛОГИН С УСТРОЙСТВОМ: xiaomi Mi 10 Pro
+2025-08-01 16:09:03,047 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (13/13; 440dpi; 1080x2340; xiaomi; Mi 10 Pro; mi-10-pro; qcom)
+2025-08-01 16:09:03,047 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Mi 10 Pro
+2025-08-01 16:09:04,601 - public_request - INFO - simpkin070651 [200] POST https://i.instagram.com/api/v1/accounts/contact_point_prefill/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 16:09:04,601 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (13/13; 440dpi; 1080x2340; xiaomi; Mi 10 Pro; mi-10-pro; qcom)
+2025-08-01 16:09:04,601 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Mi 10 Pro
+2025-08-01 16:09:05,202 - public_request - INFO - simpkin070651 [200] POST https://i.instagram.com/api/v1/launcher/sync/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 16:09:06,627 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (13/13; 440dpi; 1080x2340; xiaomi; Mi 10 Pro; mi-10-pro; qcom)
+2025-08-01 16:09:06,627 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Mi 10 Pro
+2025-08-01 16:09:07,399 - public_request - INFO - simpkin070651 [400] POST https://i.instagram.com/api/v1/accounts/login/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 16:09:07,400 - instagram.client - INFO - Восстановлен оригинальный input() после попытки входа для simpkin070651
+2025-08-01 16:09:07,400 - instagram.client - ERROR - Ошибка при входе для simpkin070651: We can't find an account with simpkin070651. Try another phone number or email, or if you don't have an Instagram account, you can sign up.
+2025-08-01 16:09:07,400 - instagram.client - WARNING - ⚠️ Неизвестная ошибка входа для simpkin070651: We can't find an account with simpkin070651. Try another phone number or email, or if you don't have an Instagram account, you can sign up.
+2025-08-01 16:09:18,295 - instagram.client - INFO - Тестирование входа для пользователя michelle.muses3or с прокси
+2025-08-01 16:09:18,302 - services.instagram_service - INFO - ✅ Автоматически зашифрован пароль для michelle.muses3or
+2025-08-01 16:09:18,302 - instagram.client - INFO - Используется расшифрованный пароль для michelle.muses3or
+2025-08-01 16:09:18,303 - instagram.client - INFO - Создан клиент Instagram для michelle.muses3or
+2025-08-01 16:09:18,308 - device_manager - INFO - Сгенерированы настройки устройства для аккаунта 4: xiaomi Redmi 9
+2025-08-01 16:09:18,308 - instagram.client_patch - INFO - 🔧 SET_SETTINGS: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 560dpi; 1080x2160; xiaomi; Redmi 9; redmi-9; qcom)
+2025-08-01 16:09:18,308 - instagram.client_patch - INFO - 📱 ПРИМЕНЕНО УСТРОЙСТВО: xiaomi Redmi 9
+2025-08-01 16:09:18,308 - instagram.client - INFO - 📌 Установлен статический прокси для michelle.muses3or
+2025-08-01 16:09:18,309 - instagram.client - INFO - Настроен улучшенный обработчик кодов подтверждения и патч input() для michelle.muses3or
+2025-08-01 16:09:18,309 - instagram.client - INFO - Добавлена задержка 3.20 секунд перед входом для michelle.muses3or
+2025-08-01 16:09:21,519 - instagram.client_patch - INFO - 🔧 LOGIN_PATCH: Установлен User-Agent перед логином: Instagram 269.0.0.18.75 Android (10.0/10.0; 560dpi; 1080x2160; xiaomi; Redmi 9; redmi-9; qcom)
+2025-08-01 16:09:21,520 - instagram.client_patch - INFO - 📱 ЛОГИН С УСТРОЙСТВОМ: xiaomi Redmi 9
+2025-08-01 16:09:21,521 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 560dpi; 1080x2160; xiaomi; Redmi 9; redmi-9; qcom)
+2025-08-01 16:09:21,521 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Redmi 9
+2025-08-01 16:09:22,373 - public_request - INFO - michelle.muses3or [200] POST https://i.instagram.com/api/v1/accounts/contact_point_prefill/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 16:09:22,373 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 560dpi; 1080x2160; xiaomi; Redmi 9; redmi-9; qcom)
+2025-08-01 16:09:22,373 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Redmi 9
+2025-08-01 16:09:22,845 - public_request - INFO - michelle.muses3or [200] POST https://i.instagram.com/api/v1/launcher/sync/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 16:09:23,514 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10.0/10.0; 560dpi; 1080x2160; xiaomi; Redmi 9; redmi-9; qcom)
+2025-08-01 16:09:23,514 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: xiaomi Redmi 9
+2025-08-01 16:09:26,068 - public_request - INFO - michelle.muses3or [400] POST https://i.instagram.com/api/v1/accounts/login/ (203.0.0.29.118, Xiaomi MI 5s)
+2025-08-01 16:09:26,069 - instagram.client - INFO - Восстановлен оригинальный input() после попытки входа для michelle.muses3or
+2025-08-01 16:09:26,069 - instagram.client - ERROR - Ошибка при входе для michelle.muses3or: We can send you an email to help you get back into your account.
+2025-08-01 16:09:26,069 - instagram.client - WARNING - ⚠️ Неизвестная ошибка входа для michelle.muses3or: We can send you an email to help you get back into your account.
+2025-08-01 16:09:51,199 - instagram.email_utils_optimized - INFO - 🔍 Поиск кода для oyvrdpol@wildbmail.com (попытка 1)
+2025-08-01 16:09:51,200 - instagram.imap_pool - INFO - 🔄 Запущена автоочистка пула IMAP (интервал: 0:05:00)
+2025-08-01 16:09:51,703 - instagram.imap_pool - INFO - ✅ IMAP соединение создано для oyvrdpol@wildbmail.com
+2025-08-01 16:10:02,621 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 37% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 17.6% | RAM: 83.4% | Temp: N/A
+2025-08-01 16:10:07,842 - instagram.email_utils_optimized - INFO - 🔍 Поиск кода для oyvrdpol@wildbmail.com (попытка 2)
+2025-08-01 16:10:24,011 - instagram.email_utils_optimized - INFO - 🔍 Поиск кода для oyvrdpol@wildbmail.com (попытка 3)
+2025-08-01 16:10:25,194 - instagram.email_utils_optimized - WARNING - ❌ Код НЕ найден для oyvrdpol@wildbmail.com после 3 попыток (2 поисков, 0 писем, 1.2с)
+2025-08-01 16:10:39,718 - instagram.client - INFO - Тестирование входа для пользователя leslyenydo_fype99 с прокси
+2025-08-01 16:10:39,731 - services.instagram_service - INFO - ✅ Автоматически зашифрован пароль для leslyenydo_fype99
+2025-08-01 16:10:39,731 - instagram.client - INFO - Используется расшифрованный пароль для leslyenydo_fype99
+2025-08-01 16:10:39,733 - instagram.client - INFO - Создан клиент Instagram для leslyenydo_fype99
+2025-08-01 16:10:39,736 - device_manager - INFO - Сгенерированы настройки устройства для аккаунта 36: google Pixel 6
+2025-08-01 16:10:39,737 - instagram.client_patch - INFO - 🔧 SET_SETTINGS: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10/10; 420dpi; 1440x3200; google; Pixel 6; pixel-6; qcom)
+2025-08-01 16:10:39,737 - instagram.client_patch - INFO - 📱 ПРИМЕНЕНО УСТРОЙСТВО: google Pixel 6
+2025-08-01 16:10:39,737 - instagram.client - INFO - 📌 Установлен статический прокси для leslyenydo_fype99
+2025-08-01 16:10:39,737 - instagram.client - INFO - Настроен улучшенный обработчик кодов подтверждения и патч input() для leslyenydo_fype99
+2025-08-01 16:10:39,737 - instagram.client - INFO - Добавлена задержка 2.74 секунд перед входом для leslyenydo_fype99
+2025-08-01 16:10:42,486 - instagram.client_patch - INFO - 🔧 LOGIN_PATCH: Установлен User-Agent перед логином: Instagram 269.0.0.18.75 Android (10/10; 420dpi; 1440x3200; google; Pixel 6; pixel-6; qcom)
+2025-08-01 16:10:42,486 - instagram.client_patch - INFO - 📱 ЛОГИН С УСТРОЙСТВОМ: google Pixel 6
+2025-08-01 16:10:42,487 - instagram.client_patch - INFO - 🔧 ПАТЧ: Принудительно установлен User-Agent: Instagram 269.0.0.18.75 Android (10/10; 420dpi; 1440x3200; google; Pixel 6; pixel-6; qcom)
+2025-08-01 16:10:42,487 - instagram.client_patch - INFO - 📱 УСТРОЙСТВО: google Pixel 6
+2025-08-01 16:12:27,852 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 16:12:42,488 - instagram.client - INFO - Восстановлен оригинальный input() после попытки входа для leslyenydo_fype99
+2025-08-01 16:12:42,489 - instagram.client - WARNING - Таймаут входа для leslyenydo_fype99 - процесс превысил 120 секунд
+2025-08-01 16:12:42,518 - database.db_manager - WARNING - ⚠️ Аккаунт leslyenydo_fype99 деактивирован: Таймаут входа
+2025-08-01 16:12:59,013 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 16:17:03,011 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 42% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 19.8% | RAM: 83.7% | Temp: N/A
+2025-08-01 16:22:02,434 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 42% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 15.0% | RAM: 81.4% | Temp: N/A
+2025-08-01 16:29:02,983 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 37% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 12.3% | RAM: 81.1% | Temp: N/A
+2025-08-01 16:30:40,025 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 16:31:11,178 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 16:33:15,775 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 16:33:46,934 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 16:34:02,236 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 38% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 20.7% | RAM: 81.9% | Temp: N/A
+2025-08-01 16:34:18,090 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 16:34:49,242 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 16:37:56,245 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 16:38:27,417 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 16:40:00,934 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 5 | Уровень: Повышенная активность бота
+2025-08-01 16:40:32,090 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 5 → 4 | Уровень: Стандартная активность бота
+2025-08-01 16:41:02,643 - utils.system_monitor - INFO - 🖥️ 🟡 НАГРУЗКА СИСТЕМЫ: 40% (УМЕРЕННАЯ) - Стандартная активность бота | CPU: 23.6% | RAM: 83.2% | Temp: N/A
+2025-08-01 16:44:41,241 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 4 → 3 | Уровень: Ограниченная активность бота
+2025-08-01 16:44:51,906 - instagram.imap_pool - INFO - 🧹 Очистка пула: удалено 1 протухших соединений
+2025-08-01 16:45:12,388 - utils.task_queue - INFO - 🔧 Адаптация нагрузки: потоков 3 → 4 | Уровень: Стандартная активность бота

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ Ассистент - Instagram Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a><a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        ИИ Ассистент
+                    </h1>
+                    <p class="text-lg text-slate-300">Генерация контента и автоматизация взаимодействий с помощью искусственного интеллекта</p>
+                </div>
+                <div class="flex gap-2">
+                    <select class="px-3 py-2 bg-slate-800 border border-slate-700 rounded-md text-white" id="ai-model">
+                        <option value="gpt-4">GPT-4</option>
+                        <option value="gpt-3.5">GPT-3.5 Turbo</option>
+                        <option value="claude">Claude 3</option>
+                        <option value="llama">Llama 3</option>
+                    </select>
+                    <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-white transition-colors" onclick="startAI()">
+                        <i data-lucide="zap" class="h-4 w-4 mr-2 inline"></i>
+                        Запустить ИИ
+                    </button>
+                </div>
+            </div>
+
+            <!-- AI Stats -->
+            <div class="grid grid-cols-4 gap-4 mb-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="sparkles" class="h-6 w-6 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="generated-content">1,247</p>
+                            <p class="text-slate-400">Сгенерировано</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="message-square" class="h-6 w-6 text-green-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="ai-responses">3,856</p>
+                            <p class="text-slate-400">Ответов</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="bot" class="h-6 w-6 text-purple-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="ai-accuracy">98.7%</p>
+                            <p class="text-slate-400">Точность</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="zap" class="h-6 w-6 text-orange-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="tokens-used">12.5K</p>
+                            <p class="text-slate-400">Токенов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mb-6">
+                <div class="flex space-x-1 bg-slate-800 p-1 rounded-lg">
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md bg-blue-600 text-white" onclick="switchTab('content')">
+                        <i data-lucide="sparkles" class="h-4 w-4 mr-2 inline"></i>
+                        Генерация контента
+                    </button>
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md text-slate-400 hover:text-white transition-colors" onclick="switchTab('interaction')">
+                        <i data-lucide="message-square" class="h-4 w-4 mr-2 inline"></i>
+                        Автоответчик
+                    </button>
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md text-slate-400 hover:text-white transition-colors" onclick="switchTab('analytics')">
+                        <i data-lucide="bar-chart-3" class="h-4 w-4 mr-2 inline"></i>
+                        Аналитика ИИ
+                    </button>
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md text-slate-400 hover:text-white transition-colors" onclick="switchTab('settings')">
+                        <i data-lucide="settings" class="h-4 w-4 mr-2 inline"></i>
+                        Настройки
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Tabs -->
+            <div id="ai-content">
+                <!-- Content Generation Tab -->
+                <div id="content-tab" class="space-y-6">
+                    <!-- Content Generator -->
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <i data-lucide="edit" class="h-5 w-5 text-blue-400"></i>
+                            Генератор контента
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Тип контента</label>
+                                    <select class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" id="content-type">
+                                        <option value="caption">Подпись к посту</option>
+                                        <option value="story">Текст для сториз</option>
+                                        <option value="comment">Комментарий</option>
+                                        <option value="bio">Описание профиля</option>
+                                        <option value="hashtags">Хештеги</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Тематика</label>
+                                    <input type="text" placeholder="Например: мотивация, бизнес, красота..." class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" id="content-theme">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Тон голоса</label>
+                                    <select class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" id="content-tone">
+                                        <option value="friendly">Дружелюбный</option>
+                                        <option value="professional">Профессиональный</option>
+                                        <option value="casual">Неформальный</option>
+                                        <option value="inspiring">Вдохновляющий</option>
+                                        <option value="funny">Веселый</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Дополнительные инструкции</label>
+                                    <textarea rows="3" placeholder="Особые требования к контенту..." class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" id="content-instructions"></textarea>
+                                </div>
+                                
+                                <button onclick="generateContent()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md transition-colors">
+                                    <i data-lucide="sparkles" class="h-4 w-4 mr-2 inline"></i>
+                                    Сгенерировать контент
+                                </button>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-1">Результат</label>
+                                <div class="bg-slate-700 border border-slate-600 rounded-md p-4 h-80 overflow-y-auto">
+                                    <div id="generated-result" class="text-slate-400 text-sm">
+                                        Нажмите "Сгенерировать контент" чтобы создать текст...
+                                    </div>
+                                </div>
+                                <div class="flex gap-2 mt-2">
+                                    <button onclick="copyContent()" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md transition-colors">
+                                        <i data-lucide="copy" class="h-4 w-4 mr-2 inline"></i>
+                                        Копировать
+                                    </button>
+                                    <button onclick="saveContent()" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition-colors">
+                                        <i data-lucide="save" class="h-4 w-4 mr-2 inline"></i>
+                                        Сохранить
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interaction Bot Tab -->
+                <div id="interaction-tab" class="hidden space-y-6">
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <i data-lucide="bot" class="h-5 w-5 text-green-400"></i>
+                            Автоответчик
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <label class="text-lg text-white">Автоответчик активен</label>
+                                    <input type="checkbox" id="autoresponder-enabled" class="h-6 w-6">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Типы сообщений для ответа</label>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center gap-2">
+                                            <input type="checkbox" checked>
+                                            <span class="text-slate-300">Комментарии к постам</span>
+                                        </label>
+                                        <label class="flex items-center gap-2">
+                                            <input type="checkbox" checked>
+                                            <span class="text-slate-300">Личные сообщения</span>
+                                        </label>
+                                        <label class="flex items-center gap-2">
+                                            <input type="checkbox">
+                                            <span class="text-slate-300">Упоминания в сториз</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Задержка ответа (сек)</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <input type="number" value="30" placeholder="Мин." class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                                        <input type="number" value="300" placeholder="Макс." class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Стиль ответов</label>
+                                    <select class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                                        <option value="helpful">Полезный</option>
+                                        <option value="friendly">Дружелюбный</option>
+                                        <option value="professional">Профессиональный</option>
+                                        <option value="creative">Креативный</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-1">Последние взаимодействия</label>
+                                <div class="bg-slate-700 border border-slate-600 rounded-md p-4 h-80 overflow-y-auto">
+                                    <div id="recent-interactions" class="space-y-3">
+                                        <!-- Will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div id="analytics-tab" class="hidden space-y-6">
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <i data-lucide="trending-up" class="h-5 w-5 text-purple-400"></i>
+                            Аналитика ИИ
+                        </h3>
+                        
+                        <div class="grid grid-cols-3 gap-6">
+                            <div class="bg-slate-700/30 rounded-lg p-4">
+                                <h4 class="text-lg font-semibold text-white mb-2">Генерация контента</h4>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-300">Сегодня:</span>
+                                        <span class="text-white">47</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-300">Этот месяц:</span>
+                                        <span class="text-white">1,247</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-300">Всего:</span>
+                                        <span class="text-white">8,520</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-slate-700/30 rounded-lg p-4">
+                                <h4 class="text-lg font-semibold text-white mb-2">Автоответы</h4>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-300">Сегодня:</span>
+                                        <span class="text-white">156</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-300">Этот месяц:</span>
+                                        <span class="text-white">3,856</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-300">Всего:</span>
+                                        <span class="text-white">24,120</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-slate-700/30 rounded-lg p-4">
+                                <h4 class="text-lg font-semibold text-white mb-2">Использование токенов</h4>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-300">Сегодня:</span>
+                                        <span class="text-white">2.1K</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-300">Этот месяц:</span>
+                                        <span class="text-white">12.5K</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-300">Лимит:</span>
+                                        <span class="text-white">100K</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div id="settings-tab" class="hidden space-y-6">
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <i data-lucide="settings" class="h-5 w-5 text-orange-400"></i>
+                            Настройки ИИ
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">API ключ</label>
+                                    <input type="password" placeholder="sk-..." class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Организация</label>
+                                    <input type="text" placeholder="org-..." class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Модель по умолчанию</label>
+                                    <select class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                                        <option value="gpt-4">GPT-4</option>
+                                        <option value="gpt-3.5">GPT-3.5 Turbo</option>
+                                        <option value="claude">Claude 3</option>
+                                        <option value="llama">Llama 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Температура</label>
+                                    <input type="range" min="0" max="1" step="0.1" value="0.7" class="w-full h-2">
+                                    <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                        <span>Точный (0.0)</span>
+                                        <span>Сбалансированный (0.7)</span>
+                                        <span>Креативный (1.0)</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Максимальная длина ответа</label>
+                                    <select class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                                        <option value="256">256 токенов</option>
+                                        <option value="512">512 токенов</option>
+                                        <option value="1024">1024 токена</option>
+                                        <option value="2048">2048 токенов</option>
+                                        <option value="4096">4096 токенов</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="text-sm text-slate-300">Кэширование ответов</label>
+                                        <p class="text-xs text-slate-500">Сохранять ответы для экономии токенов</p>
+                                    </div>
+                                    <input type="checkbox" checked class="h-5 w-5">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3 mt-6">
+                            <button class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-2 px-4 rounded-md transition-colors">
+                                Отмена
+                            </button>
+                            <button onclick="saveAISettings()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors">
+                                Сохранить настройки
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        // Инициализация Lucide иконок
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

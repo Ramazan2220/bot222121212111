@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление аккаунтами - Instagram Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a><a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Управление аккаунтами
+                    </h1>
+                    <p class="text-lg text-slate-300">Добавляйте, настраивайте и контролируйте до 100 Instagram аккаунтов одновременно</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-white transition-colors" onclick="openAddAccountModal()">
+                        <i data-lucide="plus" class="h-4 w-4 mr-2 inline"></i>
+                        Добавить аккаунт
+                    </button>
+                    <button class="border border-slate-600 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-md transition-colors" onclick="openBulkAddModal()">
+                        <i data-lucide="users" class="h-4 w-4 mr-2 inline"></i>
+                        Массовое добавление
+                    </button>
+                    <button class="border border-slate-600 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-md transition-colors" onclick="openImportModal()">
+                        <i data-lucide="upload" class="h-4 w-4 mr-2 inline"></i>
+                        Импорт CSV
+                    </button>
+                    <button class="border border-slate-600 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-md transition-colors" onclick="openGroupManagerModal()">
+                        <i data-lucide="folder" class="h-4 w-4 mr-2 inline"></i>
+                        Управление группами
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mb-6">
+                <div class="flex space-x-1 bg-slate-800 p-1 rounded-lg">
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md bg-blue-600 text-white" onclick="switchTab('all')">
+                        Все аккаунты (<span id="total-count">0</span>)
+                    </button>
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md text-slate-400 hover:text-white transition-colors" onclick="switchTab('active')">
+                        Активные (<span id="active-count">0</span>)
+                    </button>
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md text-slate-400 hover:text-white transition-colors" onclick="switchTab('inactive')">
+                        Неактивные (<span id="inactive-count">0</span>)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Groups Filter -->
+            <div class="mb-6">
+                <div class="flex gap-4 items-center">
+                    <label class="text-sm font-medium text-slate-300">Фильтр по группам:</label>
+                    <select id="group-filter" class="px-3 py-2 bg-slate-800 border border-slate-700 rounded-md text-white" onchange="filterByGroup()">
+                        <option value="">Все группы</option>
+                        <!-- Groups will be populated here -->
+                    </select>
+                    <div class="flex gap-2">
+                        <button class="text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded text-white transition-colors" onclick="selectAllInGroup()">
+                            Выбрать все в группе
+                        </button>
+                        <button class="text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded text-white transition-colors" onclick="clearSelection()">
+                            Очистить выбор
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="flex gap-4 mb-6">
+                <div class="flex-1 relative">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-4 w-4"></i>
+                    <input 
+                        type="text" 
+                        placeholder="Поиск по username или ID..." 
+                        class="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="search-input"
+                    >
+                </div>
+                <button class="border border-slate-600 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-md transition-colors">
+                    <i data-lucide="filter" class="h-4 w-4 mr-2 inline"></i>
+                    Фильтры
+                </button>
+            </div>
+
+            <!-- Accounts Grid -->
+            <div class="grid gap-4" id="accounts-grid">
+                <!-- Accounts will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Account Modal -->
+    <div id="add-account-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-slate-800 rounded-lg p-6 w-full max-w-md">
+            <h3 class="text-xl font-bold text-white mb-4">Добавить аккаунт</h3>
+            <form id="add-account-form">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Username</label>
+                        <input type="text" name="username" required class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Password</label>
+                        <input type="password" name="password" required class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Email (опционально)</label>
+                        <input type="email" name="email" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Email Password (опционально)</label>
+                        <input type="password" name="email_password" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Группа</label>
+                        <select name="group_id" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                            <option value="">Без группы</option>
+                            <!-- Groups will be populated here -->
+                        </select>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-6">
+                    <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors">
+                        Добавить
+                    </button>
+                    <button type="button" onclick="closeAddAccountModal()" class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-2 px-4 rounded-md transition-colors">
+                        Отмена
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Import Modal -->
+    <div id="importModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-slate-800 rounded-lg p-6 w-full max-w-md">
+            <h3 class="text-xl font-bold text-white mb-4">Импорт аккаунтов</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Выберите файл</label>
+                    <input 
+                        type="file" 
+                        id="importFile" 
+                        accept=".txt,.csv" 
+                        class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700"
+                    >
+                </div>
+                <div class="text-sm text-slate-400">
+                    <p class="mb-2">Формат файла:</p>
+                    <code class="bg-slate-700 px-2 py-1 rounded text-xs">username:password:email:email_password</code>
+                    <p class="mt-2">Каждый аккаунт на новой строке</p>
+                </div>
+                <div class="flex gap-3">
+                    <button 
+                        type="button" 
+                        class="flex-1 bg-green-600 hover:bg-green-700 py-2 rounded-md text-white transition-colors"
+                        onclick="importAccounts()"
+                    >
+                        Импортировать
+                    </button>
+                    <button 
+                        type="button" 
+                        class="flex-1 border border-slate-600 text-slate-300 hover:bg-slate-700 py-2 rounded-md transition-colors"
+                        onclick="closeImportModal()"
+                    >
+                        Отмена
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Add Modal -->
+    <div id="bulk-add-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-slate-800 rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <h3 class="text-xl font-bold text-white mb-4">Массовое добавление аккаунтов</h3>
+            <form onsubmit="handleBulkAddAccounts(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Формат данных</label>
+                        <textarea 
+                            id="bulk-accounts-data" 
+                            rows="10" 
+                            class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 font-mono text-sm"
+                            placeholder="Введите данные в формате:
+username1:password1:email1:emailpassword1
+username2:password2:email2:emailpassword2
+username3:password3
+
+Или в формате JSON:
+[
+  {&quot;username&quot;: &quot;user1&quot;, &quot;password&quot;: &quot;pass1&quot;, &quot;email&quot;: &quot;email1&quot;},
+  {&quot;username&quot;: &quot;user2&quot;, &quot;password&quot;: &quot;pass2&quot;}
+]"
+                        ></textarea>
+                        <p class="text-xs text-slate-500 mt-1">Поддерживаются форматы: username:password, username:password:email, username:password:email:emailpassword или JSON</p>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Группа для всех аккаунтов</label>
+                        <select id="bulk-group" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                            <option value="">Без группы</option>
+                            <!-- Groups will be populated here -->
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Количество параллельных потоков</label>
+                        <select id="parallel-threads" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                            <option value="1">1 поток (последовательно)</option>
+                            <option value="2" selected>2 потока (рекомендуется)</option>
+                            <option value="3">3 потока</option>
+                            <option value="4">4 потока</option>
+                            <option value="5">5 потоков (максимум)</option>
+                        </select>
+                        <p class="text-xs text-slate-500 mt-1">Больше потоков = быстрее, но больше нагрузка на систему. Рекомендуется 2-3 потока.</p>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="validate-accounts" class="text-blue-600" checked>
+                        <label for="validate-accounts" class="text-sm text-slate-300">Проверить аккаунты после добавления</label>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors">
+                        Добавить аккаунты
+                    </button>
+                    <button type="button" onclick="closeBulkAddModal()" class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-2 px-4 rounded-md transition-colors">
+                        Отмена
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Group Manager Modal -->
+    <div id="group-manager-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-slate-800 rounded-lg p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+            <h3 class="text-xl font-bold text-white mb-4">Управление группами</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Create Group -->
+                <div class="bg-slate-700/50 rounded-lg p-4">
+                    <h4 class="text-lg font-semibold text-white mb-3">Создать группу</h4>
+                    <form onsubmit="createGroup(event)">
+                        <div class="space-y-3">
+                            <input type="text" id="new-group-name" placeholder="Название группы" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white" required>
+                            <textarea id="new-group-description" placeholder="Описание (опционально)" rows="2" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white"></textarea>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition-colors">
+                                Создать группу
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Existing Groups -->
+                <div class="bg-slate-700/50 rounded-lg p-4">
+                    <h4 class="text-lg font-semibold text-white mb-3">Существующие группы</h4>
+                    <div id="groups-list" class="space-y-2 max-h-60 overflow-y-auto">
+                        <!-- Groups will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assign to Groups -->
+            <div class="mt-6 bg-slate-700/50 rounded-lg p-4">
+                <h4 class="text-lg font-semibold text-white mb-3">Назначить аккаунты в группы</h4>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Выберите аккаунты</label>
+                        <select id="accounts-to-assign" multiple class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white h-32">
+                            <!-- Accounts will be populated here -->
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Выберите группу</label>
+                        <select id="target-group" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                            <option value="">Удалить из группы</option>
+                            <!-- Groups will be populated here -->
+                        </select>
+                        <button onclick="assignToGroup()" class="w-full mt-2 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md transition-colors">
+                            Назначить в группу
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-3 mt-6">
+                <button onclick="closeGroupManagerModal()" class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-2 px-4 rounded-md transition-colors">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/accounts.js"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        // Инициализация Lucide иконок
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

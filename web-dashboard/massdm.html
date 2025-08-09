@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Массовая рассылка - Instagram Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a><a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Массовая рассылка
+                    </h1>
+                    <p class="text-lg text-slate-300">Автоматическая отправка персонализированных сообщений</p>
+                </div>
+                <button onclick="createMassDMCampaign()" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors flex items-center gap-2">
+                    <i data-lucide="plus" class="h-5 w-5"></i>
+                    Создать рассылку
+                </button>
+            </div>
+
+            <!-- Warning Banner -->
+            <div class="bg-yellow-600/20 border border-yellow-600/50 rounded-lg p-4 mb-6">
+                <div class="flex items-start gap-3">
+                    <i data-lucide="alert-triangle" class="h-5 w-5 text-yellow-400 mt-0.5"></i>
+                    <div>
+                        <p class="text-yellow-100 font-medium">Используйте с осторожностью</p>
+                        <p class="text-yellow-200 text-sm mt-1">Instagram ограничивает количество сообщений. Рекомендуем отправлять не более 20-30 сообщений в час с прогретых аккаунтов.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 backdrop-blur-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 text-sm">Отправлено сегодня</p>
+                            <p class="text-2xl font-bold text-white">0</p>
+                        </div>
+                        <i data-lucide="send" class="h-8 w-8 text-green-400"></i>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 backdrop-blur-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 text-sm">Доставлено</p>
+                            <p class="text-2xl font-bold text-white">0%</p>
+                        </div>
+                        <i data-lucide="check-circle" class="h-8 w-8 text-blue-400"></i>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 backdrop-blur-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 text-sm">Ответов</p>
+                            <p class="text-2xl font-bold text-white">0</p>
+                        </div>
+                        <i data-lucide="message-square" class="h-8 w-8 text-purple-400"></i>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 backdrop-blur-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 text-sm">Конверсия</p>
+                            <p class="text-2xl font-bold text-white">0%</p>
+                        </div>
+                        <i data-lucide="target" class="h-8 w-8 text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Templates -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm mb-6">
+                <div class="p-6 border-b border-slate-700">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-white">Шаблоны сообщений</h3>
+                        <button onclick="createTemplate()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors text-sm">
+                            <i data-lucide="plus" class="h-4 w-4 mr-1 inline"></i>
+                            Создать шаблон
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Template Example -->
+                        <div class="bg-slate-700/50 rounded-lg p-4 border border-slate-600">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-medium text-white">Приветственное сообщение</h4>
+                                <div class="flex gap-1">
+                                    <button class="text-slate-400 hover:text-white">
+                                        <i data-lucide="edit-2" class="h-4 w-4"></i>
+                                    </button>
+                                    <button class="text-slate-400 hover:text-red-400">
+                                        <i data-lucide="trash-2" class="h-4 w-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-300 mb-3">Привет, {name}! 👋 Заметил(а), что ты интересуешься {interest}. У нас есть отличное предложение...</p>
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <span class="bg-slate-600 px-2 py-1 rounded">2 переменные</span>
+                                <span>CTR: 0%</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Add Template Card -->
+                        <div onclick="createTemplate()" class="bg-slate-700/30 rounded-lg p-4 border-2 border-dashed border-slate-600 hover:border-slate-500 cursor-pointer transition-colors flex items-center justify-center min-h-[120px]">
+                            <div class="text-center">
+                                <i data-lucide="plus-circle" class="h-8 w-8 text-slate-400 mx-auto mb-2"></i>
+                                <p class="text-slate-400">Создать шаблон</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DM Campaigns Table -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm">
+                <div class="p-6 border-b border-slate-700">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-white">Кампании рассылки</h3>
+                        <div class="flex gap-2">
+                            <button class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-md transition-colors text-sm">
+                                <i data-lucide="filter" class="h-4 w-4 mr-1 inline"></i>
+                                Фильтры
+                            </button>
+                            <button class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-md transition-colors text-sm">
+                                <i data-lucide="download" class="h-4 w-4 mr-1 inline"></i>
+                                Экспорт
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-700">
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Кампания</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Аккаунт</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Аудитория</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Отправлено</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Доставлено</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Ответов</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Статус</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="campaigns-table" class="divide-y divide-slate-700">
+                            <tr>
+                                <td colspan="8" class="px-6 py-12 text-center text-slate-400">
+                                    <i data-lucide="mail-x" class="h-12 w-12 mx-auto mb-3 text-slate-600"></i>
+                                    <p>Нет активных рассылок</p>
+                                    <button onclick="createMassDMCampaign()" class="mt-3 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors text-sm">
+                                        Создать первую рассылку
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Create Campaign Modal -->
+            <div id="create-campaign-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-slate-800 rounded-lg p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-white">Создать рассылку</h3>
+                        <button onclick="closeCampaignModal()" class="text-slate-400 hover:text-white">
+                            <i data-lucide="x" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                    
+                    <form id="create-campaign-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Название кампании</label>
+                            <input type="text" id="campaign-name" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Аккаунт отправителя</label>
+                            <select id="sender-account" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" required>
+                                <option value="">Выберите аккаунт</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Тип аудитории</label>
+                            <select id="audience-type" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" onchange="toggleAudienceInput()" required>
+                                <option value="">Выберите тип</option>
+                                <option value="followers">Мои подписчики</option>
+                                <option value="following">Мои подписки</option>
+                                <option value="custom">Список пользователей</option>
+                                <option value="engaged">Вовлеченная аудитория</option>
+                                <option value="import">Импорт из файла</option>
+                            </select>
+                        </div>
+                        
+                        <div id="custom-audience" class="hidden">
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Список получателей</label>
+                            <textarea id="recipients-list" rows="5" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" 
+                                      placeholder="@username1&#10;@username2&#10;@username3"></textarea>
+                            <p class="text-xs text-slate-400 mt-1">Введите по одному username на строку</p>
+                        </div>
+                        
+                        <div id="import-audience" class="hidden">
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Импорт списка</label>
+                            <div class="bg-slate-700 border-2 border-dashed border-slate-600 rounded-lg p-6 text-center">
+                                <input type="file" id="import-file" accept=".csv,.txt" class="hidden">
+                                <i data-lucide="upload-cloud" class="h-12 w-12 text-slate-400 mx-auto mb-3"></i>
+                                <p class="text-slate-300 mb-2">Перетащите файл сюда или</p>
+                                <button type="button" onclick="document.getElementById('import-file').click()" 
+                                        class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors">
+                                    Выберите файл
+                                </button>
+                                <p class="text-xs text-slate-400 mt-2">Поддерживаются CSV и TXT файлы</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Сообщение</label>
+                            <div class="mb-2">
+                                <select id="message-template" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" onchange="loadTemplate()">
+                                    <option value="">Выберите шаблон или создайте новое</option>
+                                    <option value="template1">Приветственное сообщение</option>
+                                    <option value="custom">Свой текст</option>
+                                </select>
+                            </div>
+                            <textarea id="message-text" rows="4" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" 
+                                      placeholder="Введите текст сообщения..."></textarea>
+                            <div class="mt-2 flex items-center gap-2">
+                                <button type="button" onclick="insertVariable('{name}')" class="px-2 py-1 bg-slate-600 hover:bg-slate-500 text-white rounded text-xs">
+                                    {name}
+                                </button>
+                                <button type="button" onclick="insertVariable('{username}')" class="px-2 py-1 bg-slate-600 hover:bg-slate-500 text-white rounded text-xs">
+                                    {username}
+                                </button>
+                                <button type="button" onclick="insertVariable('{date}')" class="px-2 py-1 bg-slate-600 hover:bg-slate-500 text-white rounded text-xs">
+                                    {date}
+                                </button>
+                                <span class="text-xs text-slate-400 ml-auto">
+                                    <span id="message-length">0</span>/1000
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Сообщений в час</label>
+                                <input type="number" id="messages-per-hour" min="1" max="30" value="20" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Всего сообщений</label>
+                                <input type="number" id="total-messages" min="1" value="100" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Дополнительные настройки</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="skip-existing" checked>
+                                    <span class="text-sm text-slate-300">Пропускать тех, кому уже писали</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="track-opens">
+                                    <span class="text-sm text-slate-300">Отслеживать прочтения</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="stop-on-reply">
+                                    <span class="text-sm text-slate-300">Останавливать при ответе</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3 pt-4">
+                            <button type="button" onclick="closeCampaignModal()" class="flex-1 px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white rounded-md transition-colors">
+                                Отмена
+                            </button>
+                            <button type="submit" class="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors">
+                                Запустить рассылку
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/massdm.js"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

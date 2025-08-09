@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стилизация профиля - Instagram Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a><a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Стилизация профиля
+                    </h1>
+                    <p class="text-lg text-slate-300">Настройте автоматическое оформление профилей для ваших аккаунтов</p>
+                </div>
+            </div>
+
+            <!-- Profile Settings -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Profile Form -->
+                <div class="lg:col-span-2">
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm">
+                        <div class="p-6 border-b border-slate-700">
+                            <h3 class="text-white flex items-center gap-2 text-xl">
+                                <i data-lucide="edit-3" class="h-6 w-6 text-blue-400"></i>
+                                Стилизация профиля
+                            </h3>
+                            <p class="text-slate-400 mt-1">Настройте внешний вид профилей Instagram</p>
+                        </div>
+                        <div class="p-6">
+                            <form class="space-y-6" id="profile-form">
+                                <!-- Account Selection -->
+                                <div class="bg-slate-700/30 rounded-lg p-4 mb-6">
+                                    <label class="block text-sm font-medium text-slate-300 mb-2">
+                                        <i data-lucide="users" class="h-4 w-4 inline mr-1"></i>
+                                        Выбор аккаунтов
+                                    </label>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <select id="account-selection-type" class="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white" onchange="toggleAccountSelection()">
+                                            <option value="single">Один аккаунт</option>
+                                            <option value="multiple">Несколько аккаунтов</option>
+                                            <option value="group">Группа аккаунтов</option>
+                                            <option value="all">Все аккаунты</option>
+                                        </select>
+                                        <div id="single-account-select">
+                                            <select id="single-account" class="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white">
+                                                <option value="">Выберите аккаунт</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="multiple-accounts-select" class="hidden mt-3">
+                                        <div class="space-y-2">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <button type="button" id="select-all-accounts" class="text-sm text-blue-400 hover:text-blue-300">
+                                                    Выбрать все
+                                                </button>
+                                                <span id="selected-accounts-count" class="text-sm text-slate-400">
+                                                    Выбрано: 0
+                                                </span>
+                                            </div>
+                                            <div id="accounts-list" class="max-h-64 overflow-y-auto bg-slate-800 border border-slate-600 rounded-lg p-3 space-y-2">
+                                                <!-- Populated by JS -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="group-select" class="hidden mt-3">
+                                        <select id="account-group" class="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white">
+                                            <option value="">Выберите группу</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Username Section -->
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-2">
+                                        <i data-lucide="at-sign" class="h-4 w-4 inline mr-1"></i>
+                                        1. Изменить юзернейм
+                                    </label>
+                                    <div id="single-username-input">
+                                        <div class="flex gap-2">
+                                            <input type="text" id="new-username" class="flex-1 px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white placeholder-slate-400" 
+                                                   placeholder="Новый юзернейм" oninput="validateUsername()">
+                                            <button type="button" onclick="checkUsernameAvailability()" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md transition-colors">
+                                                <i data-lucide="search" class="h-4 w-4"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="multiple-usernames-input" class="hidden">
+                                        <textarea id="bulk-usernames" rows="3" class="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white placeholder-slate-400" 
+                                                  placeholder="Введите юзернеймы (по одному на строку)" oninput="validateBulkUsernames()"></textarea>
+                                        <button type="button" onclick="checkBulkUsernames()" class="mt-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md transition-colors text-sm">
+                                            <i data-lucide="search" class="h-4 w-4 mr-1 inline"></i>
+                                            Проверить все
+                                        </button>
+                                    </div>
+                                    <div id="username-status" class="mt-2 text-sm"></div>
+                                </div>
+
+                                <!-- Profile Name -->
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-2">
+                                        2. Имя профиля
+                                    </label>
+                                    <div id="single-name-input">
+                                        <input type="text" id="profile-name" class="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white placeholder-slate-400" placeholder="Введите имя">
+                                    </div>
+                                    <div id="multiple-names-input" class="hidden">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <label class="text-sm text-slate-400">
+                                                <input type="checkbox" id="use-single-name" class="mr-2" onchange="toggleNameMode()">
+                                                Использовать одно имя для всех
+                                            </label>
+                                            <button type="button" onclick="addNameField()" class="text-sm text-blue-400 hover:text-blue-300">
+                                                + Добавить имя
+                                            </button>
+                                        </div>
+                                        <div id="names-list" class="space-y-2">
+                                            <div class="name-field flex gap-2">
+                                                <input type="text" class="flex-1 px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white placeholder-slate-400" placeholder="Имя 1">
+                                                <button type="button" onclick="removeNameField(this)" class="px-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors">
+                                                    <i data-lucide="x" class="h-4 w-4"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <p class="text-xs text-slate-400 mt-2">Имена будут равномерно распределены между аккаунтами</p>
+                                    </div>
+                                </div>
+
+                                <!-- Bio Section -->
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-2">
+                                        3. Описание профиля
+                                    </label>
+                                    <textarea id="profile-bio" rows="4" class="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white placeholder-slate-400" placeholder="Расскажите о себе..."></textarea>
+                                    <div class="flex justify-between mt-1">
+                                        <p class="text-xs text-slate-400">Максимум 150 символов</p>
+                                        <span id="bio-counter" class="text-xs text-slate-400">0/150</span>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- Profile Picture -->
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-2">
+                                        <i data-lucide="image" class="h-4 w-4 inline mr-1"></i>
+                                        4. Фото профиля
+                                    </label>
+                                    
+                                    <!-- Single Avatar Mode -->
+                                    <div id="single-avatar-mode" class="flex items-center gap-4">
+                                        <div class="w-20 h-20 bg-slate-700 rounded-full flex items-center justify-center overflow-hidden">
+                                            <img id="profile-picture-preview" class="w-full h-full object-cover hidden" alt="Profile">
+                                            <i data-lucide="user" class="h-10 w-10 text-slate-400" id="default-avatar"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <input type="file" id="profile-picture-input" accept="image/*" class="hidden" onchange="previewProfilePicture(event)">
+                                            <button type="button" onclick="document.getElementById('profile-picture-input').click()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors">
+                                                <i data-lucide="upload" class="h-4 w-4 mr-2 inline"></i>
+                                                Загрузить фото
+                                            </button>
+                                            <p class="text-xs text-slate-400 mt-1">JPG, PNG до 2MB (320x320px)</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Multiple Avatars Mode -->
+                                    <div id="multiple-avatars-mode" class="hidden">
+                                        <div class="bg-slate-800 border-2 border-dashed border-slate-600 rounded-lg p-6 text-center">
+                                            <input type="file" id="multiple-avatars-input" accept="image/*" multiple class="hidden" onchange="handleMultipleAvatars(event)">
+                                            <i data-lucide="image-plus" class="h-12 w-12 text-slate-400 mx-auto mb-3"></i>
+                                            <p class="text-slate-300 mb-2">Перетащите изображения сюда или</p>
+                                            <button type="button" onclick="document.getElementById('multiple-avatars-input').click()" 
+                                                    class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors">
+                                                <i data-lucide="upload" class="h-4 w-4 mr-2 inline"></i>
+                                                Выберите файлы
+                                            </button>
+                                            <p class="text-xs text-slate-400 mt-2">Можно загрузить несколько изображений для разных аккаунтов</p>
+                                        </div>
+                                        
+                                        <!-- Avatars Preview Grid -->
+                                        <div id="avatars-preview-grid" class="mt-4 grid grid-cols-4 gap-3 hidden">
+                                            <!-- Populated by JS -->
+                                        </div>
+                                        
+                                        <div class="mt-3 flex items-center gap-3">
+                                            <label class="flex items-center gap-2 text-sm text-slate-300">
+                                                <input type="checkbox" id="distribute-avatars" checked>
+                                                Равномерно распределить между аккаунтами
+                                            </label>
+                                            <label class="flex items-center gap-2 text-sm text-slate-300">
+                                                <input type="checkbox" id="randomize-avatars">
+                                                Случайный порядок
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Thread Management -->
+                                <div class="bg-slate-700/30 rounded-lg p-4">
+                                    <label class="block text-sm font-medium text-slate-300 mb-3">
+                                        <i data-lucide="cpu" class="h-4 w-4 inline mr-1"></i>
+                                        5. Управление потоками
+                                    </label>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="text-xs text-slate-400">Количество потоков</label>
+                                            <input type="number" id="thread-count" min="1" max="10" value="3" 
+                                                   class="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white">
+                                        </div>
+                                        <div>
+                                            <label class="text-xs text-slate-400">Задержка между действиями (сек)</label>
+                                            <input type="number" id="action-delay" min="1" max="60" value="5" 
+                                                   class="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white">
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-slate-400 mt-2">
+                                        <i data-lucide="info" class="h-3 w-3 inline mr-1"></i>
+                                        Используйте несколько потоков для параллельной обработки аккаунтов
+                                    </p>
+                                </div>
+
+                                <!-- Uniquifier Section -->
+                                <div class="bg-slate-700/30 rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <label class="text-sm font-medium text-slate-300">
+                                            <i data-lucide="shuffle" class="h-4 w-4 inline mr-1"></i>
+                                            Уникализатор контента
+                                        </label>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" id="enable-uniquifier" class="sr-only peer">
+                                            <div class="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                        </label>
+                                    </div>
+                                    <div id="uniquifier-options" class="space-y-3 hidden">
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" id="uniquify-avatar" class="text-blue-600" checked>
+                                            <label for="uniquify-avatar" class="text-sm text-slate-300">Уникализировать фото профиля</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" id="uniquify-bio" class="text-blue-600">
+                                            <label for="uniquify-bio" class="text-sm text-slate-300">Уникализировать описание</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" id="uniquify-name" class="text-blue-600">
+                                            <label for="uniquify-name" class="text-sm text-slate-300">Вариации имени</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="flex gap-3 pt-4 border-t border-slate-700">
+                                    <button type="button" onclick="previewChanges()" class="flex-1 px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white rounded-md transition-colors">
+                                        <i data-lucide="eye" class="h-4 w-4 mr-2 inline"></i>
+                                        Предпросмотр
+                                    </button>
+                                    <button type="submit" class="flex-1 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors">
+                                        <i data-lucide="save" class="h-4 w-4 mr-2 inline"></i>
+                                        Применить изменения
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Panel -->
+                <div class="lg:col-span-1">
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6 sticky top-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Предпросмотр профиля</h3>
+                        
+                        <!-- Instagram-like preview -->
+                        <div class="bg-slate-900 rounded-lg p-4 border border-slate-600">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-16 h-16 rounded-full bg-slate-700 flex items-center justify-center overflow-hidden">
+                                    <img id="preview-avatar" class="w-full h-full object-cover hidden" alt="Profile">
+                                    <i data-lucide="user" class="h-8 w-8 text-slate-400" id="preview-default-avatar"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 id="preview-username" class="text-white font-medium">@username</h4>
+                                    <p id="preview-name" class="text-slate-300 text-sm">Имя профиля</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-4 mb-4 text-center">
+                                <div>
+                                    <div class="text-white font-bold">0</div>
+                                    <div class="text-slate-400 text-xs">публикаций</div>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold">0</div>
+                                    <div class="text-slate-400 text-xs">подписчиков</div>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold">0</div>
+                                    <div class="text-slate-400 text-xs">подписок</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <p id="preview-bio" class="text-slate-300 text-sm whitespace-pre-wrap">Описание профиля появится здесь...</p>
+                            </div>
+                            
+                            <button class="w-full bg-blue-600 text-white py-2 rounded-md text-sm font-medium">
+                                Подписаться
+                            </button>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="mt-4 space-y-2">
+                            <button onclick="generateProfileData()" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition-colors">
+                                <i data-lucide="sparkles" class="h-4 w-4 mr-2 inline"></i>
+                                Сгенерировать данные
+                            </button>
+                            <button onclick="loadTemplate()" class="w-full border border-slate-600 text-slate-300 hover:bg-slate-800 py-2 rounded-md transition-colors">
+                                <i data-lucide="file-text" class="h-4 w-4 mr-2 inline"></i>
+                                Загрузить шаблон
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

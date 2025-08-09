@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Automation Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation - Точная копия -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a>
+                    <a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header - Точная копия -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Instagram Automation Hub
+                    </h1>
+                    <p class="text-lg text-slate-300">Управляйте своими Instagram аккаунтами с максимальной эффективностью</p>
+                </div>
+            </div>
+
+            <!-- Stats Overview - Точная копия -->
+            <div class="grid grid-cols-4 gap-4 mb-6 stats-grid">
+                <!-- Account Stats -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 stats-card">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="users" class="h-6 w-6 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="active-accounts">-</p>
+                            <p class="text-slate-400">Активных аккаунтов</p>
+                            <span class="inline-block mt-1 px-2 py-1 text-xs bg-green-600 rounded">+12%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Posts Stats -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 stats-card">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="upload" class="h-6 w-6 text-green-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="total-posts">-</p>
+                            <p class="text-slate-400">Публикаций сегодня</p>
+                            <span class="inline-block mt-1 px-2 py-1 text-xs bg-green-600 rounded">+8%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Rate -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 stats-card">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="trending-up" class="h-6 w-6 text-purple-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="success-rate">-</p>
+                            <p class="text-slate-400">Успешность</p>
+                            <span class="inline-block mt-1 px-2 py-1 text-xs bg-green-600 rounded">+2.1%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proxy Stats -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 stats-card">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="globe" class="h-6 w-6 text-orange-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="active-proxies">-</p>
+                            <p class="text-slate-400">Активных прокси</p>
+                            <span class="inline-block mt-1 px-2 py-1 text-xs bg-green-600 rounded">100%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions and System Status -->
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <!-- Quick Actions -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm quick-actions">
+                    <div class="p-6 border-b border-slate-700">
+                        <h3 class="text-white flex items-center gap-2 text-xl">
+                            <i data-lucide="zap" class="h-6 w-6 text-yellow-400"></i>
+                            Быстрые действия
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <button class="w-full flex items-center justify-start gap-3 bg-blue-600 hover:bg-blue-700 text-lg py-6 px-4 rounded-md text-white transition-colors" onclick="navigateTo('accounts.html')">
+                            <i data-lucide="users" class="h-5 w-5"></i>
+                            Добавить аккаунты
+                        </button>
+                        <button class="w-full flex items-center justify-start gap-3 bg-purple-600 hover:bg-purple-700 text-lg py-6 px-4 rounded-md text-white transition-colors" onclick="navigateTo('posts.html')">
+                            <i data-lucide="upload" class="h-5 w-5"></i>
+                            Массовая публикация
+                        </button>
+                        <button class="w-full flex items-center justify-start gap-3 bg-green-600 hover:bg-green-700 text-lg py-6 px-4 rounded-md text-white transition-colors" onclick="startWarmup()">
+                            <i data-lucide="bot" class="h-5 w-5"></i>
+                            Запустить прогрев
+                        </button>
+                    </div>
+                </div>
+
+                <!-- System Status -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm">
+                    <div class="p-6 border-b border-slate-700">
+                        <h3 class="text-white flex items-center gap-2 text-xl">
+                            <i data-lucide="activity" class="h-6 w-6 text-green-400"></i>
+                            Системный статус
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-slate-300">Загрузка CPU</span>
+                                <span class="text-white" id="cpu-usage">23%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 23%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-slate-300">Использование RAM</span>
+                                <span class="text-white" id="ram-usage">67%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 67%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 mt-4">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                            <span class="text-slate-300">Все сервисы работают нормально</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm">
+                <div class="p-6 border-b border-slate-700">
+                    <h3 class="text-white flex items-center gap-2 text-xl">
+                        <i data-lucide="bar-chart-3" class="h-6 w-6 text-blue-400"></i>
+                        Последняя активность
+                    </h3>
+                    <p class="text-slate-400 mt-1">Обзор последних операций в системе</p>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4" id="activity-list">
+                        <!-- Динамически загружается через JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        // Инициализация Lucide иконок
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

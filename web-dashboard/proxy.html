@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление прокси - Instagram Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a><a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Управление прокси
+                    </h1>
+                    <p class="text-lg text-slate-300">Настройте и контролируйте прокси серверы для ваших аккаунтов</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-white transition-colors" onclick="openAddProxyModal()">
+                        <i data-lucide="plus" class="h-4 w-4 mr-2 inline"></i>
+                        Добавить прокси
+                    </button>
+                    <button class="border border-slate-600 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-md transition-colors" onclick="openBulkProxyModal()">
+                        <i data-lucide="layers" class="h-4 w-4 mr-2 inline"></i>
+                        Массовое добавление
+                    </button>
+                    <button class="border border-slate-600 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-md transition-colors" onclick="checkAllProxies()">
+                        <i data-lucide="refresh-cw" class="h-4 w-4 mr-2 inline"></i>
+                        Проверить все
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-4 gap-4 mb-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="globe" class="h-6 w-6 text-green-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="total-proxies">-</p>
+                            <p class="text-slate-400">Всего прокси</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="active-proxies">-</p>
+                            <p class="text-slate-400">Активных</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="x-circle" class="h-6 w-6 text-red-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="inactive-proxies">-</p>
+                            <p class="text-slate-400">Неактивных</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="users" class="h-6 w-6 text-purple-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="assigned-proxies">-</p>
+                            <p class="text-slate-400">Назначенных</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search and Actions -->
+            <div class="flex gap-4 mb-6">
+                <div class="flex-1 relative">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-4 w-4"></i>
+                    <input 
+                        type="text" 
+                        placeholder="Поиск по IP или порту..." 
+                        class="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="search-input"
+                    >
+                </div>
+                <button class="border border-slate-600 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-md transition-colors" onclick="autoAssignProxies()">
+                    <i data-lucide="shuffle" class="h-4 w-4 mr-2 inline"></i>
+                    Авто-назначение
+                </button>
+            </div>
+
+            <!-- Proxy List -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-lg">
+                <div class="p-6 border-b border-slate-700">
+                    <h3 class="text-xl font-bold text-white">Список прокси серверов</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-slate-700/50">
+                            <tr>
+                                <th class="text-left py-3 px-6 text-slate-300 font-medium">Хост</th>
+                                <th class="text-left py-3 px-6 text-slate-300 font-medium">Порт</th>
+                                <th class="text-left py-3 px-6 text-slate-300 font-medium">Тип</th>
+                                <th class="text-left py-3 px-6 text-slate-300 font-medium">Статус</th>
+                                <th class="text-left py-3 px-6 text-slate-300 font-medium">Назначен</th>
+                                <th class="text-right py-3 px-6 text-slate-300 font-medium">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="proxy-table-body">
+                            <!-- Proxies will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Proxy Modal -->
+    <div id="add-proxy-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-slate-800 rounded-lg p-6 w-full max-w-md">
+            <h3 class="text-xl font-bold text-white mb-4">Добавить прокси</h3>
+            <form onsubmit="addProxy(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">IP адрес</label>
+                        <input type="text" id="proxy-host" required class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" placeholder="127.0.0.1">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Порт</label>
+                        <input type="number" id="proxy-port" required class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" placeholder="8080">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Логин (опционально)</label>
+                        <input type="text" id="proxy-username" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Пароль (опционально)</label>
+                        <input type="password" id="proxy-password" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Тип</label>
+                        <select id="proxy-type" class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white">
+                            <option value="http">HTTP</option>
+                            <option value="https">HTTPS</option>
+                            <option value="socks4">SOCKS4</option>
+                            <option value="socks5">SOCKS5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-6">
+                    <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors">
+                        Добавить
+                    </button>
+                    <button type="button" onclick="closeAddProxyModal()" class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-2 px-4 rounded-md transition-colors">
+                        Отмена
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bulk Add Proxy Modal -->
+    <div id="bulk-proxy-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-slate-800 rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <h3 class="text-xl font-bold text-white mb-4">Массовое добавление прокси</h3>
+            <form onsubmit="bulkAddProxies(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Формат данных</label>
+                        <textarea 
+                            id="bulk-proxies-data" 
+                            rows="10" 
+                            class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400 font-mono text-sm"
+                            placeholder="Введите данные в формате:
+192.168.1.100:8080:http:username:password
+192.168.1.101:8081:socks5:username:password
+192.168.1.102:8082:https
+
+Или в формате JSON:
+[
+  {&quot;host&quot;: &quot;192.168.1.100&quot;, &quot;port&quot;: 8080, &quot;type&quot;: &quot;http&quot;, &quot;username&quot;: &quot;user&quot;, &quot;password&quot;: &quot;pass&quot;},
+  {&quot;host&quot;: &quot;192.168.1.101&quot;, &quot;port&quot;: 8081, &quot;type&quot;: &quot;socks5&quot;}
+]"
+                        ></textarea>
+                        <p class="text-xs text-slate-500 mt-1">Поддерживаются форматы: host:port, host:port:type, host:port:type:username:password или JSON</p>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="check-proxies" class="text-blue-600" checked>
+                        <label for="check-proxies" class="text-sm text-slate-300">Проверить прокси после добавления</label>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors">
+                        Добавить прокси
+                    </button>
+                    <button type="button" onclick="closeBulkProxyModal()" class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-2 px-4 rounded-md transition-colors">
+                        Отмена
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/proxy.js"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

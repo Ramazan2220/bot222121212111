@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитика - Instagram Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a><a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Аналитика
+                    </h1>
+                    <p class="text-lg text-slate-300">Детальная аналитика производительности и роста аккаунтов</p>
+                </div>
+                <div class="flex gap-2">
+                    <select class="px-3 py-2 bg-slate-800 border border-slate-700 rounded-md text-white" id="time-period">
+                        <option value="7">7 дней</option>
+                        <option value="30" selected>30 дней</option>
+                        <option value="90">90 дней</option>
+                        <option value="365">1 год</option>
+                    </select>
+                    <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-white transition-colors" onclick="exportReport()">
+                        <i data-lucide="download" class="h-4 w-4 mr-2 inline"></i>
+                        Экспорт
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analytics Stats -->
+            <div class="grid grid-cols-4 gap-4 mb-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="users" class="h-6 w-6 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="total-followers">125.4K</p>
+                            <p class="text-slate-400">Общие подписчики</p>
+                            <span class="text-sm text-green-400">+12.5% ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="heart" class="h-6 w-6 text-green-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="engagement-rate">4.8%</p>
+                            <p class="text-slate-400">Вовлеченность</p>
+                            <span class="text-sm text-green-400">+0.3% ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="upload" class="h-6 w-6 text-purple-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="posts-published">1,247</p>
+                            <p class="text-slate-400">Публикаций</p>
+                            <span class="text-sm text-green-400">+89 ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="eye" class="h-6 w-6 text-orange-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="reach">2.1M</p>
+                            <p class="text-slate-400">Охват</p>
+                            <span class="text-sm text-green-400">+18.2% ↗</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <!-- Followers Growth Chart -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="trending-up" class="h-5 w-5 text-blue-400"></i>
+                        Рост подписчиков
+                    </h3>
+                    <canvas id="followers-chart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Engagement Chart -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="heart" class="h-5 w-5 text-green-400"></i>
+                        Динамика вовлеченности
+                    </h3>
+                    <canvas id="engagement-chart" width="400" height="200"></canvas>
+                </div>
+            </div>
+
+            <!-- Activity Charts -->
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <!-- Posts Performance -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="bar-chart" class="h-5 w-5 text-purple-400"></i>
+                        Производительность постов
+                    </h3>
+                    <canvas id="posts-chart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Account Activity -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="activity" class="h-5 w-5 text-orange-400"></i>
+                        Активность аккаунтов
+                    </h3>
+                    <canvas id="activity-chart" width="400" height="200"></canvas>
+                </div>
+            </div>
+
+            <!-- Top Performers -->
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <!-- Top Accounts -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="crown" class="h-5 w-5 text-yellow-400"></i>
+                        Топ аккаунты
+                    </h3>
+                    <div class="space-y-4" id="top-accounts">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Top Posts -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400"></i>
+                        Топ публикации
+                    </h3>
+                    <div class="space-y-4" id="top-posts">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Analytics Table -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i data-lucide="table" class="h-5 w-5 text-blue-400"></i>
+                        Детальная аналитика аккаунтов
+                    </h3>
+                    <div class="flex gap-2">
+                        <input 
+                            type="text" 
+                            placeholder="Поиск..." 
+                            class="px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-slate-400"
+                            id="analytics-search"
+                        >
+                        <select class="px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white" id="sort-by">
+                            <option value="followers">По подписчикам</option>
+                            <option value="engagement">По вовлеченности</option>
+                            <option value="growth">По росту</option>
+                            <option value="posts">По постам</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-slate-700">
+                                <th class="pb-3 text-slate-300">Аккаунт</th>
+                                <th class="pb-3 text-slate-300">Подписчики</th>
+                                <th class="pb-3 text-slate-300">Рост</th>
+                                <th class="pb-3 text-slate-300">Вовлеченность</th>
+                                <th class="pb-3 text-slate-300">Посты</th>
+                                <th class="pb-3 text-slate-300">Последняя активность</th>
+                            </tr>
+                        </thead>
+                        <tbody id="analytics-table">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        // Инициализация Lucide иконок
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

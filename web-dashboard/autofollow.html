@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автоподписки - Instagram Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a><a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Автоподписки
+                    </h1>
+                    <p class="text-lg text-slate-300">Автоматическая подписка на аккаунты по заданным правилам</p>
+                </div>
+                <div class="flex gap-3">
+                    <button id="stopAllTasksBtn" onclick="stopAllTasks()" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors flex items-center gap-2 hidden">
+                        <i data-lucide="square" class="h-5 w-5"></i>
+                        Остановить все (<span id="activeTasksCount">0</span>)
+                    </button>
+                    <button onclick="createFollowTask()" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors flex items-center gap-2">
+                        <i data-lucide="plus" class="h-5 w-5"></i>
+                        Создать задачу
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 backdrop-blur-sm" data-stat="active-tasks">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 text-sm">Активные задачи</p>
+                            <p class="text-2xl font-bold text-white" id="active-tasks-count">0</p>
+                        </div>
+                        <i data-lucide="play-circle" class="h-8 w-8 text-green-400"></i>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 backdrop-blur-sm" data-stat="follows-today">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 text-sm">Подписок сегодня</p>
+                            <p class="text-2xl font-bold text-white" id="today-follows">0</p>
+                        </div>
+                        <i data-lucide="user-plus" class="h-8 w-8 text-blue-400"></i>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 backdrop-blur-sm" data-stat="total-follows">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 text-sm">Всего подписок</p>
+                            <p class="text-2xl font-bold text-white" id="total-followed">0</p>
+                        </div>
+                        <i data-lucide="users" class="h-8 w-8 text-purple-400"></i>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 backdrop-blur-sm" data-stat="average-speed">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 text-sm">Успешность</p>
+                            <p class="text-2xl font-bold text-white" id="success-rate">0%</p>
+                        </div>
+                        <i data-lucide="trending-up" class="h-8 w-8 text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Follow Tasks Table -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm">
+                <div class="p-6 border-b border-slate-700">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-white">Задачи автоподписки</h3>
+                        <div class="flex gap-2">
+                            <button class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-md transition-colors text-sm">
+                                <i data-lucide="filter" class="h-4 w-4 mr-1 inline"></i>
+                                Фильтры
+                            </button>
+                            <button class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-md transition-colors text-sm">
+                                <i data-lucide="download" class="h-4 w-4 mr-1 inline"></i>
+                                Экспорт
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-700">
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Название</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Аккаунт</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Источник</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Прогресс</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Скорость</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Статус</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tasks-table-body" class="divide-y divide-slate-700">
+                            <!-- Tasks will be populated here -->
+                            <tr>
+                                <td colspan="7" class="px-6 py-12 text-center text-slate-400">
+                                    <i data-lucide="inbox" class="h-12 w-12 mx-auto mb-3 text-slate-600"></i>
+                                    <p>Нет активных задач</p>
+                                    <button onclick="createFollowTask()" class="mt-3 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors text-sm">
+                                        Создать первую задачу
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Create Task Modal -->
+            <div id="createTaskModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+                <div class="bg-slate-800 rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold text-white">Создать задачу автоподписок</h2>
+                        <button onclick="closeCreateModal()" class="text-gray-400 hover:text-white">
+                            <i data-lucide="x" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                    
+                    <form id="createTaskForm" class="space-y-4">
+                        <!-- Task Name -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Название задачи</label>
+                            <input type="text" id="taskName" required
+                                class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none"
+                                placeholder="Например: Подписки на фитнес аккаунты">
+                        </div>
+                        
+                        <!-- Account Selection -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Выберите аккаунты</label>
+                            
+                            <!-- Selected accounts display -->
+                            <div id="selected-accounts-display" class="flex flex-wrap gap-2 mb-3 min-h-[32px] p-2 bg-slate-700/50 rounded-lg border border-slate-600">
+                                <span class="text-slate-400 text-sm">Выберите аккаунты для работы...</span>
+                            </div>
+                            
+                            <!-- Account selection buttons -->
+                            <div class="flex gap-2 mb-3">
+                                <button type="button" onclick="toggleAccountSelection()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors text-sm">
+                                    <i data-lucide="users" class="h-4 w-4 mr-2 inline"></i>
+                                    Выбрать аккаунты
+                                </button>
+                                <button type="button" onclick="selectAllFollowAccounts()" class="px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white rounded-md transition-colors text-sm">
+                                    Выбрать все
+                                </button>
+                                <button type="button" onclick="deselectAllFollowAccounts()" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors text-sm">
+                                    Снять выбор
+                                </button>
+                            </div>
+                            
+                            <!-- Account selection dropdown -->
+                            <div id="account-selection-dropdown" class="hidden relative">
+                                <div class="absolute top-0 left-0 right-0 bg-slate-700 border border-slate-600 rounded-lg shadow-lg z-10 max-h-64 overflow-y-auto">
+                                    <div class="p-3">
+                                        <input type="text" id="account-search" placeholder="Поиск аккаунтов..." 
+                                               class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white text-sm mb-2"
+                                               onkeyup="filterFollowAccounts()">
+                                        <div id="accounts-list" class="space-y-1">
+                                            <!-- Accounts will be loaded here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Target Accounts -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Целевые аккаунты</label>
+                            <textarea id="targetAccounts" 
+                                class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none h-24 resize-none"
+                                placeholder="Введите username аккаунтов для подписки (по одному на строку)&#10;Например:&#10;@fitness_motivation&#10;@healthy_lifestyle&#10;@workout_tips"
+                                required
+                                onkeyup="updateTaskModeInfo()"
+                                onchange="updateTaskModeInfo()"></textarea>
+                            <div class="text-xs text-gray-400 mt-1">
+                                Укажите аккаунты, на которые будут подписываться ваши аккаунты
+                            </div>
+                        </div>
+                        
+                        <!-- Follow Settings -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Подписок в час</label>
+                                <input type="number" id="followsPerHour" value="20" min="1" max="60"
+                                    class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white focus:border-blue-500 focus:outline-none">
+                                <div class="text-xs text-gray-400 mt-1">Скорость выполнения подписок</div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Лимит подписок</label>
+                                <input type="number" id="followLimit" value="500" min="1"
+                                    class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white focus:border-blue-500 focus:outline-none">
+                                <div class="text-xs text-gray-400 mt-1">Максимум подписок для задачи</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Threads Slider -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">
+                                Количество потоков
+                            </label>
+                            <div class="flex items-center gap-4">
+                                <input type="range" id="threadsSlider" min="1" max="30" value="3" step="1"
+                                    class="flex-1 h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
+                                    oninput="document.getElementById('threadsValue').textContent = this.value + (this.value == 1 ? ' поток' : this.value < 5 ? ' потока' : ' потоков')">
+                                <span id="threadsValue" class="text-white font-medium w-24 text-center">3 потока</span>
+                            </div>
+                            <div class="text-xs text-gray-400 mt-2">
+                                <p>Рекомендации по выбору потоков:</p>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• <strong>1-3 потока:</strong> Для слабых VPS или домашних ПК</li>
+                                    <li>• <strong>5-10 потоков:</strong> Для обычных серверов</li>
+                                    <li>• <strong>15-30 потоков:</strong> Для мощных серверов с хорошим интернетом</li>
+                                </ul>
+                                <p class="mt-2 text-yellow-400">⚠️ Больше потоков = выше нагрузка на систему и риск блокировок</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Delay Range -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Задержка между подписками (сек)</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="text-xs text-gray-400">От</label>
+                                    <input type="number" id="delayMin" value="30" min="5" max="300"
+                                        class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white focus:border-blue-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-gray-400">До</label>
+                                    <input type="number" id="delayMax" value="90" min="10" max="600"
+                                        class="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-white focus:border-blue-500 focus:outline-none">
+                                </div>
+                            </div>
+                            <div class="text-xs text-gray-400 mt-1">
+                                Случайная задержка в указанном диапазоне
+                            </div>
+                        </div>
+                        
+                        <!-- Task Creation Mode -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Режим создания задач</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2">
+                                    <input type="radio" name="taskMode" value="single" checked
+                                        class="text-blue-600 bg-slate-700 border-slate-600"
+                                        onchange="updateTaskModeInfo()">
+                                    <span class="text-sm text-gray-300">Одна задача на аккаунт</span>
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="radio" name="taskMode" value="multiple"
+                                        class="text-blue-600 bg-slate-700 border-slate-600"
+                                        onchange="updateTaskModeInfo()">
+                                    <span class="text-sm text-gray-300">Отдельная задача для каждой цели</span>
+                                </label>
+                            </div>
+                            <div id="taskModeInfo" class="mt-2 text-xs text-gray-400 p-2 bg-slate-800 rounded">
+                                Будет создана одна задача для каждого выбранного аккаунта
+                            </div>
+                        </div>
+                        
+                        <!-- Unique Follows Checkbox -->
+                        <div class="flex items-center gap-3 p-3 bg-slate-700/50 rounded-lg">
+                            <input type="checkbox" id="uniqueFollows" checked
+                                class="w-4 h-4 text-blue-600 bg-slate-700 border-slate-600 rounded focus:ring-blue-500">
+                            <label for="uniqueFollows" class="text-sm text-gray-300">
+                                Уникальные подписки
+                                <span class="text-xs text-gray-400 block">
+                                    Не подписываться на аккаунты, на которые уже подписаны
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <!-- Filters -->
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-medium text-gray-300">Фильтры</h3>
+                            
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="skipPrivate" checked class="rounded text-blue-600 bg-slate-700 border-slate-600">
+                                    <span class="text-sm text-gray-300">Пропускать закрытые аккаунты</span>
+                                </label>
+                                
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="skipNoAvatar" checked class="rounded text-blue-600 bg-slate-700 border-slate-600">
+                                    <span class="text-sm text-gray-300">Пропускать без аватара</span>
+                                </label>
+                                
+                                <label class="flex items-center gap-2">
+                                    <input type="checkbox" id="businessOnly" class="rounded text-blue-600 bg-slate-700 border-slate-600">
+                                    <span class="text-sm text-gray-300">Только бизнес аккаунты</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Form Actions -->
+                        <div class="flex justify-end gap-3 pt-4 border-t border-slate-700">
+                            <button type="button" onclick="closeCreateModal()"
+                                class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-md transition-colors">
+                                Отмена
+                            </button>
+                            <button type="submit"
+                                class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors">
+                                Создать задачу
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/autofollow.js"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        // Инициализация Lucide после загрузки DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валидация аккаунтов - Instagram Automation Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a>
+                    <a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header -->
+            <div class="mb-6">
+                <h1 class="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Валидация аккаунтов
+                </h1>
+                <p class="text-lg text-slate-300">Автоматическая проверка и восстановление аккаунтов Instagram</p>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="grid grid-cols-4 gap-4 mb-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-green-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="valid-count">0</p>
+                            <p class="text-slate-400">Валидных</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="x-circle" class="h-6 w-6 text-red-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="invalid-count">0</p>
+                            <p class="text-slate-400">Невалидных</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="wrench" class="h-6 w-6 text-yellow-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="repaired-count">0</p>
+                            <p class="text-slate-400">Восстановлено</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="refresh-cw" class="h-6 w-6 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="checking-count">0</p>
+                            <p class="text-slate-400">Проверяется</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings and Controls -->
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <!-- Validation Settings -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm">
+                    <div class="p-6 border-b border-slate-700">
+                        <h3 class="text-white flex items-center justify-between text-xl">
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="settings" class="h-6 w-6 text-purple-400"></i>
+                                Настройки валидации
+                            </span>
+                            <button onclick="saveSettings()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white transition-colors text-sm">
+                                Сохранить
+                            </button>
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <label class="text-slate-300 block mb-2">Интервал проверки (минуты)</label>
+                            <input type="number" id="check-interval" min="5" max="1440" value="60" 
+                                   class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:border-blue-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="auto-repair" checked class="rounded border-slate-600 text-blue-600 focus:ring-blue-500">
+                                <span class="text-slate-300">Автоматическое восстановление</span>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-slate-400">Статус сервиса:</span>
+                            <span id="service-status" class="px-3 py-1 bg-green-600/20 text-green-400 rounded-full">Загрузка...</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-slate-400">Следующая проверка:</span>
+                            <span id="next-check" class="text-white">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm">
+                    <div class="p-6 border-b border-slate-700">
+                        <h3 class="text-white flex items-center gap-2 text-xl">
+                            <i data-lucide="zap" class="h-6 w-6 text-yellow-400"></i>
+                            Управление
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <button onclick="startValidation()" class="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-md transition-colors">
+                            <i data-lucide="play" class="h-5 w-5"></i>
+                            Запустить проверку
+                        </button>
+                        <button onclick="loadValidationStatus()" class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-md transition-colors">
+                            <i data-lucide="refresh-cw" class="h-5 w-5"></i>
+                            Обновить статус
+                        </button>
+                        <button onclick="stopValidation()" class="w-full flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-md transition-colors">
+                            <i data-lucide="stop-circle" class="h-5 w-5"></i>
+                            Остановить
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accounts Table -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm mb-6">
+                <div class="p-6 border-b border-slate-700">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-white flex items-center gap-2 text-xl">
+                            <i data-lucide="users" class="h-6 w-6 text-blue-400"></i>
+                            Состояние аккаунтов
+                        </h3>
+                        <div class="flex gap-2">
+                            <button onclick="filterAccounts('all')" class="filter-btn active px-3 py-1 bg-slate-700 text-white rounded-md text-sm">Все</button>
+                            <button onclick="filterAccounts('valid')" class="filter-btn px-3 py-1 bg-slate-700 text-white rounded-md text-sm">Валидные</button>
+                            <button onclick="filterAccounts('invalid')" class="filter-btn px-3 py-1 bg-slate-700 text-white rounded-md text-sm">Невалидные</button>
+                            <button onclick="filterAccounts('checking')" class="filter-btn px-3 py-1 bg-slate-700 text-white rounded-md text-sm">Проверяются</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="text-left text-slate-400 border-b border-slate-700">
+                                    <th class="pb-3">Аккаунт</th>
+                                    <th class="pb-3">Email</th>
+                                    <th class="pb-3">Статус</th>
+                                    <th class="pb-3">Последняя проверка</th>
+                                    <th class="pb-3">Ошибка</th>
+                                    <th class="pb-3 text-right">Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="accounts-table" class="text-slate-300">
+                                <!-- Динамически заполняется -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation Log -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-lg backdrop-blur-sm">
+                <div class="p-6 border-b border-slate-700">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-white flex items-center gap-2 text-xl">
+                            <i data-lucide="file-text" class="h-6 w-6 text-green-400"></i>
+                            Лог валидации
+                        </h3>
+                        <button onclick="clearLog()" class="text-slate-400 hover:text-white transition-colors">
+                            <i data-lucide="trash-2" class="h-5 w-5"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div id="validation-log" class="bg-slate-900 rounded-lg p-4 h-96 overflow-y-auto font-mono text-sm">
+                        <!-- Динамически заполняется -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .filter-btn.active {
+            background-color: rgb(59 130 246);
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .status-dot.valid {
+            background-color: rgb(34 197 94);
+        }
+        
+        .status-dot.invalid {
+            background-color: rgb(239 68 68);
+        }
+        
+        .status-dot.checking {
+            background-color: rgb(250 204 21);
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .log-entry {
+            margin-bottom: 0.5rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid rgb(51 65 85);
+        }
+        
+        .log-time {
+            color: rgb(148 163 184);
+            margin-right: 0.5rem;
+        }
+        
+        .log-message.success {
+            color: rgb(34 197 94);
+        }
+        
+        .log-message.error {
+            color: rgb(239 68 68);
+        }
+        
+        .log-message.warning {
+            color: rgb(250 204 21);
+        }
+        
+        .log-message.info {
+            color: rgb(59 130 246);
+        }
+    </style>
+
+    <script src="js/api.js"></script>
+    <script src="js/validation.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

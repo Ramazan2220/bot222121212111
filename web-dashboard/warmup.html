@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогрев аккаунтов - Instagram Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 border-r border-slate-800 flex flex-col">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+                        <span class="font-bold text-white">IA</span>
+                    </div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        InstaAutomation
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto py-4 px-3">
+                <nav class="space-y-1">
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="home" class="h-5 w-5"></i>
+                        <span>Дашборд</span>
+                    </a>
+                    <a href="accounts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="users" class="h-5 w-5"></i>
+                        <span>Аккаунты</span>
+                    </a>
+                    <a href="proxy.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="globe" class="h-5 w-5"></i>
+                        <span>Прокси</span>
+                    </a>
+                    <a href="posts.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="upload" class="h-5 w-5"></i>
+                        <span>Публикации</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="settings" class="h-5 w-5"></i>
+                        <span>Стилизация</span>
+                    </a>
+                    <a href="warmup.html" class="flex items-center gap-3 px-3 py-2 rounded-md bg-blue-600 text-white">
+                        <i data-lucide="activity" class="h-5 w-5"></i>
+                        <span>Прогрев</span>
+                    </a>
+                    <a href="autofollow.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="user-plus" class="h-5 w-5"></i>
+                        <span>Автоподписки</span>
+                    </a>
+                    
+                    <a href="validation.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="check-circle" class="h-5 w-5"></i>
+                        <span>Валидация</span>
+                    </a><a href="comments.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        <span>Комментер</span>
+                    </a>
+                    <a href="masslooking.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                        <span>Масслукинг</span>
+                    </a>
+                    <a href="massdm.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                        <span>Рассылка</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        <span>Аналитика</span>
+                    </a>
+                    <a href="ai.html" class="flex items-center gap-3 px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                        <i data-lucide="bot" class="h-5 w-5"></i>
+                        <span>ИИ Ассистент</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                        <span class="font-bold text-white">АП</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-white">Администратор</p>
+                        <p class="text-xs text-slate-400">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <!-- Page Header -->
+            <div class="flex items-center justify-between mb-8">
+                <h1 class="text-3xl font-bold text-white">Прогрев аккаунтов</h1>
+                <div class="flex gap-4">
+                    <button 
+                        onclick="stopAllWarmup()" 
+                        class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md text-white transition-colors flex items-center gap-2"
+                    >
+                        <i data-lucide="square" class="h-4 w-4"></i>
+                        Остановить все
+                    </button>
+                    <button 
+                        onclick="startWarmup()" 
+                        class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md text-white transition-colors flex items-center gap-2"
+                    >
+                        <i data-lucide="play" class="h-4 w-4"></i>
+                        Запустить прогрев
+                    </button>
+                </div>
+            </div>
+
+            <!-- Warmup Stats -->
+            <div class="grid grid-cols-4 gap-4 mb-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="activity" class="h-6 w-6 text-green-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="active-warmup">12</p>
+                            <p class="text-slate-400">Активный прогрев</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="clock" class="h-6 w-6 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="queue-warmup">8</p>
+                            <p class="text-slate-400">В очереди</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-purple-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="completed-warmup">47</p>
+                            <p class="text-slate-400">Завершено</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="trending-up" class="h-6 w-6 text-orange-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white" id="success-rate">94.3%</p>
+                            <p class="text-slate-400">Успешность</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mb-6">
+                <div class="flex space-x-1 bg-slate-800 p-1 rounded-lg">
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md bg-blue-600 text-white" onclick="switchTab('active')">
+                        Активные (<span id="active-count">12</span>)
+                    </button>
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md text-slate-400 hover:text-white transition-colors" onclick="switchTab('queue')">
+                        Очередь (<span id="queue-count">8</span>)
+                    </button>
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md text-slate-400 hover:text-white transition-colors" onclick="switchTab('completed')">
+                        Завершенные (<span id="completed-count">47</span>)
+                    </button>
+                    <button class="flex-1 py-2 px-4 text-sm font-medium rounded-md text-slate-400 hover:text-white transition-colors" onclick="switchTab('templates')">
+                        Шаблоны
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="flex gap-4 mb-6">
+                <div class="flex-1 relative">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-4 w-4"></i>
+                    <input 
+                        type="text" 
+                        placeholder="Поиск по username или статусу..." 
+                        class="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="search-input"
+                    >
+                </div>
+                <select class="px-3 py-2 bg-slate-800 border border-slate-700 rounded-md text-white" id="phase-filter">
+                    <option value="">Все фазы</option>
+                    <option value="phase1">Фаза 1: Подписки</option>
+                    <option value="phase2">Фаза 2: Лайки</option>
+                    <option value="phase3">Фаза 3: Комментарии</option>
+                    <option value="phase4">Фаза 4: Сториз</option>
+                </select>
+            </div>
+
+            <!-- Content Grid -->
+            <div id="warmup-content">
+                <!-- Active Warmup Tab -->
+                <div id="active-tab" class="grid gap-4">
+                    <!-- Content will be loaded here -->
+                </div>
+
+                <!-- Queue Tab -->
+                <div id="queue-tab" class="hidden grid gap-4">
+                    <!-- Content will be loaded here -->
+                </div>
+
+                <!-- Completed Tab -->
+                <div id="completed-tab" class="hidden grid gap-4">
+                    <!-- Content will be loaded here -->
+                </div>
+
+                <!-- Templates Tab -->
+                <div id="templates-tab" class="hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Template cards will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Warmup Settings Modal -->
+    <div id="warmup-settings-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-slate-800 rounded-lg p-6 w-full max-w-5xl max-h-[90vh] overflow-y-auto">
+            <h3 class="text-xl font-bold text-white mb-4">Настройки прогрева</h3>
+            
+            <div class="space-y-6">
+                <!-- Account Selection -->
+                <div class="bg-slate-700/50 rounded-lg p-4">
+                    <h4 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="users" class="h-5 w-5 text-blue-400"></i>
+                        Выбор аккаунтов для прогрева
+                    </h4>
+                    <div class="space-y-4">
+                        <!-- Selected accounts display -->
+                        <div id="selected-accounts-display" class="flex flex-wrap gap-2 min-h-[32px]">
+                            <span class="text-slate-400 text-sm">Выберите аккаунты для прогрева...</span>
+                        </div>
+                        
+                        <!-- Account selection buttons -->
+                        <div class="flex gap-2">
+                            <button type="button" onclick="toggleAccountSelection()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors text-sm">
+                                <i data-lucide="users" class="h-4 w-4 mr-2 inline"></i>
+                                Выбрать аккаунты
+                            </button>
+                            <button type="button" onclick="selectAllWarmupAccounts()" class="px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white rounded-md transition-colors text-sm">
+                                Выбрать все
+                            </button>
+                            <button type="button" onclick="deselectAllWarmupAccounts()" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors text-sm">
+                                Отменить выбор
+                            </button>
+                        </div>
+                        
+                        <!-- Account selection dropdown -->
+                        <div id="account-selection-dropdown" class="hidden relative">
+                            <div class="absolute top-0 left-0 right-0 bg-slate-700 border border-slate-600 rounded-lg shadow-lg z-10 max-h-64 overflow-y-auto">
+                                <div class="p-3">
+                                    <input type="text" id="account-search" placeholder="Поиск аккаунтов..." 
+                                           class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white text-sm mb-2"
+                                           onkeyup="filterWarmupAccounts()">
+                                    <div id="accounts-list" class="space-y-1">
+                                        <!-- Accounts will be loaded here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preset Templates -->
+                <div class="bg-slate-700/50 rounded-lg p-4">
+                    <h5 class="text-md font-medium text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="zap" class="h-5 w-5 text-blue-400"></i>
+                        Выберите режим прогрева
+                    </h5>
+                    
+                    <div class="grid grid-cols-5 gap-3">
+                        <!-- Медленный -->
+                        <div class="relative">
+                            <label class="block p-4 bg-slate-600/30 rounded-lg cursor-pointer hover:bg-slate-600/50 transition-colors border-2 border-transparent has-[:checked]:border-green-500 text-center h-40">
+                                <input type="radio" name="warmup-preset" value="SLOW" class="sr-only" onchange="selectWarmupPreset('SLOW')">
+                                <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="turtle" class="h-6 w-6 text-green-400"></i>
+                                </div>
+                                <div class="text-white font-medium text-sm mb-1">Медленный</div>
+                                <div class="text-slate-400 text-xs">~21 день</div>
+                                <div class="text-slate-400 text-xs">1-3 действия/час</div>
+                            </label>
+                            <button onclick="showPresetInfo('SLOW')" class="absolute top-2 right-2 w-6 h-6 bg-slate-500/50 hover:bg-slate-500/70 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-colors">
+                                <i data-lucide="info" class="h-4 w-4"></i>
+                            </button>
+                        </div>
+
+                        <!-- Обычный -->
+                        <div class="relative">
+                            <label class="block p-4 bg-slate-600/30 rounded-lg cursor-pointer hover:bg-slate-600/50 transition-colors border-2 border-transparent has-[:checked]:border-blue-500 text-center h-40">
+                                <input type="radio" name="warmup-preset" value="NORMAL" checked class="sr-only" onchange="selectWarmupPreset('NORMAL')">
+                                <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="zap" class="h-6 w-6 text-blue-400"></i>
+                                </div>
+                                <div class="text-white font-medium text-sm mb-1">Обычный</div>
+                                <div class="text-slate-400 text-xs">~14 дней</div>
+                                <div class="text-slate-400 text-xs">3-8 действий/час</div>
+                            </label>
+                            <button onclick="showPresetInfo('NORMAL')" class="absolute top-2 right-2 w-6 h-6 bg-slate-500/50 hover:bg-slate-500/70 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-colors">
+                                <i data-lucide="info" class="h-4 w-4"></i>
+                            </button>
+                        </div>
+
+                        <!-- Быстрый -->
+                        <div class="relative">
+                            <label class="block p-4 bg-slate-600/30 rounded-lg cursor-pointer hover:bg-slate-600/50 transition-colors border-2 border-transparent has-[:checked]:border-orange-500 text-center h-40">
+                                <input type="radio" name="warmup-preset" value="FAST" class="sr-only" onchange="selectWarmupPreset('FAST')">
+                                <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="rocket" class="h-6 w-6 text-orange-400"></i>
+                                </div>
+                                <div class="text-white font-medium text-sm mb-1">Быстрый</div>
+                                <div class="text-slate-400 text-xs">~7 дней</div>
+                                <div class="text-slate-400 text-xs">8-15 действий/час</div>
+                            </label>
+                            <button onclick="showPresetInfo('FAST')" class="absolute top-2 right-2 w-6 h-6 bg-slate-500/50 hover:bg-slate-500/70 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-colors">
+                                <i data-lucide="info" class="h-4 w-4"></i>
+                            </button>
+                        </div>
+
+                        <!-- Супер быстрый -->
+                        <div class="relative">
+                            <label class="block p-4 bg-slate-600/30 rounded-lg cursor-pointer hover:bg-slate-600/50 transition-colors border-2 border-transparent has-[:checked]:border-red-500 text-center h-40">
+                                <input type="radio" name="warmup-preset" value="SUPER_FAST" class="sr-only" onchange="selectWarmupPreset('SUPER_FAST')">
+                                <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="flame" class="h-6 w-6 text-red-400"></i>
+                                </div>
+                                <div class="text-white font-medium text-sm mb-1">Супер быстрый</div>
+                                <div class="text-slate-400 text-xs">2-4 дня</div>
+                                <div class="text-slate-400 text-xs">15-30 действий/час</div>
+                            </label>
+                            <button onclick="showPresetInfo('SUPER_FAST')" class="absolute top-2 right-2 w-6 h-6 bg-slate-500/50 hover:bg-slate-500/70 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-colors">
+                                <i data-lucide="info" class="h-4 w-4"></i>
+                            </button>
+                        </div>
+
+                        <!-- Дневной -->
+                        <div class="relative">
+                            <label class="block p-4 bg-slate-600/30 rounded-lg cursor-pointer hover:bg-slate-600/50 transition-colors border-2 border-transparent has-[:checked]:border-purple-500 text-center h-40">
+                                <input type="radio" name="warmup-preset" value="DAILY" class="sr-only" onchange="selectWarmupPreset('DAILY')">
+                                <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="clock" class="h-6 w-6 text-purple-400"></i>
+                                </div>
+                                <div class="text-white font-medium text-sm mb-1">Дневной</div>
+                                <div class="text-slate-400 text-xs">1 день</div>
+                                <div class="text-slate-400 text-xs">5-12 действий/час</div>
+                            </label>
+                            <button onclick="showPresetInfo('DAILY')" class="absolute top-2 right-2 w-6 h-6 bg-slate-500/50 hover:bg-slate-500/70 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-colors">
+                                <i data-lucide="info" class="h-4 w-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Follow Settings -->
+                <div class="bg-slate-700/50 rounded-lg p-4">
+                    <h5 class="text-md font-medium text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="user-plus" class="h-5 w-5 text-green-400"></i>
+                        Настройки подписок
+                    </h5>
+                    
+                    <div class="space-y-4">
+                        <!-- Target accounts for following -->
+                        <div>
+                            <label class="block text-sm text-slate-300 mb-2">Аккаунты для подписки</label>
+                            <textarea 
+                                id="target-accounts"
+                                placeholder="Введите username аккаунтов для подписки (по одному на строку)&#10;Например:&#10;@fitness_motivation&#10;@healthy_lifestyle&#10;@workout_tips"
+                                class="w-full h-24 bg-slate-600/50 border border-slate-500/50 rounded-lg px-3 py-2 text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none resize-none"
+                                oninput="updateDistributionInfo()"
+                            ></textarea>
+                            <div class="text-xs text-slate-400 mt-1">
+                                Укажите аккаунты, на которые будут подписываться ваши аккаунты во время прогрева
+                            </div>
+                        </div>
+                        
+                        <!-- Unique follows option -->
+                        <div class="flex items-center gap-3">
+                            <input 
+                                type="checkbox" 
+                                id="unique-follows" 
+                                checked
+                                class="w-4 h-4 text-blue-600 bg-slate-600 border-slate-500 rounded focus:ring-blue-500"
+                                onchange="updateDistributionInfo()"
+                            >
+                            <label for="unique-follows" class="text-sm text-slate-300">
+                                Уникальные подписки
+                            </label>
+                            <div class="text-xs text-slate-400">
+                                Каждый аккаунт будет подписываться на уникальный набор целевых аккаунтов
+                            </div>
+                        </div>
+                        
+                        <!-- Distribution info -->
+                        <div id="distribution-text" class="text-xs text-slate-400 bg-slate-600/30 rounded-lg p-3">
+                            Выберите аккаунты и укажите целевые аккаунты для просмотра распределения
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concurrent Processing Settings -->
+                <div class="bg-slate-700/50 rounded-lg p-4">
+                    <h5 class="text-md font-medium text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="cpu" class="h-5 w-5 text-purple-400"></i>
+                        Параллельная обработка
+                    </h5>
+                    
+                    <div class="space-y-4">
+                        <!-- Max concurrent accounts -->
+                        <div>
+                            <label class="block text-sm text-slate-300 mb-2">Количество одновременных аккаунтов</label>
+                            <div class="flex items-center gap-4">
+                                <input 
+                                    type="range" 
+                                    id="max-concurrent-accounts" 
+                                    min="1" 
+                                    max="10" 
+                                    value="3"
+                                    class="flex-1 h-2 bg-slate-600 rounded-lg appearance-none cursor-pointer"
+                                    oninput="updateConcurrentValue(this.value)"
+                                >
+                                <span id="concurrent-value" class="text-lg font-semibold text-white w-8 text-center">3</span>
+                            </div>
+                            <div class="text-xs text-slate-400 mt-2">
+                                <p>Количество аккаунтов, которые будут прогреваться одновременно.</p>
+                                <p class="mt-1">⚠️ Больше потоков = быстрее прогрев, но выше нагрузка на систему</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Performance tips -->
+                        <div class="bg-slate-600/30 rounded-lg p-3">
+                            <h6 class="text-sm font-medium text-white mb-2">Рекомендации:</h6>
+                            <ul class="text-xs text-slate-400 space-y-1">
+                                <li>• <strong>1-2 потока:</strong> Для слабых компьютеров или VPS</li>
+                                <li>• <strong>3-5 потоков:</strong> Оптимально для большинства систем</li>
+                                <li>• <strong>6-10 потоков:</strong> Для мощных серверов с хорошим интернетом</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Settings Toggle -->
+                <div class="text-center">
+                    <button type="button" id="toggle-advanced-settings" onclick="toggleAdvancedSettings()" class="px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white rounded-md transition-colors text-sm flex items-center gap-2 mx-auto">
+                        <i data-lucide="chevron-down" id="advanced-chevron" class="h-4 w-4 transition-transform"></i>
+                        <span>Расширенные настройки</span>
+                    </button>
+                    <p class="text-slate-400 text-sm mt-2">Настройте каждую фазу индивидуально</p>
+                </div>
+
+                <!-- Advanced Settings (Hidden by default) -->
+                <div id="advanced-settings" class="hidden space-y-6">
+                    <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+                        <div class="flex items-center gap-2 text-yellow-400 mb-2">
+                            <i data-lucide="alert-triangle" class="h-5 w-5"></i>
+                            <span class="font-medium">Расширенные настройки</span>
+                        </div>
+                        <p class="text-yellow-300 text-sm">
+                            Изменение этих настроек может повлиять на безопасность прогрева. 
+                            Рекомендуется использовать предустановленные режимы.
+                        </p>
+                    </div>
+
+                    <!-- Phase 1: Follows -->
+                    <div class="bg-slate-700/50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <h5 class="text-md font-medium text-white flex items-center gap-2">
+                                <i data-lucide="user-plus" class="h-5 w-5 text-blue-400"></i>
+                                Фаза 1: Подписки
+                            </h5>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="phase1-enabled" class="sr-only peer" checked onchange="togglePhase(1)">
+                                <div class="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                            </label>
+                        </div>
+                        <div id="phase1-content" class="space-y-4">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">Мин. подписок/день</label>
+                                    <input type="number" id="phase1-min" value="10" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">Макс. подписок/день</label>
+                                    <input type="number" id="phase1-max" value="25" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-1">Длительность фазы</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <input type="number" id="phase1-duration-days" value="7" min="0" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                        <span class="text-xs text-slate-400">дней</span>
+                                    </div>
+                                    <div>
+                                        <input type="number" id="phase1-duration-hours" value="0" min="0" max="23" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                        <span class="text-xs text-slate-400">часов</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2: Likes -->
+                    <div class="bg-slate-700/50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <h5 class="text-md font-medium text-white flex items-center gap-2">
+                                <i data-lucide="heart" class="h-5 w-5 text-red-400"></i>
+                                Фаза 2: Лайки
+                            </h5>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="phase2-enabled" class="sr-only peer" checked onchange="togglePhase(2)">
+                                <div class="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                            </label>
+                        </div>
+                        <div id="phase2-content" class="space-y-4">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">Мин. лайков/день</label>
+                                    <input type="number" id="phase2-min" value="50" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">Макс. лайков/день</label>
+                                    <input type="number" id="phase2-max" value="100" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-1">Длительность фазы</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <input type="number" id="phase2-duration-days" value="5" min="0" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                        <span class="text-xs text-slate-400">дней</span>
+                                    </div>
+                                    <div>
+                                        <input type="number" id="phase2-duration-hours" value="0" min="0" max="23" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                        <span class="text-xs text-slate-400">часов</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-2">Источники контента для лайков</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="like-following-posts" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Посты людей, на которых подписан</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="like-explore-reels" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Рилсы из рекомендаций</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="like-explore-posts" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Предложенные публикации</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3: Comments (optional) -->
+                    <div class="bg-slate-700/50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <h5 class="text-md font-medium text-white flex items-center gap-2">
+                                <i data-lucide="message-circle" class="h-5 w-5 text-green-400"></i>
+                                Фаза 3: Комментарии (опционально)
+                            </h5>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="phase3-enabled" class="sr-only peer" onchange="togglePhase(3)">
+                                <div class="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                            </label>
+                        </div>
+                        <div id="phase3-content" class="hidden space-y-4">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">Мин. комментариев/день</label>
+                                    <input type="number" id="phase3-min" value="5" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">Макс. комментариев/день</label>
+                                    <input type="number" id="phase3-max" value="15" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-1">Длительность фазы</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <input type="number" id="phase3-duration-days" value="3" min="0" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                        <span class="text-xs text-slate-400">дней</span>
+                                    </div>
+                                    <div>
+                                        <input type="number" id="phase3-duration-hours" value="0" min="0" max="23" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                        <span class="text-xs text-slate-400">часов</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-2">Типы комментариев</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="comment-positive" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Позитивные комментарии</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="comment-compliments" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Комплименты</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="comment-questions" class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Вопросы о местах/контенте</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="comment-emojis" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Эмодзи реакции</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-1">Дополнительные комментарии</label>
+                                <textarea 
+                                    id="phase3-custom-comments" 
+                                    rows="3" 
+                                    placeholder="Добавьте свои комментарии, по одному на строку:&#10;Отличное фото! 👍&#10;Красивый вид! 😍&#10;Супер контент! 🔥"
+                                    class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white placeholder-slate-400"
+                                ></textarea>
+                                <p class="text-xs text-slate-400 mt-1">Эти комментарии будут добавлены к стандартным</p>
+                            </div>
+                        </div>
+                        <div id="phase3-disabled-message" class="text-sm text-slate-400">
+                            Включите эту фазу, чтобы настроить комментирование постов
+                        </div>
+                    </div>
+
+                    <!-- Phase 4: Stories (optional) -->
+                    <div class="bg-slate-700/50 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <h5 class="text-md font-medium text-white flex items-center gap-2">
+                                <i data-lucide="circle" class="h-5 w-5 text-purple-400"></i>
+                                Фаза 4: Истории (опционально)
+                            </h5>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="phase4-enabled" class="sr-only peer" onchange="togglePhase(4)">
+                                <div class="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                            </label>
+                        </div>
+                        <div id="phase4-content" class="hidden space-y-4">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">Мин. историй/день</label>
+                                    <input type="number" id="phase4-min" value="1" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">Макс. историй/день</label>
+                                    <input type="number" id="phase4-max" value="3" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-1">Длительность фазы</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <input type="number" id="phase4-duration-days" value="3" min="0" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                        <span class="text-xs text-slate-400">дней</span>
+                                    </div>
+                                    <div>
+                                        <input type="number" id="phase4-duration-hours" value="0" min="0" max="23" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                        <span class="text-xs text-slate-400">часов</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-2">Активности с историями</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="story-publish" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Публиковать истории</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="story-view" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Просматривать истории других</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="story-react" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Реагировать на истории эмодзи</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="checkbox" id="story-reply" class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Отвечать на истории сообщениями</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-1">Тексты для историй</label>
+                                <textarea 
+                                    id="phase4-story-texts" 
+                                    rows="4" 
+                                    placeholder="Добавьте тексты для историй, по одному на строку:&#10;Хорошего дня! ☀️&#10;Всем привет! 👋&#10;Отличное настроение! 😊&#10;Продуктивного дня! 💪"
+                                    class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white placeholder-slate-400"
+                                ></textarea>
+                                <p class="text-xs text-slate-400 mt-1">Тексты будут случайно выбираться для историй</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-300 mb-2">Стиль историй</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="story-style" value="gradient" checked class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Градиентный фон</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="story-style" value="solid" class="h-4 w-4">
+                                        <span class="text-sm text-slate-300">Однотонный фон</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="phase4-disabled-message" class="text-sm text-slate-400">
+                            Включите эту фазу, чтобы настроить работу с историями
+                        </div>
+                    </div>
+
+                    <!-- Working Hours Settings -->
+                    <div class="bg-slate-700/50 rounded-lg p-4">
+                        <h4 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                            <i data-lucide="clock" class="h-5 w-5 text-blue-400"></i>
+                            Время работы и отдыха
+                        </h4>
+                        <div class="space-y-4">
+                            <!-- Working Hours -->
+                            <div class="bg-slate-600/30 rounded-lg p-4">
+                                <h5 class="text-sm font-medium text-white mb-3 flex items-center gap-2">
+                                    <i data-lucide="sun" class="h-4 w-4 text-yellow-400"></i>
+                                    Рабочие часы
+                                </h5>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs text-slate-400 mb-1">Начало работы</label>
+                                        <input type="time" id="work-start" value="09:00" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-slate-400 mb-1">Конец работы</label>
+                                        <input type="time" id="work-end" value="22:00" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-400 mt-2">Бот будет работать только в указанное время</p>
+                            </div>
+
+                            <!-- Breaks -->
+                            <div class="bg-slate-600/30 rounded-lg p-4">
+                                <h5 class="text-sm font-medium text-white mb-3 flex items-center gap-2">
+                                    <i data-lucide="coffee" class="h-4 w-4 text-orange-400"></i>
+                                    Перерывы
+                                </h5>
+                                <label class="flex items-center gap-2 mb-3">
+                                    <input type="checkbox" id="enable-breaks" checked class="h-4 w-4">
+                                    <span class="text-sm text-slate-300">Делать перерывы во время работы</span>
+                                </label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs text-slate-400 mb-1">Работать (минут)</label>
+                                        <input type="number" id="work-period" value="120" min="30" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-slate-400 mb-1">Отдыхать (минут)</label>
+                                        <input type="number" id="break-duration" value="15" min="5" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-400 mt-2">Например: работать 2 часа, затем отдых 15 минут</p>
+                            </div>
+
+                            <!-- Action Intervals -->
+                            <div class="bg-slate-600/30 rounded-lg p-4">
+                                <h5 class="text-sm font-medium text-white mb-3 flex items-center gap-2">
+                                    <i data-lucide="timer" class="h-4 w-4 text-green-400"></i>
+                                    Скорость действий
+                                </h5>
+                                <label class="block text-sm text-slate-300 mb-2">Пауза между действиями (секунды)</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs text-slate-400 mb-1">Минимум</label>
+                                        <input type="number" id="action-interval-min" value="30" min="10" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-slate-400 mb-1">Максимум</label>
+                                        <input type="number" id="action-interval-max" value="120" min="30" class="w-full px-3 py-2 bg-slate-600 border border-slate-500 rounded-md text-white">
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-400 mt-2">Случайная пауза между минимальным и максимальным значением</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-3 mt-6">
+                <button onclick="closeWarmupSettings()" class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-2 px-4 rounded-md transition-colors">
+                    Отмена
+                </button>
+                <button onclick="saveWarmupSettings()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors">
+                    Сохранить настройки
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/warmup.js"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        // Инициализация Lucide иконок
+        lucide.createIcons();
+    </script>
+
+    <!-- Preset Info Modal -->
+    <div id="preset-info-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-slate-800 rounded-lg p-6 max-w-md w-full mx-4 max-h-[80vh] overflow-y-auto">
+            <div class="flex items-center justify-between mb-4">
+                <h3 id="preset-info-title" class="text-xl font-bold text-white"></h3>
+                <button onclick="closePresetInfo()" class="text-slate-400 hover:text-white">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <div id="preset-info-content" class="text-slate-300 space-y-4">
+                <!-- Content will be filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

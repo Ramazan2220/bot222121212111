@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey, Text, Float, JSON, Enum, Table
+from sqlalchemy import Column, Integer, BigInteger, String, Boolean, DateTime, ForeignKey, Text, Float, JSON, Enum, Table
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from datetime import datetime
@@ -97,7 +97,7 @@ class InstagramAccount(Base):
     device_id = Column(String(255), nullable=True)  # Уникальный ID устройства для Instagram
     
     # ✅ КРИТИЧЕСКИ ВАЖНО: Изоляция данных по пользователям
-    user_id = Column(Integer, nullable=False, index=True)  # ID пользователя Telegram для изоляции
+    user_id = Column(BigInteger, nullable=False, index=True)  # ID пользователя Telegram для изоляции
     
     is_active = Column(Boolean, default=True)
     status = Column(String(50), default='active')  # Статус аккаунта: active, inactive, banned, etc.
@@ -156,7 +156,7 @@ class TelegramUser(Base):
     __tablename__ = 'telegram_users'
 
     id = Column(Integer, primary_key=True)
-    telegram_id = Column(Integer, unique=True, nullable=False)
+    telegram_id = Column(BigInteger, unique=True, nullable=False)
     username = Column(String(255), nullable=True)
     first_name = Column(String(255), nullable=True)
     last_name = Column(String(255), nullable=True)
@@ -209,7 +209,7 @@ class WarmupTask(Base):
     completed_at = Column(DateTime, nullable=True)
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
     # Новый столбец для изоляции: может быть NULL до миграции и бэкфилла
-    user_id = Column(Integer, nullable=True, index=True)
+    user_id = Column(BigInteger, nullable=True, index=True)
     
     # Отношения
     account = relationship("InstagramAccount")

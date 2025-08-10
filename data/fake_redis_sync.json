@@ -1,0 +1,11 @@
+{
+  "data": {
+    "hash:access:users": "{}",
+    "hash:test_hash": "{\"field1\": \"value1\"}",
+    "test_key": "test_value",
+    "broadcasts:queue": "[]",
+    "hash:broadcasts:messages": "{\"broadcast_1754434947_123456789\": \"{\\\"id\\\": \\\"broadcast_1754434947_123456789\\\", \\\"title\\\": \\\"\\\\ud83e\\\\uddea \\\\u0422\\\\u0435\\\\u0441\\\\u0442 \\\\u0434\\\\u043b\\\\u044f trial \\\\u043f\\\\u043e\\\\u043b\\\\u044c\\\\u0437\\\\u043e\\\\u0432\\\\u0430\\\\u0442\\\\u0435\\\\u043b\\\\u0435\\\\u0439\\\", \\\"message\\\": \\\"\\\\u042d\\\\u0442\\\\u043e \\\\u0442\\\\u0435\\\\u0441\\\\u0442\\\\u043e\\\\u0432\\\\u0430\\\\u044f \\\\u0440\\\\u0430\\\\u0441\\\\u0441\\\\u044b\\\\u043b\\\\u043a\\\\u0430 \\\\u0434\\\\u043b\\\\u044f trial \\\\u043f\\\\u043e\\\\u043b\\\\u044c\\\\u0437\\\\u043e\\\\u0432\\\\u0430\\\\u0442\\\\u0435\\\\u043b\\\\u0435\\\\u0439\\\", \\\"broadcast_type\\\": \\\"trial_users\\\", \\\"priority\\\": \\\"normal\\\", \\\"admin_id\\\": 123456789, \\\"created_at\\\": \\\"2025-08-06T02:02:27.264837\\\", \\\"scheduled_at\\\": null, \\\"status\\\": \\\"pending\\\", \\\"target_users\\\": null, \\\"total_recipients\\\": 0, \\\"sent_count\\\": 0, \\\"failed_count\\\": 0, \\\"delivery_stats\\\": {}}\"}"
+  },
+  "last_update": 1754478330.6159968,
+  "updated_by": "fake_redis"
+}

@@ -1,0 +1,58 @@
+{
+  "cache": {
+    "6499246016": {
+      "telegram_id": 6499246016,
+      "source": "config",
+      "role": "super_admin",
+      "is_active": true,
+      "added_at": "2025-08-05T18:20:36.966638"
+    },
+    "555555555": {
+      "telegram_id": 555555555,
+      "source": "admin_panel",
+      "role": "admin",
+      "is_active": true,
+      "subscription_plan": "subscription_90_days",
+      "subscription_end": "2025-10-01T12:13:32.284570",
+      "added_at": "2025-07-03T12:13:32.284575"
+    },
+    "666666666": {
+      "telegram_id": 666666666,
+      "source": "admin_panel",
+      "role": "admin",
+      "is_active": true,
+      "subscription_plan": "subscription_lifetime",
+      "subscription_end": null,
+      "added_at": "2025-06-03T12:13:32.285139"
+    },
+    "222222222": {
+      "telegram_id": 222222222,
+      "source": "admin_panel",
+      "role": "trial",
+      "is_active": false,
+      "subscription_plan": "free_trial_1_day",
+      "subscription_end": "2025-08-03T14:02:51.593754",
+      "added_at": "2025-08-02T14:02:51.593478"
+    },
+    "333333333": {
+      "telegram_id": 333333333,
+      "source": "admin_panel",
+      "role": "admin",
+      "is_active": true,
+      "subscription_plan": "subscription_30_days",
+      "subscription_end": "2025-09-01T14:02:51.594064",
+      "added_at": "2025-08-02T14:02:51.593921"
+    },
+    "265436026": {
+      "telegram_id": 265436026,
+      "source": "admin_panel",
+      "role": "admin",
+      "is_active": true,
+      "subscription_plan": "subscription_90_days",
+      "subscription_end": "2025-10-31T15:08:40.644605",
+      "added_at": "2025-08-02T15:08:40.641168"
+    }
+  },
+  "last_update": 1754407236.967975,
+  "updated_by": "AccessManager"
+}

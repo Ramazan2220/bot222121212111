@@ -1,0 +1,39 @@
+{
+  "access_list": {
+    "6499246016": {
+      "telegram_id": 6499246016,
+      "source": "config",
+      "role": "super_admin",
+      "is_active": true,
+      "added_at": "2025-08-10T14:25:32.824666"
+    },
+    "555555555": {
+      "telegram_id": 555555555,
+      "source": "admin_panel",
+      "role": "admin",
+      "is_active": true,
+      "subscription_plan": "subscription_90_days",
+      "subscription_end": "2025-10-01T12:13:32.284570",
+      "added_at": "2025-07-03T12:13:32.284575"
+    },
+    "666666666": {
+      "telegram_id": 666666666,
+      "source": "admin_panel",
+      "role": "admin",
+      "is_active": true,
+      "subscription_plan": "subscription_lifetime",
+      "subscription_end": null,
+      "added_at": "2025-06-03T12:13:32.285139"
+    },
+    "6626270112": {
+      "telegram_id": 6626270112,
+      "source": "admin_panel",
+      "role": "trial",
+      "is_active": false,
+      "subscription_plan": "free_trial_3_days",
+      "subscription_end": "2025-08-09T21:01:43.410155",
+      "added_at": "2025-08-06T21:01:43.408840"
+    }
+  },
+  "last_update": "2025-08-10T14:25:32.824684"
+}

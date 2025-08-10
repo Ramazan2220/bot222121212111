@@ -1,0 +1,105 @@
+{
+  "users": {
+    "555555555": {
+      "telegram_id": 555555555,
+      "username": "test_user_90days",
+      "is_active": true,
+      "subscription_end": "2025-10-01T12:13:32.284570",
+      "role": "subscription_90_days",
+      "migrated_at": "2025-08-05T23:27:54.804625",
+      "migrated_from": "admin_panel"
+    },
+    "666666666": {
+      "telegram_id": 666666666,
+      "username": "test_user_lifetime",
+      "is_active": true,
+      "subscription_end": "2025-09-04T23:27:54.805271",
+      "role": "subscription_lifetime",
+      "migrated_at": "2025-08-05T23:27:54.805280",
+      "migrated_from": "admin_panel"
+    },
+    "777777777": {
+      "telegram_id": 777777777,
+      "username": "expired_user",
+      "is_active": false,
+      "subscription_end": "2025-07-31T12:13:32.285559",
+      "role": "free_trial_3_days",
+      "migrated_at": "2025-08-05T23:27:54.805712",
+      "migrated_from": "admin_panel"
+    },
+    "222222222": {
+      "telegram_id": 222222222,
+      "username": "testuser2",
+      "is_active": true,
+      "subscription_end": "2025-08-03T14:02:51.593754",
+      "role": "free_trial_1_day",
+      "migrated_at": "2025-08-05T23:27:54.805985",
+      "migrated_from": "admin_panel"
+    },
+    "333333333": {
+      "telegram_id": 333333333,
+      "username": "testuser3",
+      "is_active": true,
+      "subscription_end": "2025-09-01T14:02:51.594064",
+      "role": "subscription_30_days",
+      "migrated_at": "2025-08-05T23:27:54.806246",
+      "migrated_from": "admin_panel"
+    },
+    "999999999": {
+      "telegram_id": 999999999,
+      "username": "test_user",
+      "is_active": false,
+      "subscription_end": "2025-09-04T23:27:54.806628",
+      "role": "trial",
+      "migrated_at": "2025-08-05T23:27:54.806635",
+      "migrated_from": "admin_panel"
+    },
+    "111222333": {
+      "telegram_id": 111222333,
+      "username": "test_for_delete",
+      "is_active": false,
+      "subscription_end": "2025-09-04T16:35:54.767289",
+      "role": "subscription_30_days",
+      "migrated_at": "2025-08-05T23:27:54.806919",
+      "migrated_from": "admin_panel"
+    },
+    "998877665": {
+      "telegram_id": 998877665,
+      "username": "",
+      "is_active": false,
+      "subscription_end": "2025-09-04T16:58:53.992967",
+      "role": "subscription_30_days",
+      "migrated_at": "2025-08-05T23:27:54.807523",
+      "migrated_from": "admin_panel"
+    },
+    "555666777": {
+      "telegram_id": 555666777,
+      "username": "",
+      "is_active": false,
+      "subscription_end": "2025-09-04T17:10:48.695233",
+      "role": "subscription_30_days",
+      "migrated_at": "2025-08-05T23:27:54.807812",
+      "migrated_from": "admin_panel"
+    },
+    "888999000": {
+      "telegram_id": 888999000,
+      "username": "",
+      "is_active": false,
+      "subscription_end": "2025-09-04T17:10:48.700643",
+      "role": "subscription_30_days",
+      "migrated_at": "2025-08-05T23:27:54.808108",
+      "migrated_from": "admin_panel"
+    },
+    "6626270112": {
+      "telegram_id": 6626270112,
+      "username": "lock0125",
+      "is_active": true,
+      "subscription_end": "2025-08-08T18:20:36.963693",
+      "role": "free_trial_3_days",
+      "migrated_at": "2025-08-05T23:27:54.808385",
+      "migrated_from": "admin_panel"
+    }
+  },
+  "last_update": 1754425756.651745,
+  "updated_by": 44963
+}

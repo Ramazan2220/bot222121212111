@@ -1,0 +1,935 @@
+{
+  "predictions": [
+    {
+      "account_id": 1,
+      "username": "finleybarbara124252",
+      "analysis_time": "2025-06-09T14:52:39.547246",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 1,
+      "username": "finleybarbara124252",
+      "analysis_time": "2025-06-09T14:58:26.794765",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 1,
+      "username": "finleybarbara124252",
+      "analysis_time": "2025-06-09T15:00:02.074485",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 1,
+      "username": "finleybarbara124252",
+      "analysis_time": "2025-06-09T15:00:19.880617",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 1,
+      "username": "finleybarbara124252",
+      "analysis_time": "2025-06-09T15:14:22.063791",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 6,
+      "username": "pagehank302073",
+      "analysis_time": "2025-06-09T15:14:22.066748",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 7,
+      "username": "fischercarmen3096194",
+      "analysis_time": "2025-06-09T15:14:22.068951",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 8,
+      "username": "maysfrancesca230824",
+      "analysis_time": "2025-06-09T15:14:22.071548",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 16,
+      "username": "donarcolatr594",
+      "analysis_time": "2025-06-09T15:14:22.074221",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 17,
+      "username": "0238_helenojm535",
+      "analysis_time": "2025-06-09T15:14:22.079564",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 18,
+      "username": "megeorge.s730o",
+      "analysis_time": "2025-06-09T15:14:22.082621",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 19,
+      "username": "cmb.mary.lip70g",
+      "analysis_time": "2025-06-09T15:14:22.085522",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 20,
+      "username": "drmarkmoored94131",
+      "analysis_time": "2025-06-09T15:14:22.089473",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 21,
+      "username": "john_wilsonsh05926",
+      "analysis_time": "2025-06-09T15:14:22.093983",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 22,
+      "username": "meanthony_21260",
+      "analysis_time": "2025-06-09T15:14:22.097682",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 23,
+      "username": "TestNols28882",
+      "analysis_time": "2025-06-09T15:14:22.104155",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 25,
+      "username": "NSKskksy8osks",
+      "analysis_time": "2025-06-09T15:14:22.109765",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 28,
+      "username": "WollyDolyy282",
+      "analysis_time": "2025-06-09T15:14:22.113001",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    },
+    {
+      "account_id": 29,
+      "username": "willimentqabeci2pa",
+      "analysis_time": "2025-06-09T15:14:22.116388",
+      "risks": {
+        "ban_risk": 0.3,
+        "shadowban_risk": 0.1,
+        "reach_drop_risk": 1.0,
+        "engagement_drop_risk": 0.025
+      },
+      "overall_risk": 0.352,
+      "risk_level": "\u0421\u0420\u0415\u0414\u041d\u0418\u0419",
+      "recommendations": [
+        "\ud83d\udcc9 \u0420\u0438\u0441\u043a \u043f\u0430\u0434\u0435\u043d\u0438\u044f \u043e\u0445\u0432\u0430\u0442\u043e\u0432",
+        "\ud83c\udfaf \u0423\u043b\u0443\u0447\u0448\u0438\u0442\u0435 \u0442\u0430\u0440\u0433\u0435\u0442\u0438\u043d\u0433 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430",
+        "\ud83d\udcac \u0423\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439",
+        "\ud83d\udd50 \u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u0443\u0439\u0442\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438"
+      ],
+      "forecast": {
+        "engagement_3days": 0,
+        "engagement_7days": 0,
+        "risk_trend": "\u0421\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+        "recommended_action": "\u041a\u043e\u043d\u0442\u0440\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
+      },
+      "prediction_data": {
+        "activity_history": {
+          "daily_total": 150,
+          "limits_exceeded_count": 0,
+          "recent_activity": []
+        },
+        "error_history": [],
+        "engagement_history": [
+          100,
+          95,
+          98,
+          102,
+          88,
+          92,
+          96
+        ],
+        "time_patterns": {
+          "too_regular": false,
+          "posting_at_bad_times": false
+        },
+        "account_metrics": {
+          "age_days": 35
+        }
+      }
+    }
+  ]
+}

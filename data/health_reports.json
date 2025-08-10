@@ -1,0 +1,580 @@
+{
+  "reports": [
+    {
+      "account_id": 1,
+      "username": "finleybarbara124252",
+      "check_time": "2025-06-09T14:58:26.789997",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 1,
+      "username": "finleybarbara124252",
+      "check_time": "2025-06-09T15:00:02.027759",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 1,
+      "username": "finleybarbara124252",
+      "check_time": "2025-06-09T15:00:19.857872",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 1,
+      "username": "finleybarbara124252",
+      "check_time": "2025-06-09T15:14:22.061502",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 6,
+      "username": "pagehank302073",
+      "check_time": "2025-06-09T15:14:22.065678",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 7,
+      "username": "fischercarmen3096194",
+      "check_time": "2025-06-09T15:14:22.067985",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 8,
+      "username": "maysfrancesca230824",
+      "check_time": "2025-06-09T15:14:22.070315",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 16,
+      "username": "donarcolatr594",
+      "check_time": "2025-06-09T15:14:22.072886",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 17,
+      "username": "0238_helenojm535",
+      "check_time": "2025-06-09T15:14:22.076771",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 18,
+      "username": "megeorge.s730o",
+      "check_time": "2025-06-09T15:14:22.081487",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 19,
+      "username": "cmb.mary.lip70g",
+      "check_time": "2025-06-09T15:14:22.084114",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 20,
+      "username": "drmarkmoored94131",
+      "check_time": "2025-06-09T15:14:22.087424",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 21,
+      "username": "john_wilsonsh05926",
+      "check_time": "2025-06-09T15:14:22.091111",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 22,
+      "username": "meanthony_21260",
+      "check_time": "2025-06-09T15:14:22.095526",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 23,
+      "username": "TestNols28882",
+      "check_time": "2025-06-09T15:14:22.101247",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 25,
+      "username": "NSKskksy8osks",
+      "check_time": "2025-06-09T15:14:22.106622",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 28,
+      "username": "WollyDolyy282",
+      "check_time": "2025-06-09T15:14:22.111595",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    },
+    {
+      "account_id": 29,
+      "username": "willimentqabeci2pa",
+      "check_time": "2025-06-09T15:14:22.115045",
+      "checks": {
+        "shadowban": {
+          "status": "healthy",
+          "message": "Shadowban \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0430",
+          "check_method": "hashtag_visibility"
+        },
+        "reach_analysis": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043e\u0445\u0432\u0430\u0442\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change_percent": 0
+        },
+        "engagement_rate": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "engagement_rate": 2.5
+        },
+        "follower_changes": {
+          "status": "healthy",
+          "message": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043f\u043e\u0434\u043f\u0438\u0441\u0447\u0438\u043a\u043e\u0432 \u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d",
+          "change": 0
+        }
+      },
+      "health_score": 100,
+      "risk_level": "low",
+      "recommendations": [
+        "\u2705 \u0410\u043a\u043a\u0430\u0443\u043d\u0442 \u0432 \u043e\u0442\u043b\u0438\u0447\u043d\u043e\u043c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438"
+      ]
+    }
+  ]
+}

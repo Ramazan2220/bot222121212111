@@ -1,0 +1,25 @@
+{
+  "process_name": "test_isolation",
+  "current_user_id": null,
+  "processed_users": [
+    12345,
+    67890,
+    11111
+  ],
+  "failed_users": [],
+  "skipped_users": [],
+  "user_statuses": {
+    "12345": "completed",
+    "67890": "completed",
+    "11111": "completed"
+  },
+  "user_processing_times": {
+    "12345": 0.10527491569519043,
+    "67890": 0.10539913177490234,
+    "11111": 0.1053168773651123
+  },
+  "user_errors": {},
+  "cycle_started_at": "2025-08-07T12:58:31.050197",
+  "last_full_cycle": "2025-08-07T12:58:31.367927",
+  "saved_at": "2025-08-07T12:58:31.368126"
+}

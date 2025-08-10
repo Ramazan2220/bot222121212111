@@ -1,0 +1,2362 @@
+import os
+import tempfile
+import json
+import logging
+import threading
+from datetime import datetime
+
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
+from telegram.ext import ConversationHandler
+
+from database.db_manager import get_instagram_account, get_instagram_accounts, create_publish_task
+from instagram_api.publisher import publish_video
+from database.models import TaskType, TaskStatus
+from instagram.reels_manager import publish_reels_in_parallel
+from utils.task_queue import add_task_to_queue, get_task_status
+from telegram_bot.utils.account_selection import create_account_selector
+
+# Добавляем импорт для uuid
+import uuid
+
+logger = logging.getLogger(__name__)
+
+# Состояния для публикации видео
+CHOOSE_ACCOUNT, UPLOAD_MEDIA, ENTER_CAPTION, ENTER_HASHTAGS, CONFIRM_PUBLISH, CHOOSE_SCHEDULE, CHOOSE_HIDE_FROM_FEED = range(10, 17)
+
+def is_admin(user_id):
+    from telegram_bot.bot import is_admin
+    return is_admin(user_id)
+
+def publish_now_handler(update, context):
+    """Обработчик команды публикации контента с новым селектором"""
+    user_id = update.effective_user.id
+
+    if not is_admin(user_id):
+        if update.message:
+        update.message.reply_text("У вас нет прав для выполнения этой команды.")
+        else:
+            update.callback_query.answer("У вас нет прав для выполнения этой команды.", show_alert=True)
+        return ConversationHandler.END
+
+    # Создаем селектор аккаунтов для публикации
+    selector = create_account_selector(
+        callback_prefix="publish_select",
+        title="📤 Публикация контента",
+        allow_multiple=True,  # Разрешаем выбор нескольких аккаунтов
+        show_status=True,
+        show_folders=True,
+        back_callback="menu_publish"
+    )
+    
+    # Определяем callback для обработки выбранных аккаунтов
+    def on_accounts_selected(account_ids: list, update_inner, context_inner):
+        if account_ids:
+            context_inner.user_data['selected_accounts'] = account_ids
+            context_inner.user_data['publish_account_ids'] = account_ids
+            
+            # Если выбран один аккаунт
+            if len(account_ids) == 1:
+                account = get_instagram_account(account_ids[0])
+                context_inner.user_data['publish_account_id'] = account_ids[0]
+                context_inner.user_data['publish_account_username'] = account.username
+                context_inner.user_data['publish_to_all_accounts'] = False
+            else:
+                # Если выбрано несколько аккаунтов
+                context_inner.user_data['publish_to_all_accounts'] = True
+                accounts = [get_instagram_account(acc_id) for acc_id in account_ids]
+                context_inner.user_data['publish_account_usernames'] = [acc.username for acc in accounts]
+            
+            # Проверяем, есть ли уже медиафайл
+            if 'publish_media_path' in context_inner.user_data:
+                # Если медиафайл уже загружен, переходим к вводу подписи
+                query = update_inner.callback_query
+                publish_type = context_inner.user_data.get('publish_type', 'post')
+                
+                # Определяем какой тип медиа запрашивать
+                if publish_type == 'story':
+                    media_prompt = "фото или видео для истории"
+                elif publish_type == 'reels':
+                    media_prompt = "видео для Reels"
+                elif publish_type == 'igtv':
+                    media_prompt = "видео для IGTV"
+                else:  # post
+                    media_prompt = "фото или видео для поста"
+                
+                if len(account_ids) == 1:
+                    account = get_instagram_account(account_ids[0])
+        query.edit_message_text(
+                        f"Выбран аккаунт: *{account.username}*\n\n"
+                        f"Теперь отправьте {media_prompt}:",
+                        parse_mode=ParseMode.MARKDOWN
+        )
+    else:
+                    accounts_str = ", ".join(context_inner.user_data['publish_account_usernames'])
+                    query.edit_message_text(
+                        f"Выбраны аккаунты ({len(account_ids)}):\n{accounts_str}\n\n"
+                        f"Теперь отправьте {media_prompt}:"
+                    )
+                return UPLOAD_MEDIA
+            else:
+                # Если медиафайла нет, просим загрузить
+                query = update_inner.callback_query
+                publish_type = context_inner.user_data.get('publish_type', 'post')
+                
+                # Определяем какой тип медиа запрашивать
+                if publish_type == 'story':
+                    media_prompt = "фото или видео для истории"
+                elif publish_type == 'reels':
+                    media_prompt = "видео для Reels"
+                elif publish_type == 'igtv':
+                    media_prompt = "видео для IGTV"
+                else:  # post
+                    media_prompt = "фото или видео для поста"
+                
+                if len(account_ids) == 1:
+                    account = get_instagram_account(account_ids[0])
+                    query.edit_message_text(
+                        f"Выбран аккаунт: *{account.username}*\n\n"
+                        f"Теперь отправьте {media_prompt}:",
+                        parse_mode=ParseMode.MARKDOWN
+                    )
+                else:
+                    accounts_str = ", ".join(context_inner.user_data['publish_account_usernames'])
+                    query.edit_message_text(
+                        f"Выбраны аккаунты ({len(account_ids)}):\n{accounts_str}\n\n"
+                        f"Теперь отправьте {media_prompt}:"
+                    )
+                return ConversationHandler.END
+    
+    # Запускаем процесс выбора
+    return selector.start_selection(update, context, on_accounts_selected)
+
+def choose_account_callback(update, context):
+    """Обработчик выбора аккаунта для публикации"""
+    query = update.callback_query
+    query.answer()
+
+    # Получаем ID аккаунта из callback_data
+    account_id = int(query.data.split('_')[-1])
+    context.user_data['publish_account_id'] = account_id
+
+    # Добавляем аккаунт в список выбранных (для совместимости)
+    if 'selected_accounts' not in context.user_data:
+        context.user_data['selected_accounts'] = []
+    context.user_data['selected_accounts'].append(account_id)
+
+    # Получаем аккаунт
+    account = get_instagram_account(account_id)
+    context.user_data['publish_account_username'] = account.username
+
+    # Проверяем, есть ли уже медиафайл
+    if 'publish_media_path' in context.user_data:
+        # Если медиафайл уже загружен, переходим к вводу подписи
+        query.edit_message_text(
+            f"Выбран аккаунт: *{account.username}*\n\n"
+            f"Теперь введите подпись к публикации (или отправьте /skip для публикации без подписи):",
+            parse_mode=ParseMode.MARKDOWN
+        )
+        return ENTER_CAPTION
+    else:
+        # Если медиафайла нет, просим загрузить
+        publish_type = context.user_data.get('publish_type', 'post')
+        
+        # Определяем какой тип медиа запрашивать
+        if publish_type == 'story':
+            media_prompt = "фото или видео для истории"
+        elif publish_type == 'reels':
+            media_prompt = "видео для Reels"
+        elif publish_type == 'igtv':
+            media_prompt = "видео для IGTV"
+        else:  # post
+            media_prompt = "фото или видео для поста"
+        
+        query.edit_message_text(
+            f"Выбран аккаунт: *{account.username}*\n\n"
+            f"Теперь отправьте {media_prompt}:",
+            parse_mode=ParseMode.MARKDOWN
+        )
+        return UPLOAD_MEDIA
+
+def choose_all_accounts_callback(update, context):
+    """Обработчик выбора всех аккаунтов для публикации"""
+    query = update.callback_query
+    query.answer()
+
+    # Получаем все активные аккаунты
+    accounts = get_instagram_accounts()
+    active_accounts = [account for account in accounts if account.is_active]
+
+    if not active_accounts:
+        query.edit_message_text("Нет активных аккаунтов для публикации.")
+        return ConversationHandler.END
+
+    # Сохраняем список ID всех аккаунтов
+    account_ids = [account.id for account in active_accounts]
+    context.user_data['publish_account_ids'] = account_ids
+    context.user_data['publish_to_all_accounts'] = True
+
+    # Сохраняем имена пользователей для отображения
+    account_usernames = [account.username for account in active_accounts]
+    context.user_data['publish_account_usernames'] = account_usernames
+
+    # Формируем список имен аккаунтов для отображения
+    account_names = [account.username for account in active_accounts]
+    accounts_str = ", ".join(account_names)
+
+    # Проверяем, есть ли уже медиафайл
+    if 'publish_media_path' in context.user_data:
+        # Если медиафайл уже загружен, переходим к вводу подписи
+        query.edit_message_text(
+            f"Выбраны все аккаунты ({len(active_accounts)}):\n{accounts_str}\n\n"
+            f"Теперь введите подпись к публикации (или отправьте /skip для публикации без подписи):"
+        )
+        return ENTER_CAPTION
+    else:
+        # Если медиафайла нет, просим загрузить
+        publish_type = context.user_data.get('publish_type', 'post')
+        
+        # Определяем какой тип медиа запрашивать
+        if publish_type == 'story':
+            media_prompt = "фото или видео для истории"
+        elif publish_type == 'reels':
+            media_prompt = "видео для Reels"
+        elif publish_type == 'igtv':
+            media_prompt = "видео для IGTV"
+        else:  # post
+            media_prompt = "фото или видео для поста"
+            
+        query.edit_message_text(
+            f"Выбраны все аккаунты ({len(active_accounts)}):\n{accounts_str}\n\n"
+            f"Теперь отправьте {media_prompt}:"
+        )
+        return ConversationHandler.END  # Здесь мы завершаем разговор, чтобы пользователь мог загрузить видео
+
+def choose_category_callback(update, context):
+    """Обработчик выбора категории аккаунтов (заглушка)"""
+    query = update.callback_query
+    query.answer()
+
+    query.edit_message_text(
+        "🚧 Функция выбора категории находится в разработке.\n\n"
+        "Пожалуйста, выберите конкретный аккаунт или все аккаунты."
+    )
+
+    # Возвращаемся к выбору аккаунта
+    return publish_now_handler(update, context)
+
+def media_upload_handler(update, context):
+    """Обработчик загрузки медиа для нового интерфейса (используется в старых conversation handlers)"""
+    # Для обратной совместимости с другими типами публикации (story, reels, igtv)
+    publish_type = context.user_data.get('publish_type', 'post')
+    
+    if publish_type == 'post':
+        # Для постов используем новый интерфейс
+        return handle_media_upload(update, context)
+    else:
+        # Для других типов используем старый интерфейс
+        return old_media_upload_handler(update, context)
+
+def old_media_upload_handler(update, context):
+    """Старый обработчик загрузки медиа (для story, reels, igtv)"""
+    user_id = update.effective_user.id
+
+    if not is_admin(user_id):
+        update.message.reply_text("У вас нет прав для выполнения этой команды.")
+        return
+
+    # Проверяем, выбран ли аккаунт или аккаунты
+    if 'publish_account_id' not in context.user_data and 'publish_account_ids' not in context.user_data:
+        # Если аккаунт не выбран, запускаем процесс выбора аккаунта
+        # Store the media file information for later use
+        if update.message.photo:
+            context.user_data['pending_media'] = update.message.photo[-1]
+            context.user_data['pending_media_type'] = 'PHOTO'
+        elif update.message.video:
+            context.user_data['pending_media'] = update.message.video
+            context.user_data['pending_media_type'] = 'VIDEO'
+        elif update.message.document:
+            context.user_data['pending_media'] = update.message.document
+            context.user_data['pending_media_type'] = 'VIDEO' if update.message.document.mime_type.startswith('video/') else 'PHOTO'
+        
+        return publish_now_handler(update, context)
+
+    # Получаем информацию о медиа
+    media_file = None
+    media_type = None
+    file_extension = '.jpg'
+    
+    if update.message.photo:
+        media_file = update.message.photo[-1]
+        media_type = 'PHOTO'
+        file_extension = '.jpg'
+    elif update.message.video:
+        media_file = update.message.video
+        media_type = 'VIDEO'
+        file_extension = '.mp4'
+    elif update.message.document:
+        media_file = update.message.document
+        if media_file.mime_type.startswith('video/'):
+            media_type = 'VIDEO'
+            file_extension = '.mp4'
+        else:
+            media_type = 'PHOTO'
+            file_extension = '.jpg'
+    
+    if not media_file:
+        update.message.reply_text("Пожалуйста, отправьте фото или видео.")
+        return
+
+    file_id = media_file.file_id
+
+    # Скачиваем медиа
+    media = context.bot.get_file(file_id)
+
+    # Создаем временный файл для сохранения медиа
+    with tempfile.NamedTemporaryFile(delete=False, suffix=file_extension) as temp_file:
+        media_path = temp_file.name
+
+    # Скачиваем медиа во временный файл
+    media.download(media_path)
+
+    # Сохраняем путь к медиа и тип медиа
+    context.user_data['publish_media_path'] = media_path
+    context.user_data['publish_media_type'] = media_type
+
+    # Запрашиваем подпись
+    publish_type = context.user_data.get('publish_type', 'post')
+    
+    if publish_type == 'story':
+        update.message.reply_text(
+            "📱 Медиа для истории успешно загружено!\n\n"
+            "Теперь введите подпись к истории (или отправьте /skip для публикации без подписи):"
+        )
+    elif publish_type == 'reels':
+        update.message.reply_text(
+            "🎥 Видео для Reels успешно загружено!\n\n"
+            "Теперь введите подпись к Reels (или отправьте /skip для публикации без подписи):"
+        )
+    elif publish_type == 'igtv':
+        update.message.reply_text(
+            "🎬 Видео для IGTV успешно загружено!\n\n"
+            "Теперь введите подпись к IGTV (или отправьте /skip для публикации без подписи):"
+        )
+    else:
+        update.message.reply_text(
+            "📸 Медиа для поста успешно загружено!\n\n"
+            "Теперь введите подпись к публикации (или отправьте /skip для публикации без подписи):"
+        )
+
+    return ENTER_CAPTION
+
+def enter_caption(update, context):
+    """Обработчик ввода подписи к публикации"""
+    if update.message.text == '/skip':
+        context.user_data['publish_caption'] = ""
+    else:
+        context.user_data['publish_caption'] = update.message.text
+
+    publish_type = context.user_data.get('publish_type', 'post')
+    media_type = context.user_data.get('publish_media_type')
+
+    # Для рилсов (видео) спрашиваем о видимости в основной сетке
+    if publish_type == 'reels' and media_type == 'VIDEO':
+        keyboard = [
+            [
+                InlineKeyboardButton("✅ Оставить в основной сетке", callback_data='keep_in_feed'),
+                InlineKeyboardButton("❌ Удалить из основной сетки", callback_data='hide_from_feed')
+            ],
+            [InlineKeyboardButton("🔙 Отмена", callback_data='cancel_publish')]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+
+        update.message.reply_text(
+            "Хотите ли вы удалить рилс из основной сетки профиля?\n"
+            "(Рилс останется в разделе Reels, но не будет отображаться в основной сетке фотографий)",
+            reply_markup=reply_markup
+        )
+        return CHOOSE_HIDE_FROM_FEED
+    else:
+        # Для других типов контента переходим сразу к подтверждению
+        return show_publish_confirmation(update, context)
+
+def choose_hide_from_feed(update, context):
+    """Обработчик выбора видимости рилса в основной сетке"""
+    query = update.callback_query
+    query.answer()
+
+    if query.data == 'hide_from_feed':
+        context.user_data['hide_from_feed'] = True
+        query.edit_message_text("Рилс будет удален из основной сетки профиля.")
+    else:  # keep_in_feed
+        context.user_data['hide_from_feed'] = False
+        query.edit_message_text("Рилс останется в основной сетке профиля.")
+
+    # Показываем подтверждение публикации
+    return show_publish_confirmation(update, context, is_callback=True)
+
+def show_publish_confirmation(update, context, is_callback=False):
+    """Показывает подтверждение публикации"""
+    # Получаем данные для публикации
+    media_type = context.user_data.get('publish_media_type')
+    publish_type = context.user_data.get('publish_type', 'post')
+    caption = context.user_data.get('publish_caption')
+    hide_from_feed = context.user_data.get('hide_from_feed', False)
+
+    # Проверяем, публикуем на один аккаунт или на несколько
+    if context.user_data.get('publish_to_all_accounts'):
+        account_ids = context.user_data.get('publish_account_ids', [])
+        accounts = [get_instagram_account(account_id) for account_id in account_ids]
+        account_usernames = [account.username for account in accounts]
+        account_info = f"👥 *Аккаунты:* {len(account_usernames)} аккаунтов"
+    else:
+        account_id = context.user_data.get('publish_account_id')
+        account_username = context.user_data.get('publish_account_username')
+        account_info = f"👤 *Аккаунт:* {account_username}"
+
+    # Создаем клавиатуру для подтверждения
+    keyboard = [
+        [
+            InlineKeyboardButton("✅ Опубликовать сейчас", callback_data='confirm_publish_now'),
+            InlineKeyboardButton("⏰ Запланировать", callback_data='schedule_publish')
+        ],
+        [InlineKeyboardButton("❌ Отмена", callback_data='cancel_publish')]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    # Определяем эмодзи для типа публикации
+    type_emojis = {
+        'post': '📸',
+        'story': '📱',
+        'reels': '🎥',
+        'igtv': '🎬'
+    }
+    
+    type_names = {
+        'post': 'Пост',
+        'story': 'История',
+        'reels': 'Reels',
+        'igtv': 'IGTV'
+    }
+
+    message_text = (
+        f"*Данные для публикации:*\n\n"
+        f"{account_info}\n"
+        f"{type_emojis.get(publish_type, '📸')} *Тип:* {type_names.get(publish_type, 'Пост')}\n"
+        f"📱 *Медиа:* {media_type}\n"
+        f"✏️ *Подпись:* {caption or '(без подписи)'}\n"
+    )
+
+    # Добавляем информацию о видимости в основной сетке только для рилсов
+    if publish_type == 'reels':
+        message_text += f"🔍 *Видимость:* {'Скрыт из основной сетки' if hide_from_feed else 'В основной сетке'}\n"
+
+    message_text += "\nЧто вы хотите сделать?"
+
+    if is_callback:
+        query = update.callback_query
+        query.edit_message_text(
+            message_text,
+            reply_markup=reply_markup,
+            parse_mode=ParseMode.MARKDOWN
+        )
+    else:
+        update.message.reply_text(
+            message_text,
+            reply_markup=reply_markup,
+            parse_mode=ParseMode.MARKDOWN
+        )
+
+    return CONFIRM_PUBLISH
+
+def confirm_publish_now(update, context):
+    """Обработчик подтверждения немедленной публикации"""
+    query = update.callback_query
+    query.answer()
+
+    # Получаем данные для публикации
+    media_path = context.user_data.get('publish_media_path')
+    media_type = context.user_data.get('publish_media_type')
+    publish_type = context.user_data.get('publish_type', 'post')
+    caption = context.user_data.get('publish_caption', '')
+    hide_from_feed = context.user_data.get('hide_from_feed', False)
+    user_id = query.from_user.id
+
+    # Определяем TaskType на основе типа публикации
+    if publish_type == 'story':
+        task_type = TaskType.STORY
+    elif publish_type == 'reels':
+        task_type = TaskType.VIDEO  # Reels используют VIDEO тип
+    elif publish_type == 'igtv':
+        task_type = TaskType.VIDEO  # IGTV тоже видео
+    else:  # post
+        task_type = TaskType.PHOTO if media_type == 'PHOTO' else TaskType.VIDEO
+
+    # Отправляем сообщение о начале публикации
+    status_message = query.edit_message_text(
+        f"⏳ Начинаем публикацию {publish_type}... Это может занять некоторое время."
+    )
+
+    # Проверяем, публикуем на один аккаунт или на несколько
+    if 'publish_account_ids' in context.user_data:
+        # Публикация на несколько аккаунтов
+        account_ids = context.user_data.get('publish_account_ids')
+
+        # Обновляем статус
+        context.bot.edit_message_text(
+            f"⏳ Подготовка к публикации {publish_type} на {len(account_ids)} аккаунтах...",
+            chat_id=status_message.chat_id,
+            message_id=status_message.message_id
+        )
+
+        # Создаем задачи для каждого аккаунта
+        task_ids = []
+        for account_id in account_ids:
+            # Подготавливаем дополнительные данные
+            additional_data = {
+                'hide_from_feed': hide_from_feed,
+                'publish_type': publish_type
+            }
+
+            # Создаем задачу на публикацию
+            success, task_id = create_publish_task(
+                account_id=account_id,
+                task_type=task_type,
+                media_path=media_path,
+                caption=caption,
+                additional_data=json.dumps(additional_data)
+            )
+
+            if success:
+                # Добавляем задачу в очередь
+                from utils.task_queue import add_task_to_queue
+                if add_task_to_queue(task_id, update.effective_chat.id, context.bot):
+                    account = get_instagram_account(account_id)
+                    task_ids.append((task_id, account.username))
+
+        if task_ids:
+            # Регистрируем пакет задач для итогового отчета
+            from utils.task_queue import register_task_batch
+            just_task_ids = [task_id for task_id, _ in task_ids]
+            register_task_batch(just_task_ids, update.effective_chat.id, context.bot)
+            
+            # Формируем сообщение о созданных задачах
+            message = f"✅ Созданы задачи на публикацию {publish_type}:\n\n"
+            for task_id, username in task_ids:
+                message += f"• Задача #{task_id} для аккаунта {username}\n"
+
+            message += "\nВы получите уведомления о результатах публикации и итоговый отчет."
+
+            # Отправляем новое сообщение с результатами
+            context.bot.send_message(
+                chat_id=status_message.chat_id,
+                text=message
+            )
+        else:
+            context.bot.edit_message_text(
+                f"❌ Не удалось создать задачи на публикацию {publish_type}.",
+                chat_id=status_message.chat_id,
+                message_id=status_message.message_id
+            )
+    else:
+        # Публикация на один аккаунт
+        account_id = context.user_data.get('publish_account_id')
+
+        # Обновляем статус
+        context.bot.edit_message_text(
+            f"⏳ Подготовка к публикации {publish_type}...",
+            chat_id=status_message.chat_id,
+            message_id=status_message.message_id
+        )
+
+        # Подготавливаем дополнительные данные
+        additional_data = {
+            'hide_from_feed': hide_from_feed,
+            'publish_type': publish_type
+        }
+
+        # Создаем задачу на публикацию
+        success, task_id = create_publish_task(
+            account_id=account_id,
+            task_type=task_type,
+            media_path=media_path,
+            caption=caption,
+            additional_data=json.dumps(additional_data)
+        )
+
+        if not success:
+            context.bot.edit_message_text(
+                f"❌ Ошибка при создании задачи: {task_id}",
+                chat_id=status_message.chat_id,
+                message_id=status_message.message_id
+            )
+            return ConversationHandler.END
+
+        # Добавляем задачу в очередь
+        from utils.task_queue import add_task_to_queue
+        if add_task_to_queue(task_id, update.effective_chat.id, context.bot):
+            account = get_instagram_account(account_id)
+            context.bot.edit_message_text(
+                f"✅ Задача #{task_id} на публикацию {publish_type} в аккаунт {account.username} добавлена в очередь.\n"
+                f"Вы получите уведомление после завершения публикации.",
+                chat_id=status_message.chat_id,
+                message_id=status_message.message_id
+            )
+        else:
+            context.bot.edit_message_text(
+                f"❌ Ошибка при добавлении задачи в очередь.",
+                chat_id=status_message.chat_id,
+                message_id=status_message.message_id
+            )
+
+    # Очищаем данные пользователя
+    cleanup_user_data(context)
+
+    return ConversationHandler.END
+
+def cleanup_user_data(context):
+    """Очищает данные пользователя после публикации"""
+    keys_to_remove = [
+        'publish_account_id', 'publish_account_username', 'publish_account_ids',
+        'publish_to_all_accounts', 'publish_account_usernames', 'publish_media_path',
+        'publish_media_type', 'publish_caption', 'hide_from_feed', 'publish_type'
+    ]
+    
+    for key in keys_to_remove:
+        if key in context.user_data:
+            del context.user_data[key]
+
+def schedule_publish_callback(update, context):
+    """Обработчик запланированной публикации"""
+    query = update.callback_query
+    query.answer()
+
+    query.edit_message_text(
+        "Введите дату и время публикации в формате ДД.ММ.ГГГГ ЧЧ:ММ\n"
+        "Например: 25.12.2023 15:30"
+    )
+
+    return CHOOSE_SCHEDULE
+
+def choose_schedule(update, context):
+    """Обработчик выбора времени для запланированной публикации"""
+    try:
+        # Парсим дату и время
+        scheduled_time = datetime.strptime(update.message.text, "%d.%m.%Y %H:%M")
+
+        # Получаем данные для публикации
+        account_id = context.user_data.get('publish_account_id')
+        media_path = context.user_data.get('publish_media_path')
+        media_type = context.user_data.get('publish_media_type')
+        caption = context.user_data.get('publish_caption', '')
+        hide_from_feed = context.user_data.get('hide_from_feed', False)
+        user_id = update.effective_user.id
+
+        # Преобразуем строковый тип в перечисление TaskType
+        try:
+            # Если media_type - это строка с именем перечисления (например, 'VIDEO')
+            task_type = TaskType[media_type]
+        except (KeyError, TypeError):
+            # Если не удалось преобразовать, выдаем ошибку
+            update.message.reply_text(f"❌ Неподдерживаемый тип медиа: {media_type}")
+            return ConversationHandler.END
+
+        # Подготавливаем дополнительные данные
+        additional_data = {
+            'hide_from_feed': hide_from_feed
+        }
+
+        # Создаем задачу на публикацию
+        success, task_id = create_publish_task(
+            account_id=account_id,
+            task_type=task_type,  # Передаем объект перечисления
+            media_path=media_path,
+            caption=caption,
+            scheduled_time=scheduled_time,
+            additional_data=json.dumps(additional_data)
+        )
+
+        if not success:
+            update.message.reply_text(f"❌ Ошибка при создании задачи: {task_id}")
+            return ConversationHandler.END
+
+        keyboard = [[InlineKeyboardButton("🔙 К меню задач", callback_data='menu_tasks')]]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+
+        update.message.reply_text(
+            f"✅ Публикация успешно запланирована на {scheduled_time.strftime('%d.%m.%Y %H:%M')}",
+            reply_markup=reply_markup
+        )
+
+        # Очищаем данные
+        if 'publish_account_id' in context.user_data:
+            del context.user_data['publish_account_id']
+        if 'publish_account_username' in context.user_data:
+            del context.user_data['publish_account_username']
+        if 'publish_media_path' in context.user_data:
+            del context.user_data['publish_media_path']
+        if 'publish_media_type' in context.user_data:
+            del context.user_data['publish_media_type']
+        if 'publish_caption' in context.user_data:
+            del context.user_data['publish_caption']
+        if 'hide_from_feed' in context.user_data:
+            del context.user_data['hide_from_feed']
+        if 'selected_accounts' in context.user_data:
+            del context.user_data['selected_accounts']
+
+    except ValueError:
+        update.message.reply_text(
+            "❌ Неверный формат даты и времени. Пожалуйста, используйте формат ДД.ММ.ГГГГ ЧЧ:ММ\n"
+            "Например: 25.12.2023 15:30"
+        )
+        return CHOOSE_SCHEDULE
+
+    return ConversationHandler.END
+
+def cancel_publish(update, context):
+    """Обработчик отмены публикации"""
+    query = update.callback_query
+    query.answer()
+
+    # Очищаем данные
+    if 'publish_account_id' in context.user_data:
+        del context.user_data['publish_account_id']
+    if 'publish_account_username' in context.user_data:
+        del context.user_data['publish_account_username']
+    if 'publish_account_ids' in context.user_data:
+        del context.user_data['publish_account_ids']
+    if 'publish_to_all_accounts' in context.user_data:
+        del context.user_data['publish_to_all_accounts']
+    if 'selected_accounts' in context.user_data:
+        del context.user_data['selected_accounts']
+    if 'publish_media_path' in context.user_data:
+        # Удаляем временный файл
+        try:
+            os.remove(context.user_data['publish_media_path'])
+        except:
+            pass
+        del context.user_data['publish_media_path']
+    if 'publish_media_type' in context.user_data:
+        del context.user_data['publish_media_type']
+    if 'publish_caption' in context.user_data:
+        del context.user_data['publish_caption']
+    if 'hide_from_feed' in context.user_data:
+        del context.user_data['hide_from_feed']
+
+    keyboard = [[InlineKeyboardButton("🔙 К меню задач", callback_data='menu_tasks')]]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    query.edit_message_text(
+        "❌ Публикация отменена.",
+        reply_markup=reply_markup
+    )
+
+    return ConversationHandler.END
+
+def check_task_status_handler(update, context):
+    """Обработчик для проверки статуса задачи"""
+    user_id = update.effective_user.id
+
+    if not is_admin(user_id):
+        update.message.reply_text("У вас нет прав для выполнения этой команды.")
+        return
+
+    # Проверяем, указан ли ID задачи
+    if not context.args or not context.args[0].isdigit():
+        update.message.reply_text(
+            "❌ Пожалуйста, укажите ID задачи. Например: /task_status 123"
+        )
+        return
+
+    task_id = int(context.args[0])
+
+    # Получаем статус задачи
+    status = get_task_status(task_id)
+
+    if not status:
+        update.message.reply_text(
+            f"❌ Задача с ID {task_id} не найдена."
+        )
+        return
+
+    # Формируем сообщение о статусе
+    if status['success']:
+        message = f"✅ Задача #{task_id} успешно выполнена!\n"
+        if 'result' in status and status['result']:
+            message += f"Результат: {status['result']}\n"
+    else:
+        message = f"❌ Задача #{task_id} завершилась с ошибкой:\n{status['result']}\n"
+
+    if 'completed_at' in status and status['completed_at']:
+        message += f"Время завершения: {status['completed_at'].strftime('%d.%m.%Y %H:%M:%S')}"
+
+    update.message.reply_text(message)
+
+def get_publish_handlers():
+    """Возвращает обработчики для публикации контента"""
+    from telegram.ext import CommandHandler, CallbackQueryHandler, MessageHandler, Filters
+
+    # Создаем отдельные ConversationHandler для каждого типа публикации
+    post_conversation = ConversationHandler(
+        entry_points=[
+            CallbackQueryHandler(start_post_publish, pattern='^publish_post$')
+        ],
+        states={
+            CHOOSE_ACCOUNT: [
+                CallbackQueryHandler(handle_post_source_selection, pattern='^post_source_'),
+                CallbackQueryHandler(handle_post_folder_selection, pattern='^post_folder_'),
+                CallbackQueryHandler(handle_post_account_toggle, pattern='^post_account_'),
+                CallbackQueryHandler(handle_post_confirm_selection, pattern='^post_confirm$'),
+                CallbackQueryHandler(handle_post_source_selection, pattern="^post_from_folders$"),
+                CallbackQueryHandler(handle_post_source_selection, pattern="^post_all_accounts$"),
+                CallbackQueryHandler(handle_post_source_selection, pattern="^post_back_to_menu$"),
+                CallbackQueryHandler(handle_post_folder_selection, pattern="^post_folder_"),
+                CallbackQueryHandler(handle_post_folder_selection, pattern="^post_back_to_source$"),
+                CallbackQueryHandler(handle_post_account_toggle, pattern="^post_toggle_"),
+                CallbackQueryHandler(handle_post_account_toggle, pattern="^post_select_all$"),
+                CallbackQueryHandler(handle_post_account_toggle, pattern="^post_deselect_all$"),
+                CallbackQueryHandler(handle_post_account_toggle, pattern="^post_page_"),
+                CallbackQueryHandler(handle_post_confirm_selection, pattern="^post_confirm_selection$"),
+            ],
+            UPLOAD_MEDIA: [
+                MessageHandler(Filters.photo | Filters.video | Filters.document, handle_media_upload),
+                CallbackQueryHandler(handle_media_actions, pattern="^continue_to_caption$"),
+                CallbackQueryHandler(handle_media_actions, pattern="^clear_media_files$"),
+                CallbackQueryHandler(handle_media_actions, pattern="^cancel_publish$"),
+                CallbackQueryHandler(handle_media_actions, pattern="^back_to_accounts$"),
+            ],
+            ENTER_CAPTION: [
+                MessageHandler(Filters.text & ~Filters.command, handle_caption_input),
+                CallbackQueryHandler(handle_caption_actions, pattern="^no_caption$"),
+                CallbackQueryHandler(handle_caption_actions, pattern="^back_to_media$"),
+            ],
+            ENTER_HASHTAGS: [
+                MessageHandler(Filters.text & ~Filters.command, handle_hashtags_input),
+                CallbackQueryHandler(handle_hashtags_actions, pattern="^no_hashtags$"),
+                CallbackQueryHandler(handle_hashtags_actions, pattern="^back_to_caption_from_hashtags$"),
+            ],
+            CHOOSE_HIDE_FROM_FEED: [
+                CallbackQueryHandler(choose_hide_from_feed, pattern='^(hide_from_feed|keep_in_feed)$'),
+                CallbackQueryHandler(cancel_publish, pattern='^cancel_publish$')
+            ],
+            CONFIRM_PUBLISH: [
+                CallbackQueryHandler(handle_final_confirmation, pattern="^confirm_publish$"),
+                CallbackQueryHandler(handle_final_confirmation, pattern="^back_to_caption$"),
+                CallbackQueryHandler(handle_final_confirmation, pattern="^back_to_hashtags$"),
+                CallbackQueryHandler(handle_final_confirmation, pattern="^back_to_media$"),
+                CallbackQueryHandler(handle_final_confirmation, pattern="^cancel_publish$"),
+            ],
+            CHOOSE_SCHEDULE: [
+                MessageHandler(Filters.text & ~Filters.command, choose_schedule)
+            ]
+        },
+        fallbacks=[
+            CommandHandler("cancel", lambda update, context: ConversationHandler.END),
+            CallbackQueryHandler(cancel_publish, pattern='^cancel_publish$')
+        ],
+        per_message=False
+    )
+
+    story_conversation = ConversationHandler(
+        entry_points=[
+            CallbackQueryHandler(start_story_publish, pattern='^publish_story$')
+        ],
+        states={
+            CHOOSE_ACCOUNT: [
+                MessageHandler(Filters.photo | Filters.video | Filters.document, media_upload_handler)
+            ],
+            ENTER_CAPTION: [
+                MessageHandler(Filters.text & ~Filters.command, enter_caption),
+                CommandHandler("skip", enter_caption)
+            ],
+            CONFIRM_PUBLISH: [
+                CallbackQueryHandler(confirm_publish_now, pattern='^confirm_publish_now$'),
+                CallbackQueryHandler(schedule_publish_callback, pattern='^schedule_publish$'),
+                CallbackQueryHandler(cancel_publish, pattern='^cancel_publish$')
+            ],
+            CHOOSE_SCHEDULE: [
+                MessageHandler(Filters.text & ~Filters.command, choose_schedule)
+            ]
+        },
+        fallbacks=[
+            CommandHandler("cancel", lambda update, context: ConversationHandler.END),
+            CallbackQueryHandler(cancel_publish, pattern='^cancel_publish$')
+        ]
+    )
+
+    reels_conversation = ConversationHandler(
+        entry_points=[
+            CallbackQueryHandler(start_reels_publish, pattern='^publish_reels$')
+        ],
+        states={
+            CHOOSE_ACCOUNT: [
+                MessageHandler(Filters.photo | Filters.video | Filters.document, media_upload_handler)
+            ],
+            ENTER_CAPTION: [
+                MessageHandler(Filters.text & ~Filters.command, enter_caption),
+                CommandHandler("skip", enter_caption)
+            ],
+            CHOOSE_HIDE_FROM_FEED: [
+                CallbackQueryHandler(choose_hide_from_feed, pattern='^(hide_from_feed|keep_in_feed)$'),
+                CallbackQueryHandler(cancel_publish, pattern='^cancel_publish$')
+            ],
+            CONFIRM_PUBLISH: [
+                CallbackQueryHandler(confirm_publish_now, pattern='^confirm_publish_now$'),
+                CallbackQueryHandler(schedule_publish_callback, pattern='^schedule_publish$'),
+                CallbackQueryHandler(cancel_publish, pattern='^cancel_publish$')
+            ],
+            CHOOSE_SCHEDULE: [
+                MessageHandler(Filters.text & ~Filters.command, choose_schedule)
+            ]
+        },
+        fallbacks=[
+            CommandHandler("cancel", lambda update, context: ConversationHandler.END),
+            CallbackQueryHandler(cancel_publish, pattern='^cancel_publish$')
+        ]
+    )
+
+    igtv_conversation = ConversationHandler(
+        entry_points=[
+            CallbackQueryHandler(start_igtv_publish, pattern='^publish_igtv$')
+        ],
+        states={
+            CHOOSE_ACCOUNT: [
+                MessageHandler(Filters.photo | Filters.video | Filters.document, media_upload_handler)
+            ],
+            ENTER_CAPTION: [
+                MessageHandler(Filters.text & ~Filters.command, enter_caption),
+                CommandHandler("skip", enter_caption)
+            ],
+            CONFIRM_PUBLISH: [
+                CallbackQueryHandler(confirm_publish_now, pattern='^confirm_publish_now$'),
+                CallbackQueryHandler(schedule_publish_callback, pattern='^schedule_publish$'),
+                CallbackQueryHandler(cancel_publish, pattern='^cancel_publish$')
+            ],
+            CHOOSE_SCHEDULE: [
+                MessageHandler(Filters.text & ~Filters.command, choose_schedule)
+            ]
+        },
+        fallbacks=[
+            CommandHandler("cancel", lambda update, context: ConversationHandler.END),
+            CallbackQueryHandler(cancel_publish, pattern='^cancel_publish$')
+        ]
+    )
+
+    # Создаем селектор для публикации
+    publish_selector = create_account_selector(
+        callback_prefix="publish_select",
+        title="📤 Публикация контента",
+        allow_multiple=True,
+        show_status=True,
+        show_folders=True,
+        back_callback="menu_publications"
+    )
+
+    # Обработчики медиа файлов
+    video_handler = MessageHandler(Filters.video | Filters.document.video, media_upload_handler)
+    photo_handler = MessageHandler(Filters.photo, media_upload_handler)
+    task_status_handler = CommandHandler("task_status", check_task_status_handler)
+
+    # Создаем селекторы для каждого типа публикации
+    post_selector = create_account_selector(
+        callback_prefix="post_select",
+        title="📸 Публикация поста",
+        allow_multiple=True,
+        show_status=True,
+        show_folders=True,
+        back_callback="menu_publications"
+    )
+    
+    story_selector = create_account_selector(
+        callback_prefix="story_select",
+        title="📱 Публикация истории",
+        allow_multiple=True,
+        show_status=True,
+        show_folders=True,
+        back_callback="menu_publications"
+    )
+    
+    reels_selector = create_account_selector(
+        callback_prefix="reels_select",
+        title="🎥 Публикация Reels",
+        allow_multiple=True,
+        show_status=True,
+        show_folders=True,
+        back_callback="menu_publications"
+    )
+    
+    igtv_selector = create_account_selector(
+        callback_prefix="igtv_select",
+        title="🎬 Публикация IGTV",
+        allow_multiple=True,
+        show_status=True,
+        show_folders=True,
+        back_callback="menu_publications"
+    )
+
+    return [
+        post_conversation,
+        story_conversation, 
+        reels_conversation,
+        igtv_conversation,
+        video_handler,
+        photo_handler,
+        task_status_handler,
+        publish_selector.get_conversation_handler(),  # Общий селектор
+        post_selector.get_conversation_handler(),     # Селектор для постов
+        story_selector.get_conversation_handler(),    # Селектор для историй
+        reels_selector.get_conversation_handler(),    # Селектор для Reels
+        igtv_selector.get_conversation_handler()      # Селектор для IGTV
+    ]
+
+# Новые обработчики для разных типов публикаций
+
+def start_post_publish(update, context):
+    """Начинает процесс публикации поста с продвинутым селектором"""
+    query = update.callback_query
+    query.answer()
+    
+    # Устанавливаем тип публикации
+    context.user_data['publish_type'] = 'post'
+    context.user_data['publish_media_type'] = 'PHOTO'
+    
+    # Показываем меню выбора источника аккаунтов
+    keyboard = []
+    
+    # Получаем папки
+    from database.db_manager import get_account_groups
+    folders = get_account_groups()
+    if folders:
+        keyboard.append([InlineKeyboardButton("📁 Выбрать из папки", callback_data="post_from_folders")])
+    
+    keyboard.append([InlineKeyboardButton("📋 Все аккаунты", callback_data="post_all_accounts")])
+    keyboard.append([InlineKeyboardButton("🔙 Назад", callback_data="menu_publications")])
+    
+    query.edit_message_text(
+        "📸 **Публикация поста**\n\nВыберите источник аккаунтов:",
+        parse_mode='Markdown',
+        reply_markup=InlineKeyboardMarkup(keyboard)
+    )
+    
+    return CHOOSE_ACCOUNT
+
+def start_story_publish(update, context):
+    """Начинает процесс публикации истории с продвинутым селектором"""
+    from telegram_bot.utils.account_selection import AccountSelector
+    
+    # Устанавливаем тип публикации
+    context.user_data['publish_type'] = 'story'
+    context.user_data['publish_media_type'] = 'STORY'
+    
+    # Создаем селектор аккаунтов для публикации историй
+    selector = AccountSelector(
+        callback_prefix="story_select",
+        title="📱 Публикация истории",
+        allow_multiple=True,  # Разрешаем множественный выбор
+        show_status=True,     # Показываем статус аккаунтов
+        show_folders=True,    # Показываем папки
+        back_callback="menu_publications"
+    )
+    
+    # Определяем callback для обработки выбранных аккаунтов
+    def on_accounts_selected(account_ids: list, update_inner, context_inner):
+        if account_ids:
+            # Сохраняем выбранные аккаунты
+            context_inner.user_data['publish_account_ids'] = account_ids
+            context_inner.user_data['publish_type'] = 'story'
+            context_inner.user_data['publish_to_all_accounts'] = len(account_ids) > 1
+            
+            # Получаем информацию об аккаунтах
+            from database.db_manager import get_instagram_account
+            accounts = [get_instagram_account(acc_id) for acc_id in account_ids]
+            usernames = [acc.username for acc in accounts if acc]
+            context_inner.user_data['publish_account_usernames'] = usernames
+            
+            if len(account_ids) == 1:
+                text = f"📱 Выбран аккаунт: *{usernames[0]}*\n\n"
+                context_inner.user_data['publish_account_id'] = account_ids[0]
+                context_inner.user_data['publish_account_username'] = usernames[0]
+            else:
+                text = f"📱 Выбрано аккаунтов: {len(account_ids)}\n"
+                text += f"Аккаунты: {', '.join(usernames[:5])}"
+                if len(usernames) > 5:
+                    text += f" и ещё {len(usernames) - 5}..."
+                text += "\n\n"
+            
+            text += "Теперь отправьте фото или видео для истории:"
+            
+            update_inner.callback_query.edit_message_text(
+                text,
+                parse_mode=ParseMode.MARKDOWN
+            )
+            
+            # Переходим к состоянию ожидания медиа
+            return CHOOSE_ACCOUNT
+    
+    # Запускаем процесс выбора
+    return selector.start_selection(update, context, on_accounts_selected)
+
+def start_reels_publish(update, context):
+    """Начинает процесс публикации Reels с продвинутым селектором"""
+    from telegram_bot.utils.account_selection import AccountSelector
+    
+    # Устанавливаем тип публикации
+    context.user_data['publish_type'] = 'reels'
+    context.user_data['publish_media_type'] = 'VIDEO'
+    
+    # Создаем селектор аккаунтов для публикации Reels
+    selector = AccountSelector(
+        callback_prefix="reels_select",
+        title="🎥 Публикация Reels",
+        allow_multiple=True,  # Разрешаем множественный выбор
+        show_status=True,     # Показываем статус аккаунтов
+        show_folders=True,    # Показываем папки
+        back_callback="menu_publications"
+    )
+    
+    # Определяем callback для обработки выбранных аккаунтов
+    def on_accounts_selected(account_ids: list, update_inner, context_inner):
+        if account_ids:
+            # Сохраняем выбранные аккаунты
+            context_inner.user_data['publish_account_ids'] = account_ids
+            context_inner.user_data['publish_type'] = 'reels'
+            context_inner.user_data['publish_to_all_accounts'] = len(account_ids) > 1
+            
+            # Получаем информацию об аккаунтах
+            from database.db_manager import get_instagram_account
+            accounts = [get_instagram_account(acc_id) for acc_id in account_ids]
+            usernames = [acc.username for acc in accounts if acc]
+            context_inner.user_data['publish_account_usernames'] = usernames
+            
+            if len(account_ids) == 1:
+                text = f"🎥 Выбран аккаунт: *{usernames[0]}*\n\n"
+                context_inner.user_data['publish_account_id'] = account_ids[0]
+                context_inner.user_data['publish_account_username'] = usernames[0]
+            else:
+                text = f"🎥 Выбрано аккаунтов: {len(account_ids)}\n"
+                text += f"Аккаунты: {', '.join(usernames[:5])}"
+                if len(usernames) > 5:
+                    text += f" и ещё {len(usernames) - 5}..."
+                text += "\n\n"
+            
+            text += "Теперь отправьте видео для Reels:"
+            
+            update_inner.callback_query.edit_message_text(
+                text,
+                parse_mode=ParseMode.MARKDOWN
+            )
+            
+            # Переходим к состоянию ожидания медиа
+            return CHOOSE_ACCOUNT
+    
+    # Запускаем процесс выбора
+    return selector.start_selection(update, context, on_accounts_selected)
+
+def start_igtv_publish(update, context):
+    """Начинает процесс публикации IGTV с продвинутым селектором"""
+    from telegram_bot.utils.account_selection import AccountSelector
+    
+    # Устанавливаем тип публикации
+    context.user_data['publish_type'] = 'igtv'
+    context.user_data['publish_media_type'] = 'VIDEO'
+    
+    # Создаем селектор аккаунтов для публикации IGTV
+    selector = AccountSelector(
+        callback_prefix="igtv_select",
+        title="🎬 Публикация IGTV",
+        allow_multiple=True,  # Разрешаем множественный выбор
+        show_status=True,     # Показываем статус аккаунтов
+        show_folders=True,    # Показываем папки
+        back_callback="menu_publications"
+    )
+    
+    # Определяем callback для обработки выбранных аккаунтов
+    def on_accounts_selected(account_ids: list, update_inner, context_inner):
+        if account_ids:
+            # Сохраняем выбранные аккаунты
+            context_inner.user_data['publish_account_ids'] = account_ids
+            context_inner.user_data['publish_type'] = 'igtv'
+            context_inner.user_data['publish_to_all_accounts'] = len(account_ids) > 1
+            
+            # Получаем информацию об аккаунтах
+            from database.db_manager import get_instagram_account
+            accounts = [get_instagram_account(acc_id) for acc_id in account_ids]
+            usernames = [acc.username for acc in accounts if acc]
+            context_inner.user_data['publish_account_usernames'] = usernames
+            
+            if len(account_ids) == 1:
+                text = f"🎬 Выбран аккаунт: *{usernames[0]}*\n\n"
+                context_inner.user_data['publish_account_id'] = account_ids[0]
+                context_inner.user_data['publish_account_username'] = usernames[0]
+            else:
+                text = f"🎬 Выбрано аккаунтов: {len(account_ids)}\n"
+                text += f"Аккаунты: {', '.join(usernames[:5])}"
+                if len(usernames) > 5:
+                    text += f" и ещё {len(usernames) - 5}..."
+                text += "\n\n"
+            
+            text += "Теперь отправьте видео для IGTV:"
+            
+            update_inner.callback_query.edit_message_text(
+                text,
+                parse_mode=ParseMode.MARKDOWN
+            )
+            
+            # Переходим к состоянию ожидания медиа
+            return CHOOSE_ACCOUNT
+    
+    # Запускаем процесс выбора
+    return selector.start_selection(update, context, on_accounts_selected)
+
+def show_scheduled_posts(update, context):
+    """Показывает запланированные публикации"""
+    query = update.callback_query
+    query.answer()
+    
+    from database.db_manager import get_session
+    from database.models import PublishTask, TaskStatus
+    
+    session = get_session()
+    try:
+        # Получаем запланированные задачи
+        scheduled_tasks = session.query(PublishTask).filter(
+            PublishTask.status == TaskStatus.SCHEDULED
+        ).order_by(PublishTask.scheduled_time).limit(10).all()
+        
+        if not scheduled_tasks:
+            query.edit_message_text(
+                "📅 Нет запланированных публикаций",
+                reply_markup=InlineKeyboardMarkup([
+                    [InlineKeyboardButton("🔙 Назад", callback_data="menu_publications")]
+                ])
+            )
+            return
+        
+        message = "📅 *Запланированные публикации:*\n\n"
+        
+        for task in scheduled_tasks:
+            from database.db_manager import get_instagram_account
+            account = get_instagram_account(task.account_id)
+            
+            scheduled_time = task.scheduled_time.strftime("%d.%m.%Y %H:%M")
+            task_type = task.task_type.value if hasattr(task.task_type, 'value') else str(task.task_type)
+            
+            message += f"• *{task_type.upper()}* в @{account.username if account else 'Unknown'}\n"
+            message += f"  📅 {scheduled_time}\n"
+            message += f"  📝 {task.caption[:50]}{'...' if len(task.caption or '') > 50 else ''}\n\n"
+        
+        keyboard = [
+            [InlineKeyboardButton("🔄 Обновить", callback_data="scheduled_posts")],
+            [InlineKeyboardButton("🔙 Назад", callback_data="menu_publications")]
+        ]
+        
+        query.edit_message_text(
+            message,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode=ParseMode.MARKDOWN
+        )
+        
+    except Exception as e:
+        logger.error(f"Ошибка при получении запланированных публикаций: {e}")
+        query.edit_message_text(
+            "❌ Ошибка при загрузке запланированных публикаций",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔙 Назад", callback_data="menu_publications")]
+            ])
+        )
+    finally:
+        session.close()
+
+def show_publication_history(update, context):
+    """Показывает историю публикаций"""
+    query = update.callback_query
+    query.answer()
+    
+    from database.db_manager import get_session
+    from database.models import PublishTask, TaskStatus
+    
+    session = get_session()
+    try:
+        # Получаем последние выполненные задачи
+        completed_tasks = session.query(PublishTask).filter(
+            PublishTask.status.in_([TaskStatus.COMPLETED, TaskStatus.FAILED])
+        ).order_by(PublishTask.completed_time.desc()).limit(10).all()
+        
+        if not completed_tasks:
+            query.edit_message_text(
+                "📊 История публикаций пуста",
+                reply_markup=InlineKeyboardMarkup([
+                    [InlineKeyboardButton("🔙 Назад", callback_data="menu_publications")]
+                ])
+            )
+            return
+        
+        message = "📊 *История публикаций:*\n\n"
+        
+        for task in completed_tasks:
+            from database.db_manager import get_instagram_account
+            account = get_instagram_account(task.account_id)
+            
+            completed_time = task.completed_time.strftime("%d.%m.%Y %H:%M") if task.completed_time else "Не завершена"
+            task_type = task.task_type.value if hasattr(task.task_type, 'value') else str(task.task_type)
+            status_emoji = "✅" if task.status == TaskStatus.COMPLETED else "❌"
+            
+            message += f"{status_emoji} *{task_type.upper()}* в @{account.username if account else 'Unknown'}\n"
+            message += f"  📅 {completed_time}\n"
+            
+            if task.status == TaskStatus.FAILED and task.error_message:
+                message += f"  ❌ {task.error_message[:50]}{'...' if len(task.error_message) > 50 else ''}\n"
+            elif task.media_id:
+                message += f"  🔗 ID: {task.media_id}\n"
+            
+            message += "\n"
+        
+        keyboard = [
+            [InlineKeyboardButton("🔄 Обновить", callback_data="publication_history")],
+            [InlineKeyboardButton("🔙 Назад", callback_data="menu_publications")]
+        ]
+        
+        query.edit_message_text(
+            message,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode=ParseMode.MARKDOWN
+        )
+        
+    except Exception as e:
+        logger.error(f"Ошибка при получении истории публикаций: {e}")
+        query.edit_message_text(
+            "❌ Ошибка при загрузке истории публикаций",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔙 Назад", callback_data="menu_publications")]
+            ])
+        )
+    finally:
+        session.close()
+
+# Обработчики выбора аккаунтов для публикации постов
+
+def handle_post_source_selection(update, context):
+    """Обрабатывает выбор источника аккаунтов для постов"""
+    query = update.callback_query
+    query.answer()
+    
+    if query.data == "post_from_folders":
+        # Показываем список папок
+        return show_post_folders(update, context)
+    
+    elif query.data == "post_all_accounts":
+        # Показываем все аккаунты
+        return show_post_accounts_list(update, context, "all")
+    
+    elif query.data == "post_back_to_menu":
+        # Возвращаемся в меню публикаций
+        from telegram_bot.handlers.system_handlers import show_publish_menu
+        return show_publish_menu(update, context)
+
+def handle_post_folder_selection(update, context):
+    """Обрабатывает выбор папки для постов"""
+    query = update.callback_query
+    query.answer()
+    
+    if query.data.startswith("post_folder_"):
+        folder_id = query.data.replace("post_folder_", "")
+        return show_post_accounts_list(update, context, folder_id)
+    elif query.data == "post_back_to_source":
+        return handle_post_source_selection(update, context)
+
+def show_post_accounts_list(update, context, folder_name_or_accounts, page=0):
+    """Показывает список аккаунтов для выбора с пагинацией"""
+    try:
+        # Если передан folder_name (строка), получаем аккаунты
+        if isinstance(folder_name_or_accounts, str):
+            folder_name = folder_name_or_accounts
+            if folder_name == "all":
+                accounts = get_instagram_accounts()
+            else:
+                accounts = get_accounts_by_folder(folder_name)
+        else:
+            # Если передан список аккаунтов
+            accounts = folder_name_or_accounts
+            folder_name = "unknown"
+        
+        if not accounts:
+            query = update.callback_query
+            query.edit_message_text(
+                f"❌ В папке нет аккаунтов",
+                reply_markup=InlineKeyboardMarkup([[
+                    InlineKeyboardButton("◀️ Назад", callback_data="post_back_to_source")
+                ]])
+            )
+            return CHOOSE_ACCOUNT
+        
+        # Инициализируем выбранные аккаунты если нужно
+        if 'selected_post_accounts' not in context.user_data:
+            context.user_data['selected_post_accounts'] = []
+        
+        # Пагинация
+        accounts_per_page = 8
+        total_pages = (len(accounts) + accounts_per_page - 1) // accounts_per_page
+        page = max(0, min(page, total_pages - 1))
+        
+        start_idx = page * accounts_per_page
+        end_idx = start_idx + accounts_per_page
+        page_accounts = accounts[start_idx:end_idx]
+        
+        # Формируем клавиатуру
+        keyboard = []
+        
+        # Кнопки аккаунтов
+        for account in page_accounts:
+            selected = account.id in context.user_data['selected_post_accounts']
+            checkbox = "✅" if selected else "☐"
+            status = "✅" if account.is_active else "❌"
+            
+            keyboard.append([InlineKeyboardButton(
+                f"{checkbox} {status} @{account.username}",
+                callback_data=f"post_toggle_{account.id}"
+            )])
+        
+        # Кнопки управления
+        control_buttons = []
+        if len(context.user_data['selected_post_accounts']) > 0:
+            control_buttons.append(InlineKeyboardButton("❌ Сбросить все", callback_data="post_deselect_all"))
+        
+        if len(context.user_data['selected_post_accounts']) < len(accounts):
+            control_buttons.append(InlineKeyboardButton("✅ Выбрать все", callback_data="post_select_all"))
+        
+        if control_buttons:
+            keyboard.append(control_buttons)
+        
+        # Пагинация
+        if total_pages > 1:
+            nav_buttons = []
+            if page > 0:
+                nav_buttons.append(InlineKeyboardButton("◀️", callback_data=f"post_page_{page-1}"))
+            
+            nav_buttons.append(InlineKeyboardButton(f"{page+1}/{total_pages}", callback_data="post_page_info"))
+            
+            if page < total_pages - 1:
+                nav_buttons.append(InlineKeyboardButton("▶️", callback_data=f"post_page_{page+1}"))
+            
+            keyboard.append(nav_buttons)
+        
+        # Кнопки действий
+        action_buttons = []
+        if len(context.user_data['selected_post_accounts']) > 0:
+            action_buttons.append(InlineKeyboardButton(
+                f"📤 Продолжить ({len(context.user_data['selected_post_accounts'])})",
+                callback_data="post_confirm_selection"
+            ))
+        
+        action_buttons.append(InlineKeyboardButton("◀️ Назад", callback_data="post_back_to_source"))
+        keyboard.append(action_buttons)
+        
+        # Формируем текст
+        folder_text = f"📁 {folder_name}" if folder_name != "all" else "📁 Все аккаунты"
+        selected_count = len(context.user_data['selected_post_accounts'])
+        
+        text = f"🎯 Выбор аккаунтов для публикации поста\n\n"
+        text += f"{folder_text}\n"
+        text += f"Выбрано: {selected_count} из {len(accounts)}\n\n"
+        
+        if selected_count > 1:
+            text += "⚠️ При выборе нескольких аккаунтов контент будет автоматически уникализирован\n\n"
+        
+        text += "📋 Выберите аккаунты:"
+        
+        # Сохраняем данные для пагинации
+        context.user_data['post_folder_name'] = folder_name
+        context.user_data['post_current_page'] = page
+        context.user_data['post_total_accounts'] = len(accounts)
+        context.user_data['post_all_accounts'] = [acc.id for acc in accounts]
+        
+        query = update.callback_query
+        query.edit_message_text(
+            text,
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+        
+        return CHOOSE_ACCOUNT
+        
+    except Exception as e:
+        logger.error(f"Ошибка при показе списка аккаунтов: {e}")
+        query = update.callback_query
+        query.edit_message_text(
+            f"❌ Ошибка при загрузке аккаунтов: {e}",
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("◀️ Назад", callback_data="post_back_to_source")
+            ]])
+        )
+        return CHOOSE_ACCOUNT
+
+def handle_post_account_toggle(update, context):
+    """Обрабатывает выбор/отмену выбора аккаунта"""
+    query = update.callback_query
+    query.answer()
+    
+    try:
+        if query.data.startswith("post_toggle_"):
+            # Извлекаем ID аккаунта
+            account_id = int(query.data.replace("post_toggle_", ""))
+            
+            # Инициализируем список если нужно
+            if 'selected_post_accounts' not in context.user_data:
+                context.user_data['selected_post_accounts'] = []
+            
+            selected = context.user_data['selected_post_accounts']
+            
+            # Переключаем выбор
+            if account_id in selected:
+                selected.remove(account_id)
+            else:
+                selected.append(account_id)
+            
+            context.user_data['selected_post_accounts'] = selected
+            
+            # Обновляем интерфейс
+            folder_name = context.user_data.get('post_folder_name', 'all')
+            current_page = context.user_data.get('post_current_page', 0)
+            
+            return show_post_accounts_list(update, context, folder_name, current_page)
+            
+        elif query.data == "post_select_all":
+            # Выбираем все аккаунты
+            all_account_ids = context.user_data.get('post_all_accounts', [])
+            context.user_data['selected_post_accounts'] = all_account_ids.copy()
+            
+            folder_name = context.user_data.get('post_folder_name', 'all')
+            current_page = context.user_data.get('post_current_page', 0)
+            
+            return show_post_accounts_list(update, context, folder_name, current_page)
+            
+        elif query.data == "post_deselect_all":
+            # Сбрасываем все выборы
+            context.user_data['selected_post_accounts'] = []
+            
+            folder_name = context.user_data.get('post_folder_name', 'all')
+            current_page = context.user_data.get('post_current_page', 0)
+            
+            return show_post_accounts_list(update, context, folder_name, current_page)
+            
+        elif query.data.startswith("post_page_"):
+            # Навигация по страницам
+            page_part = query.data.replace("post_page_", "")
+            
+            # Проверяем, что это не информационная кнопка
+            if page_part == "info":
+                return CHOOSE_ACCOUNT
+            
+            try:
+                page_num = int(page_part)
+                folder_name = context.user_data.get('post_folder_name', 'all')
+                return show_post_accounts_list(update, context, folder_name, page_num)
+            except ValueError:
+                # Если не удалось преобразовать в число, игнорируем
+                return CHOOSE_ACCOUNT
+            
+    except Exception as e:
+        logger.error(f"Ошибка при переключении аккаунта: {e}")
+        query.edit_message_text(
+            f"❌ Ошибка: {e}",
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("◀️ Назад", callback_data="post_back_to_source")
+            ]])
+        )
+        return CHOOSE_ACCOUNT
+
+def handle_post_confirm_selection(update, context):
+    """Подтверждает выбор аккаунтов для постов"""
+    query = update.callback_query
+    query.answer()
+    
+    selected = context.user_data.get('selected_post_accounts', [])
+    
+    if not selected:
+        query.answer("Выберите хотя бы один аккаунт", show_alert=True)
+        return CHOOSE_ACCOUNT
+    
+    # Сохраняем выбранные аккаунты
+    context.user_data['selected_accounts'] = selected
+    context.user_data['publish_account_ids'] = selected
+    context.user_data['publish_to_all_accounts'] = len(selected) > 1
+    
+    # Получаем информацию об аккаунтах
+    from database.db_manager import get_instagram_account
+    accounts = [get_instagram_account(acc_id) for acc_id in selected]
+    usernames = [acc.username for acc in accounts if acc]
+    context.user_data['publish_account_usernames'] = usernames
+    
+    if len(selected) == 1:
+        text = f"📸 *Выбран аккаунт:* @{usernames[0]}\n\n"
+        context.user_data['publish_account_id'] = selected[0]
+        context.user_data['publish_account_username'] = usernames[0]
+    else:
+        text = f"📸 *Выбрано аккаунтов:* {len(selected)}\n"
+        text += f"*Аккаунты:* {', '.join(usernames[:5])}"
+        if len(usernames) > 5:
+            text += f" и ещё {len(usernames) - 5}..."
+        text += "\n\n"
+    
+    text += "📎 *Отправьте медиа файлы для публикации:*\n"
+    text += "• Фото (JPG, PNG)\n"
+    text += "• Видео (MP4, MOV)\n"
+    text += "• Несколько фото для карусели (до 10 штук)\n\n"
+    
+    if len(selected) > 1:
+        text += "🎨 *Контент будет автоматически уникализирован для каждого аккаунта*"
+    
+    query.edit_message_text(text, parse_mode=ParseMode.MARKDOWN)
+    
+    # Очищаем временные данные
+    if 'selected_post_accounts' in context.user_data:
+        del context.user_data['selected_post_accounts']
+    if 'available_post_accounts' in context.user_data:
+        del context.user_data['available_post_accounts']
+    
+    return UPLOAD_MEDIA
+
+# Вспомогательные функции для нового интерфейса публикации
+
+def show_post_folders(update, context):
+    """Показать список папок для выбора"""
+    try:
+        from database.db_manager import get_account_groups
+        folders = get_account_groups()
+        
+        if not folders:
+            query = update.callback_query
+            query.edit_message_text(
+                "📂 Папки не найдены",
+                reply_markup=InlineKeyboardMarkup([[
+                    InlineKeyboardButton("◀️ Назад", callback_data="post_back_to_source")
+                ]])
+            )
+            return CHOOSE_ACCOUNT
+        
+        keyboard = []
+        for folder in folders:
+            from database.db_manager import get_accounts_in_group
+            accounts_count = len(get_accounts_in_group(folder.id))
+            button_text = f"{folder.icon} {folder.name} ({accounts_count} акк.)"
+            keyboard.append([InlineKeyboardButton(button_text, callback_data=f"post_folder_{folder.id}")])
+        
+        keyboard.append([InlineKeyboardButton("◀️ Назад", callback_data="post_back_to_source")])
+        
+        query = update.callback_query
+        query.edit_message_text(
+            "📁 *Выберите папку:*",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode='Markdown'
+        )
+        
+        return CHOOSE_ACCOUNT
+        
+    except Exception as e:
+        logger.error(f"Ошибка при показе папок: {e}")
+        query = update.callback_query
+        query.edit_message_text(f"❌ Ошибка: {e}")
+        return CHOOSE_ACCOUNT
+
+def get_accounts_by_folder(folder_name):
+    """Получить аккаунты по имени папки"""
+    try:
+        if folder_name == "all":
+            return get_instagram_accounts()
+        
+        # Если это ID папки
+        if folder_name.isdigit():
+            from database.db_manager import get_accounts_in_group
+            return get_accounts_in_group(int(folder_name))
+        
+        # Если это имя папки
+        from database.db_manager import get_account_groups, get_accounts_in_group
+        folders = get_account_groups()
+        for folder in folders:
+            if folder.name == folder_name:
+                return get_accounts_in_group(folder.id)
+        
+        return []
+        
+    except Exception as e:
+        logger.error(f"Ошибка при получении аккаунтов папки {folder_name}: {e}")
+        return []
+
+# Новые функции для обработки медиа и описаний
+
+def handle_media_upload(update, context):
+    """Обработка загрузки медиа файлов для нового интерфейса"""
+    try:
+        # Инициализируем список медиа файлов если нужно
+        if 'media_files' not in context.user_data:
+            context.user_data['media_files'] = []
+        
+        media_files = context.user_data['media_files']
+        
+        # Проверяем тип сообщения
+        if update.message.photo:
+            # Фото
+            photo = update.message.photo[-1]  # Берем самое большое разрешение
+            file_obj = context.bot.get_file(photo.file_id)
+            
+            # Создаем уникальное имя файла
+            import uuid
+            filename = f"photo_{uuid.uuid4().hex[:8]}.jpg"
+            file_path = os.path.join("media", filename)
+            
+            # Создаем папку если нужно
+            os.makedirs("media", exist_ok=True)
+            
+            # Скачиваем файл
+            file_obj.download(file_path)
+            
+            media_files.append({
+                'type': 'photo',
+                'path': file_path,
+                'original_filename': filename
+            })
+            
+            logger.info(f"Загружено фото: {file_path}")
+            
+        elif update.message.video:
+            # Видео
+            video = update.message.video
+            file_obj = context.bot.get_file(video.file_id)
+            
+            # Создаем уникальное имя файла
+            import uuid
+            filename = f"video_{uuid.uuid4().hex[:8]}.mp4"
+            file_path = os.path.join("media", filename)
+            
+            # Создаем папку если нужно
+            os.makedirs("media", exist_ok=True)
+            
+            # Скачиваем файл
+            file_obj.download(file_path)
+            
+            media_files.append({
+                'type': 'video',
+                'path': file_path,
+                'original_filename': filename
+            })
+            
+            logger.info(f"Загружено видео: {file_path}")
+            
+        elif update.message.document:
+            # Документ (может быть медиа файлом)
+            document = update.message.document
+            file_name = document.file_name or "unknown"
+            file_ext = os.path.splitext(file_name)[1].lower()
+            
+            # Проверяем, что это медиа файл
+            if file_ext in ['.jpg', '.jpeg', '.png', '.webp', '.mp4', '.mov', '.avi', '.mkv']:
+                file_obj = context.bot.get_file(document.file_id)
+                
+                # Создаем уникальное имя файла
+                import uuid
+                filename = f"media_{uuid.uuid4().hex[:8]}{file_ext}"
+                file_path = os.path.join("media", filename)
+                
+                # Создаем папку если нужно
+                os.makedirs("media", exist_ok=True)
+                
+                # Скачиваем файл
+                file_obj.download(file_path)
+                
+                media_type = 'photo' if file_ext in ['.jpg', '.jpeg', '.png', '.webp'] else 'video'
+                media_files.append({
+                    'type': media_type,
+                    'path': file_path,
+                    'original_filename': file_name
+                })
+                
+                logger.info(f"Загружен медиа файл: {file_path}")
+            else:
+                update.message.reply_text("❌ Неподдерживаемый формат файла. Поддерживаются: JPG, PNG, MP4, MOV")
+                return UPLOAD_MEDIA
+        else:
+            update.message.reply_text("❌ Отправьте фото, видео или медиа файл")
+            return UPLOAD_MEDIA
+        
+        # Обновляем список медиа файлов
+        context.user_data['media_files'] = media_files
+        
+        # Формируем ответ
+        total_files = len(media_files)
+        current_file = media_files[-1]
+        
+        text = f"✅ Загружено файлов: {total_files}\n\n"
+        
+        # Показываем информацию о файлах
+        for i, file_info in enumerate(media_files, 1):
+            file_type = "📷 Фото" if file_info['type'] == 'photo' else "🎥 Видео"
+            # Просто используем имя файла без экранирования
+            text += f"{i}. {file_type} - {file_info['original_filename']}\n"
+        
+        text += "\n"
+        
+        # Определяем тип публикации
+        if total_files == 1:
+            if current_file['type'] == 'photo':
+                text += "📤 Тип публикации: Обычное фото\n"
+            else:
+                text += "📤 Тип публикации: Видео\n"
+        else:
+            # Проверяем, что все файлы - фото
+            all_photos = all(f['type'] == 'photo' for f in media_files)
+            if all_photos and total_files <= 10:
+                text += f"🎠 Тип публикации: Карусель ({total_files} фото)\n"
+            elif not all_photos:
+                text += "❌ Ошибка: Для карусели можно использовать только фото\n"
+                text += "Удалите видео файлы или начните заново\n"
+            else:
+                text += f"❌ Ошибка: Максимум 10 фото в карусели (загружено {total_files})\n"
+        
+        text += "\n📎 Отправьте еще файлы или нажмите 'Продолжить'"
+        
+        # Клавиатура
+        keyboard = [
+            [InlineKeyboardButton("📝 Продолжить", callback_data="continue_to_caption")],
+            [InlineKeyboardButton("🗑 Очистить все", callback_data="clear_media_files")],
+            [InlineKeyboardButton("❌ Отмена", callback_data="cancel_publish")]
+        ]
+        
+        update.message.reply_text(
+            text,
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+        
+        return UPLOAD_MEDIA
+        
+    except Exception as e:
+        logger.error(f"Ошибка при загрузке медиа: {e}")
+        update.message.reply_text(f"❌ Ошибка при загрузке файла: {e}")
+        return UPLOAD_MEDIA
+
+def handle_media_actions(update, context):
+    """Обработка действий с медиа файлами"""
+    query = update.callback_query
+    query.answer()
+    
+    try:
+        if query.data == "continue_to_caption":
+            # Проверяем медиа файлы
+            media_files = context.user_data.get('media_files', [])
+            
+            if not media_files:
+                query.edit_message_text(
+                    "❌ Не загружено ни одного медиа файла",
+                    reply_markup=InlineKeyboardMarkup([[
+                        InlineKeyboardButton("◀️ Назад", callback_data="back_to_accounts")
+                    ]])
+                )
+                return UPLOAD_MEDIA
+            
+            # Проверяем корректность для карусели
+            if len(media_files) > 1:
+                all_photos = all(f['type'] == 'photo' for f in media_files)
+                if not all_photos:
+                    query.edit_message_text(
+                        "❌ Для карусели можно использовать только фото",
+                        reply_markup=InlineKeyboardMarkup([[
+                            InlineKeyboardButton("🗑 Очистить все", callback_data="clear_media_files"),
+                            InlineKeyboardButton("❌ Отмена", callback_data="cancel_publish")
+                        ]])
+                    )
+                    return UPLOAD_MEDIA
+                
+                if len(media_files) > 10:
+                    query.edit_message_text(
+                        f"❌ Максимум 10 фото в карусели (загружено {len(media_files)})",
+                        reply_markup=InlineKeyboardMarkup([[
+                            InlineKeyboardButton("🗑 Очистить все", callback_data="clear_media_files"),
+                            InlineKeyboardButton("❌ Отмена", callback_data="cancel_publish")
+                        ]])
+                    )
+                    return UPLOAD_MEDIA
+            
+            # Переходим к вводу описания
+            selected_accounts = context.user_data.get('selected_accounts', [])
+            total_files = len(media_files)
+            
+            text = f"📝 Введите описание для публикации\n\n"
+            text += f"📤 Аккаунтов: {len(selected_accounts)}\n"
+            text += f"📁 Файлов: {total_files}\n"
+            
+            if total_files > 1:
+                text += f"🎠 Тип: Карусель\n"
+            elif media_files[0]['type'] == 'photo':
+                text += f"📷 Тип: Фото\n"
+            else:
+                text += f"🎥 Тип: Видео\n"
+            
+            if len(selected_accounts) > 1:
+                text += "\n🎨 Контент будет уникализирован для каждого аккаунта\n"
+            
+            text += "\n✍️ Отправьте текст описания или нажмите 'Без описания':"
+            
+            keyboard = [
+                [InlineKeyboardButton("📝 Без описания", callback_data="no_caption")],
+                [InlineKeyboardButton("◀️ Назад к медиа", callback_data="back_to_media")]
+            ]
+            
+            query.edit_message_text(
+                text,
+                reply_markup=InlineKeyboardMarkup(keyboard),
+                parse_mode='Markdown'
+            )
+            
+            return ENTER_CAPTION
+            
+        elif query.data == "clear_media_files":
+            # Очищаем медиа файлы
+            media_files = context.user_data.get('media_files', [])
+            
+            # Удаляем файлы с диска
+            for file_info in media_files:
+                try:
+                    if os.path.exists(file_info['path']):
+                        os.remove(file_info['path'])
+                except:
+                    pass
+            
+            # Очищаем из контекста
+            context.user_data['media_files'] = []
+            
+            query.edit_message_text(
+                "🗑 Все файлы очищены\n\n📎 Отправьте медиа файлы для публикации:"
+            )
+            
+            return UPLOAD_MEDIA
+            
+        elif query.data == "cancel_publish":
+            # Отменяем публикацию
+            media_files = context.user_data.get('media_files', [])
+            
+            # Удаляем файлы с диска
+            for file_info in media_files:
+                try:
+                    if os.path.exists(file_info['path']):
+                        os.remove(file_info['path'])
+                except:
+                    pass
+            
+            # Очищаем контекст
+            context.user_data.clear()
+            
+            query.edit_message_text("❌ Публикация отменена")
+            return ConversationHandler.END
+            
+        elif query.data == "back_to_accounts":
+            # Возвращаемся к выбору аккаунтов
+            return handle_post_source_selection(update, context)
+            
+    except Exception as e:
+        logger.error(f"Ошибка при обработке действий с медиа: {e}")
+        query.edit_message_text(f"❌ Ошибка: {e}")
+        return UPLOAD_MEDIA
+
+def handle_caption_input(update, context):
+    """Обработка ввода описания"""
+    try:
+        caption = update.message.text
+        
+        # Сохраняем описание
+        context.user_data['caption'] = caption
+        
+        # Переходим к вводу хештегов
+        return show_hashtags_input(update, context)
+        
+    except Exception as e:
+        logger.error(f"Ошибка при обработке описания: {e}")
+        update.message.reply_text(f"❌ Ошибка: {e}")
+        return ENTER_CAPTION
+
+def handle_caption_actions(update, context):
+    """Обработка действий с описанием"""
+    query = update.callback_query
+    query.answer()
+    
+    try:
+        if query.data == "no_caption":
+            # Без описания
+            context.user_data['caption'] = ""
+            return show_hashtags_input(update, context)
+            
+        elif query.data == "back_to_media":
+            # Возвращаемся к медиа
+            media_files = context.user_data.get('media_files', [])
+            
+            if not media_files:
+                query.edit_message_text("📎 Отправьте медиа файлы для публикации:")
+                return UPLOAD_MEDIA
+            
+            # Показываем текущие медиа файлы
+            text = f"📁 Загружено файлов: {len(media_files)}\n\n"
+            
+            for i, file_info in enumerate(media_files, 1):
+                file_type = "📷 Фото" if file_info['type'] == 'photo' else "🎥 Видео"
+                text += f"{i}. {file_type} - {file_info['original_filename']}\n"
+            
+            text += "\n📎 Отправьте еще файлы или нажмите 'Продолжить'"
+            
+            keyboard = [
+                [InlineKeyboardButton("📝 Продолжить", callback_data="continue_to_caption")],
+                [InlineKeyboardButton("🗑 Очистить все", callback_data="clear_media_files")],
+                [InlineKeyboardButton("❌ Отмена", callback_data="cancel_publish")]
+            ]
+            
+            query.edit_message_text(
+                text,
+                reply_markup=InlineKeyboardMarkup(keyboard),
+                parse_mode='Markdown'
+            )
+            
+            return UPLOAD_MEDIA
+            
+    except Exception as e:
+        logger.error(f"Ошибка при обработке действий с описанием: {e}")
+        query.edit_message_text(f"❌ Ошибка: {e}")
+        return ENTER_CAPTION
+
+def show_hashtags_input(update, context):
+    """Показать экран ввода хештегов"""
+    try:
+        selected_accounts = context.user_data.get('selected_accounts', [])
+        media_files = context.user_data.get('media_files', [])
+        caption = context.user_data.get('caption', "")
+        
+        text = f"🏷 Введите хештеги для публикации\n\n"
+        text += f"📤 Аккаунтов: {len(selected_accounts)}\n"
+        text += f"📁 Файлов: {len(media_files)}\n"
+        
+        if caption:
+            preview = caption[:50] + "..." if len(caption) > 50 else caption
+            text += f"📝 Описание: {preview}\n"
+        else:
+            text += f"📝 Описание: Без описания\n"
+        
+        text += "\n🏷 Введите хештеги (например: #nature #beautiful #photo)\n"
+        text += "или нажмите 'Без хештегов':"
+        
+        keyboard = [
+            [InlineKeyboardButton("🏷 Без хештегов", callback_data="no_hashtags")],
+            [InlineKeyboardButton("◀️ Назад к описанию", callback_data="back_to_caption_from_hashtags")]
+        ]
+        
+        if hasattr(update, 'callback_query') and update.callback_query:
+            update.callback_query.edit_message_text(
+                text,
+                reply_markup=InlineKeyboardMarkup(keyboard)
+            )
+        else:
+            update.message.reply_text(
+                text,
+                reply_markup=InlineKeyboardMarkup(keyboard)
+            )
+        
+        return ENTER_HASHTAGS
+        
+    except Exception as e:
+        logger.error(f"Ошибка при показе ввода хештегов: {e}")
+        if hasattr(update, 'callback_query') and update.callback_query:
+            update.callback_query.edit_message_text(f"❌ Ошибка: {e}")
+        else:
+            update.message.reply_text(f"❌ Ошибка: {e}")
+        return ENTER_HASHTAGS
+
+def handle_hashtags_input(update, context):
+    """Обработка ввода хештегов"""
+    try:
+        hashtags = update.message.text
+        
+        # Сохраняем хештеги
+        context.user_data['hashtags'] = hashtags
+        
+        # Переходим к финальному подтверждению
+        return show_final_confirmation(update, context)
+        
+    except Exception as e:
+        logger.error(f"Ошибка при обработке хештегов: {e}")
+        update.message.reply_text(f"❌ Ошибка: {e}")
+        return ENTER_HASHTAGS
+
+def handle_hashtags_actions(update, context):
+    """Обработка действий с хештегами"""
+    query = update.callback_query
+    query.answer()
+    
+    try:
+        if query.data == "no_hashtags":
+            # Без хештегов
+            context.user_data['hashtags'] = ""
+            return show_final_confirmation(update, context)
+            
+        elif query.data == "back_to_caption_from_hashtags":
+            # Возвращаемся к описанию
+            text = f"📝 Введите описание для публикации\n\n"
+            text += f"✍️ Отправьте текст описания или нажмите 'Без описания':"
+            
+            keyboard = [
+                [InlineKeyboardButton("📝 Без описания", callback_data="no_caption")],
+                [InlineKeyboardButton("◀️ Назад к медиа", callback_data="back_to_media")]
+            ]
+            
+            query.edit_message_text(
+                text,
+                reply_markup=InlineKeyboardMarkup(keyboard)
+            )
+            
+            return ENTER_CAPTION
+            
+    except Exception as e:
+        logger.error(f"Ошибка при обработке действий с хештегами: {e}")
+        query.edit_message_text(f"❌ Ошибка: {e}")
+        return ENTER_HASHTAGS
+
+def show_final_confirmation(update, context):
+    """Показать финальное подтверждение публикации"""
+    try:
+        selected_accounts = context.user_data.get('selected_accounts', [])
+        media_files = context.user_data.get('media_files', [])
+        caption = context.user_data.get('caption', "")
+        hashtags = context.user_data.get('hashtags', "")
+        
+        # Получаем информацию о аккаунтах
+        accounts = []
+        for account_id in selected_accounts:
+            account = get_instagram_account(account_id)
+            if account:
+                accounts.append(account)
+        
+        # Формируем текст подтверждения
+        text = f"🎯 Подтверждение публикации\n\n"
+        
+        # Информация о медиа
+        if len(media_files) == 1:
+            if media_files[0]['type'] == 'photo':
+                text += f"📷 Тип: Фото\n"
+            else:
+                text += f"🎥 Тип: Видео\n"
+        else:
+            text += f"🎠 Тип: Карусель ({len(media_files)} фото)\n"
+        
+        # Информация об аккаунтах
+        text += f"📤 Аккаунтов: {len(accounts)}\n"
+        
+        # Показываем первые 5 аккаунтов
+        text += f"👥 Аккаунты:\n"
+        for i, account in enumerate(accounts[:5]):
+            status = "✅" if account.is_active else "❌"
+            text += f"   {i+1}. {status} @{account.username}\n"
+        
+        if len(accounts) > 5:
+            text += f"   ... и еще {len(accounts) - 5} аккаунтов\n"
+        
+        # Информация об описании
+        if caption:
+            preview = caption[:100] + "..." if len(caption) > 100 else caption
+            text += f"\n📝 Описание: {preview}\n"
+        else:
+            text += f"\n📝 Описание: Без описания\n"
+        
+        # Информация о хештегах
+        if hashtags:
+            hashtags_preview = hashtags[:100] + "..." if len(hashtags) > 100 else hashtags
+            text += f"🏷 Хештеги: {hashtags_preview}\n"
+        else:
+            text += f"🏷 Хештеги: Без хештегов\n"
+        
+        # Уникализация
+        if len(accounts) > 1:
+            text += f"\n🎨 Уникализация: Включена (контент будет изменен для каждого аккаунта)\n"
+        
+        text += f"\n✅ Все готово к публикации!"
+        
+        # Клавиатура
+        keyboard = [
+            [InlineKeyboardButton("🚀 Опубликовать", callback_data="confirm_publish")],
+            [InlineKeyboardButton("📝 Изменить описание", callback_data="back_to_caption")],
+            [InlineKeyboardButton("🏷 Изменить хештеги", callback_data="back_to_hashtags")],
+            [InlineKeyboardButton("📁 Изменить медиа", callback_data="back_to_media")],
+            [InlineKeyboardButton("❌ Отмена", callback_data="cancel_publish")]
+        ]
+        
+        if hasattr(update, 'callback_query') and update.callback_query:
+            update.callback_query.edit_message_text(
+                text,
+                reply_markup=InlineKeyboardMarkup(keyboard)
+            )
+        else:
+            update.message.reply_text(
+                text,
+                reply_markup=InlineKeyboardMarkup(keyboard)
+            )
+        
+        return CONFIRM_PUBLISH
+        
+    except Exception as e:
+        logger.error(f"Ошибка при показе подтверждения: {e}")
+        if hasattr(update, 'callback_query') and update.callback_query:
+            update.callback_query.edit_message_text(f"❌ Ошибка: {e}")
+        else:
+            update.message.reply_text(f"❌ Ошибка: {e}")
+        return CONFIRM_PUBLISH
+
+def handle_final_confirmation(update, context):
+    """Обработка финального подтверждения"""
+    query = update.callback_query
+    query.answer()
+    
+    try:
+        if query.data == "confirm_publish":
+            # Подтверждаем публикацию
+            return execute_publish_task(update, context)
+            
+        elif query.data == "back_to_caption":
+            # Возвращаемся к описанию
+            text = f"📝 Введите описание для публикации\n\n"
+            text += f"✍️ Отправьте текст описания или нажмите 'Без описания':"
+            
+            keyboard = [
+                [InlineKeyboardButton("📝 Без описания", callback_data="no_caption")],
+                [InlineKeyboardButton("◀️ Назад к медиа", callback_data="back_to_media")]
+            ]
+            
+            query.edit_message_text(
+                text,
+                reply_markup=InlineKeyboardMarkup(keyboard)
+            )
+            
+            return ENTER_CAPTION
+            
+        elif query.data == "back_to_hashtags":
+            # Возвращаемся к хештегам
+            return show_hashtags_input(update, context)
+            
+        elif query.data == "back_to_media":
+            # Возвращаемся к медиа
+            return handle_caption_actions(update, context)
+            
+        elif query.data == "cancel_publish":
+            # Отменяем публикацию
+            return handle_media_actions(update, context)
+            
+    except Exception as e:
+        logger.error(f"Ошибка при обработке подтверждения: {e}")
+        query.edit_message_text(f"❌ Ошибка: {e}")
+        return CONFIRM_PUBLISH
+
+def execute_publish_task(update, context):
+    """Выполнение задачи публикации"""
+    query = update.callback_query
+    
+    try:
+        selected_accounts = context.user_data.get('selected_accounts', [])
+        media_files = context.user_data.get('media_files', [])
+        caption = context.user_data.get('caption', "")
+        hashtags = context.user_data.get('hashtags', "")
+        
+        # Объединяем описание и хештеги
+        full_caption = caption
+        if hashtags:
+            if full_caption:
+                full_caption += "\n\n" + hashtags
+            else:
+                full_caption = hashtags
+        
+        if not selected_accounts or not media_files:
+            query.edit_message_text("❌ Недостаточно данных для публикации")
+            return ConversationHandler.END
+        
+        # Показываем прогресс
+        query.edit_message_text("🚀 Начинаю публикацию...\n\n⏳ Подготовка задач...")
+        
+        # Определяем тип задачи
+        if len(media_files) == 1:
+            if media_files[0]['type'] == 'photo':
+                task_type = TaskType.PHOTO
+            else:
+                task_type = TaskType.VIDEO
+        else:
+            task_type = TaskType.CAROUSEL
+        
+        # Подготавливаем медиа пути
+        if task_type == TaskType.CAROUSEL:
+            media_paths = [f['path'] for f in media_files]
+            media_path_json = json.dumps(media_paths)
+        else:
+            media_path_json = media_files[0]['path']
+        
+        # Создаем задачи для каждого аккаунта
+        task_ids = []
+        need_uniquification = len(selected_accounts) > 1
+        
+        for account_id in selected_accounts:
+            account = get_instagram_account(account_id)
+            if not account:
+                continue
+            
+            # Создаем задачу публикации
+            success, task_id = create_publish_task(
+                account_id=account_id,
+                task_type=task_type,
+                media_path=media_path_json,
+                caption=full_caption,
+                additional_data=json.dumps({
+                    'uniquify_content': need_uniquification,
+                    'is_carousel': task_type == TaskType.CAROUSEL,
+                    'account_username': account.username,
+                    'account_email': account.email,
+                    'account_email_password': account.email_password
+                })
+            )
+            
+            if success and task_id:
+                task_ids.append(task_id)
+                logger.info(f"Создана задача #{task_id} для аккаунта @{account.username}")
+                
+                # Добавляем задачу в очередь для выполнения
+                from utils.task_queue import add_task_to_queue
+                add_task_to_queue(task_id, query.message.chat_id, context.bot)
+                logger.info(f"Задача #{task_id} добавлена в очередь обработки")
+        
+        # Обновляем сообщение с результатом
+        if task_ids:
+            text = f"✅ Публикация запущена!\n\n"
+            text += f"🎯 Создано задач: {len(task_ids)}\n"
+            text += f"📁 Тип публикации: "
+            
+            if task_type == TaskType.CAROUSEL:
+                text += f"Карусель ({len(media_files)} фото)\n"
+            elif task_type == TaskType.PHOTO:
+                text += "Фото\n"
+            else:
+                text += "Видео\n"
+            
+            if need_uniquification:
+                text += f"🎨 Уникализация: Включена\n"
+            
+            text += f"\n📋 Задачи: {', '.join([f'#{tid}' for tid in task_ids])}\n"
+            text += f"\n⏳ Публикация будет выполнена в ближайшее время..."
+            
+            query.edit_message_text(text)
+        else:
+            query.edit_message_text("❌ Не удалось создать задачи публикации")
+        
+        # Очищаем временные файлы и данные
+        for file_info in media_files:
+            try:
+                if os.path.exists(file_info['path']):
+                    # Не удаляем файлы сразу - они нужны для публикации
+                    pass
+            except:
+                pass
+        
+        # Очищаем контекст
+        context.user_data.clear()
+        
+        return ConversationHandler.END
+        
+    except Exception as e:
+        logger.error(f"Ошибка при выполнении публикации: {e}")
+        query.edit_message_text(f"❌ Ошибка при создании задач: {e}")
+        return ConversationHandler.END

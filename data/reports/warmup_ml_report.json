@@ -1,0 +1,119 @@
+{
+  "generated_at": "2025-08-09T21:36:20.608647",
+  "accounts": [
+    {
+      "user_id": 3000001,
+      "account_id": 45144,
+      "warmup_status": "running",
+      "actions": null,
+      "next_attempt_at": null,
+      "health": 15,
+      "risk": 41
+    },
+    {
+      "user_id": 3000000,
+      "account_id": 45143,
+      "warmup_status": "running",
+      "actions": null,
+      "next_attempt_at": null,
+      "health": 15,
+      "risk": 40
+    },
+    {
+      "user_id": 3000001,
+      "account_id": 45142,
+      "warmup_status": "completed",
+      "actions": {
+        "view_feed": 5,
+        "view_stories": 3
+      },
+      "next_attempt_at": null,
+      "health": null,
+      "risk": null
+    },
+    {
+      "user_id": 3000000,
+      "account_id": 45141,
+      "warmup_status": "completed",
+      "actions": {
+        "view_feed": 5,
+        "view_stories": 3
+      },
+      "next_attempt_at": null,
+      "health": null,
+      "risk": null
+    },
+    {
+      "user_id": 3000001,
+      "account_id": 45140,
+      "warmup_status": "completed",
+      "actions": {
+        "view_feed": 5,
+        "view_stories": 3
+      },
+      "next_attempt_at": null,
+      "health": null,
+      "risk": null
+    },
+    {
+      "user_id": 3000000,
+      "account_id": 45139,
+      "warmup_status": "completed",
+      "actions": {
+        "view_feed": 5,
+        "view_stories": 3
+      },
+      "next_attempt_at": null,
+      "health": null,
+      "risk": null
+    },
+    {
+      "user_id": 3000001,
+      "account_id": 45138,
+      "warmup_status": "completed",
+      "actions": {
+        "view_feed": 5,
+        "view_stories": 3
+      },
+      "next_attempt_at": null,
+      "health": null,
+      "risk": null
+    },
+    {
+      "user_id": 3000000,
+      "account_id": 45137,
+      "warmup_status": "completed",
+      "actions": {
+        "view_feed": 5,
+        "view_stories": 3
+      },
+      "next_attempt_at": null,
+      "health": null,
+      "risk": null
+    },
+    {
+      "user_id": 3000001,
+      "account_id": 45136,
+      "warmup_status": "completed",
+      "actions": {
+        "view_feed": 5,
+        "view_stories": 3
+      },
+      "next_attempt_at": null,
+      "health": null,
+      "risk": null
+    },
+    {
+      "user_id": 3000000,
+      "account_id": 45134,
+      "warmup_status": "completed",
+      "actions": {
+        "view_feed": 5,
+        "view_stories": 3
+      },
+      "next_attempt_at": null,
+      "health": null,
+      "risk": null
+    }
+  ]
+}

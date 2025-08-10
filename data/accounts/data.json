@@ -1,0 +1,10 @@
+{
+  "data": {
+    "access:users": "{\"6499246016\": \"{\\\"telegram_id\\\": 6499246016, \\\"username\\\": \\\"ysim0r\\\", \\\"is_active\\\": true, \\\"subscription_end\\\": \\\"2025-09-09T14:25:50.893547\\\", \\\"role\\\": \\\"subscription_lifetime\\\", \\\"added_at\\\": \\\"2025-08-10T14:25:50.893557\\\"}\", \"6626270112\": \"{\\\"telegram_id\\\": 6626270112, \\\"username\\\": \\\"lock0125\\\", \\\"is_active\\\": true, \\\"subscription_end\\\": \\\"2025-08-09T21:01:43.410155\\\", \\\"role\\\": \\\"free_trial_3_days\\\", \\\"added_at\\\": \\\"2025-08-06T21:01:43.411300\\\"}\"}",
+    "test_hash": "{}",
+    "test:key": "{\"ok\": true}",
+    "test:cache_json_basic": "{\"value\": 2}",
+    "cache:active_users": "[3000000, 3000001]"
+  },
+  "timestamp": "2025-08-10T14:25:50.895092"
+}
